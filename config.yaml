@@ -72,9 +72,9 @@ params:
   color:
   #   textColor:
   #   secondaryTextColor:
-    backgroundColor: "mistyrose"
+    backgroundColor: "white"
   #  secondaryBackgroundColor: "linen"
-  #   primaryColor:
+    primaryColor: "purple"
   #   secondaryColor:
 
   #   darkmode:
@@ -105,7 +105,7 @@ params:
     intro: "Hi, my name is"
     title: "Linda."
     subtitle: "I analyze data"
-    content: "Passionate about data science and new technologies. I provide relevant information to managers or executives for for decision making. Software Carpentry Instructor."
+    content: "Passionate about data science and new technologies. I provide relevant information to managers or executives for decision making. Software Carpentry Instructor."
     image: /images/analize.png
     button:
       enable: true
