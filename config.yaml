@@ -1,5 +1,5 @@
 baseURL: "https://lindajzmin-website.netlify.app"
-languageCode: "en-us"
+languageCode: "es"
 title: "Hugo Profile"
 theme: hugo-profile
 
@@ -21,10 +21,16 @@ Menus:
       weight: 1
 
     - identifier: gallery
-      name: Gallery
+      name: Galeria
       title: Blog posts
       url: /gallery
       weight: 2
+    
+    - identifier: courses
+      name: Cursos
+      title: Blog posts
+      url: /cursos
+      weight: 3
 
     #Dropdown menu
     # - identifier: dropdown
