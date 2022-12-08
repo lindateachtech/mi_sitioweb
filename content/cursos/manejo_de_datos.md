@@ -3,143 +3,81 @@ author: Linda Cabrera Orellana
 date: "2022-05-16T23:29:21+05:30"
 description: ""
 draft: false
-github_link: https://github.com/gurusabarish/hugo-profile
 image: /images/manejo_r.jpeg
 tags:
-- Markdown syntax
-- Sample
-- example
+- Programación con R
+- Analisis de datos
+- tidyverse
 title: Manejo de datos y reportería con R
-toc: null
+toc: TRUE
 ---
 
-Este curso fue dirigido a todos los que manejan información en cualquier área de la organización; al finalizar el curso el asistente desarrolló todo tipo de reportes planos desde R, de tal manera que pueda automatizar gran parte de su trabajo operativo y generar más valor a la institución que pertenece; así también tendrá las herramientas necesarias para transformar y preparar los datos de la forma que requiera (esto es la primera parte de cualquier proyecto de Analítica o Ciencia de Datos).
+Curso de 40 horas brindado a través de la [Sociedad Ecuatoriana de Estadística](https://see-ec.org/wordpress/).
+
 <!--more-->
 
-## Paragraph
+[![github](https://img.shields.io/badge/CODE-12100E.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/lindajzmin/)
 
-Xerum, quo qui aut unt expliquam qui dolut labo. Aque venitatiusda cum, voluptionse latur sitiae dolessi aut parist aut dollo enim qui voluptate ma dolestendit peritin re plis aut quas inctum laceat est volestemque commosa as cus endigna tectur, offic to cor sequas etum rerum idem sintibus eiur? Quianimin porecus evelectur, cum que nis nust voloribus ratem aut omnimi, sitatur? Quiatem. Nam, omnis sum am facea corem alique molestrunt et eos evelece arcillit ut aut eos eos nus, sin conecerem erum fuga. Ri oditatquam, ad quibus unda veliamenimin cusam et facea ipsamus es exerum sitate dolores editium rerore eost, temped molorro ratiae volorro te reribus dolorer sperchicium faceata tiustia prat.
+## ¿De qué se trata este curso?
 
-Itatur? Quiatae cullecum rem ent aut odis in re eossequodi nonsequ idebis ne sapicia is sinveli squiatum, core et que aut hariosam ex eat.
-
-
-## Blockquotes
-
-The blockquote element represents content that is quoted from another source, optionally with a citation which must be within a `footer` or `cite` element, and optionally with in-line changes such as annotations and abbreviations.
-
-### Blockquote without attribution
+Este curso está dirigido a todos los que manejan información en cualquier área de la organización; al finalizar el curso el asistente desarrollará todo tipo de reportes planos desde R, de tal manera que pueda automatizar gran parte de su trabajo operativo y generar más valor a la institución que pertenece; así también tendrá las herramientas necesarias para transformar y preparar los datos de la forma que requiera (esto es la primera parte de cualquier proyecto de Analítica o Ciencia de Datos).
 
 
-> Tiam, ad mint andaepu dandae nostion secatur sequo quae.
-> **Note** that you can use *Markdown syntax* within a blockquote.
+## Antes de comenzar
 
+- No hay ningún requisito, cualquier persona con una computadora puede tomar el curso.
+- No hace falta ninguna experiencia de programación.
+- Se utiliza R y RStudio que son gratuitos.
 
-### Blockquote with attribution
+## Cronograma
 
+El curso tiene una duración de 40 horas, 20 horas sincrónicas y 20 asincrónicas. Se realizaron 8 sesiones de 2.5 horas cada una. Cada sesión tiene un intervalo de descanso (preferentemente lejos de pantallas) de aproximadamente 10 minutos. Este es un cronograma tentativo.
 
-> Don't communicate by sharing memory, share memory by communicating.</p>
-> — <cite>Rob Pike[^1]</cite>
+## Contenido
 
+* Capítulo 1 - Introducción
+   - ¿Qué es R?
+   - Instalación de R y RStudio
+   - Entendiendo RStudio
+   - Obteniendo ayuda
+   - Trabajando con paquetes
+* Capítulo 2 - Generalidades
+   - Creando proyectos
+   - Creando scripts
+   - Creando objetos
+   - Funciones
+* Capítulo 3 - Data Wrangling
+   - Flujo de trabajo
+   - Importar datos
+   - Estructuras de datos
+   - Tipos de datos
+* Capítulo 4 - Data Manipulation
+   - Transformación de datos con `dplyr`
+   - Datos relacionales con `dplyr`
+   - Datos ordenados con `tidyr`
+* Capítulo 5 - Data Visualization
+   - Visualización univariada de variables numéricas
+   - Análisis exploratorio de variables categóricas
+   - Análisis de dos variables numéricas
+   - Análisis de dos variales categóricas
+   - Análisis de más de 3 variables
+   - Comunicando con gráficos
+   - Gráficos dinámicos
+* Capítulo 6 - Data Communicate
+   - Elementos básicos de Rmarkdown
+   - Encabezado YAML
+   - Formateo de texto
+   - Bloques de código de R
+   - Tipos de reporte visual
+   - Conectar RStudio con GitHub
+ 
 
-[^1]: The above quote is excerpted from Rob Pike's [talk](https://www.youtube.com/watch?v=PAAkCSZUG1c) during Gopherfest, November 18, 2015.
+## Material utilizado
 
-## Tables
+1. Capítulo 1: [Introducción](https://rpubs.com/lindajazmin1987/CuRso_Introduccion_part1)
+2. Capítulo 2: [Generalidades](https://rpubs.com/lindajazmin1987/CuRso_Generalidades_part2)
+3. Capítulo 3: [Data Wrangling](https://rpubs.com/lindajazmin1987/CuRso_DataWrangling_part3)
+4. Capítulo 4: [Data Manipulation](https://rpubs.com/lindajazmin1987/CuRso_DataManipulation_part4)
+5. Capítulo 5: [Data Visualization](https://rpubs.com/lindajazmin1987/CuRso_DataViz_part5)
+6. Capítulo 6: [Data Communicate](https://rpubs.com/lindajazmin1987/CuRso_DataComm_part6)
 
-Tables aren't part of the core Markdown spec, but Hugo supports supports them out-of-the-box.
-
-   | Name  | Age |
-   | ----- | --- |
-   | Bob   | 27  |
-   | Alice | 23  |
-
-### Inline Markdown within tables
-
-| Inline&nbsp;&nbsp;&nbsp; | Markdown&nbsp;&nbsp;&nbsp; | In&nbsp;&nbsp;&nbsp;                | Table  |
-| ------------------------ | -------------------------- | ----------------------------------- | ------ |
-| *italics*                | **bold**                   | ~~strikethrough~~&nbsp;&nbsp;&nbsp; | `code` |
-
-## Code Blocks
-
-### Code block with backticks
-
-``` html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Example HTML5 Document</title>
-</head>
-<body>
-  <p>Test</p>
-</body>
-</html>
-```
-### Code block indented with four spaces
-
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-      <meta charset="UTF-8">
-      <title>Example HTML5 Document</title>
-    </head>
-    <body>
-      <p>Test</p>
-    </body>
-    </html>
-
-### Code block with Hugo's internal highlight shortcode
-{{< highlight html >}}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Example HTML5 Document</title>
-</head>
-<body>
-  <p>Test</p>
-</body>
-</html>
-{{< /highlight >}}
-
-## List Types
-
-### Ordered List
-
-1. First item
-2. Second item
-3. Third item
-
-### Unordered List
-
-* List item
-* Another item
-* And another item
-
-### Nested list
-
-* Item
-  1. First Sub-item
-  2. Second Sub-item
-
-## Headings
-
-The following HTML `<h1>`—`<h6>` elements represent six levels of section headings. `<h1>` is the highest section level while `<h6>` is the lowest.
-
-# H1
-## H2
-### H3
-#### H4
-##### H5
-###### H6
-
-## Other Elements — abbr, sub, sup, kbd, mark
-
-<abbr title="Graphics Interchange Format">GIF</abbr> is a bitmap image format.
-
-H<sub>2</sub>O
-
-X<sup>n</sup> + Y<sup>n</sup> = Z<sup>n</sup>
-
-Press <kbd><kbd>CTRL</kbd>+<kbd>ALT</kbd>+<kbd>Delete</kbd></kbd> to end the session.
-
-Most <mark>salamanders</mark> are nocturnal, and hunt for insects, worms, and other small creatures.
