@@ -12,7 +12,7 @@ title: Manejo de datos y reportería con R
 toc: TRUE
 ---
 
-Curso de 40 horas brindado a través de la [Sociedad Ecuatoriana de Estadística](https://see-ec.org/wordpress/).
+**Manejo de datos y reportería con R**: Curso de 40 horas dictado a través de la [Sociedad Ecuatoriana de Estadística](https://see-ec.org/wordpress/).
 
 <!--more-->
 
@@ -22,6 +22,9 @@ Curso de 40 horas brindado a través de la [Sociedad Ecuatoriana de Estadística
 
 Este curso está dirigido a todos los que manejan información en cualquier área de la organización; al finalizar el curso el asistente desarrollará todo tipo de reportes planos desde R, de tal manera que pueda automatizar gran parte de su trabajo operativo y generar más valor a la institución que pertenece; así también tendrá las herramientas necesarias para transformar y preparar los datos de la forma que requiera (esto es la primera parte de cualquier proyecto de Analítica o Ciencia de Datos).
 
+## Instructora
+
+Linda Cabrera Orellana
 
 ## Antes de comenzar
 
@@ -31,7 +34,7 @@ Este curso está dirigido a todos los que manejan información en cualquier áre
 
 ## Cronograma
 
-El curso tiene una duración de 40 horas, 20 horas sincrónicas y 20 asincrónicas. Se realizaron 8 sesiones de 2.5 horas cada una. Cada sesión tiene un intervalo de descanso (preferentemente lejos de pantallas) de aproximadamente 10 minutos. Este es un cronograma tentativo.
+El curso tiene una duración de 40 horas, 20 horas sincrónicas y 20 asincrónicas. Se realizaron 8 sesiones de 2.5 horas cada una. Cada sesión tiene un intervalo de descanso (preferentemente lejos de pantallas) de aproximadamente 10 minutos.
 
 ## Contenido
 
@@ -81,3 +84,10 @@ El curso tiene una duración de 40 horas, 20 horas sincrónicas y 20 asincrónic
 5. Capítulo 5: [Data Visualization](https://rpubs.com/lindajazmin1987/CuRso_DataViz_part5)
 6. Capítulo 6: [Data Communicate](https://rpubs.com/lindajazmin1987/CuRso_DataComm_part6)
 
+
+## Aprobación
+
+1. Para la aprobación deberá realizar el trabajo asignado en un archivo R Markdown en formato html y publicarlo en RPubs.
+2. El archivo publicado debe mostrar todos los códigos, sus resultados y comentarios.
+3. La entrega debe realizarla al correo [lindaj.cabrera@gmail.com](lindaj.cabrera@gmail.com) adjuntando el link de RPubs y el archivo `.Rmd`.
+4. Fecha máxima de extrega: 15 de junio de 2022.
