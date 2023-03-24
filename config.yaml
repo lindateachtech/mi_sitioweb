@@ -110,12 +110,12 @@ params:
     enable: true
     intro: "Hola, mi nombre es"
     title: "Linda."
-    content: "Apasionada del análisis y visualización de datos. Me encargo de proporcionar información relevante a administradores o ejecutivos para la toma de decisiones. Soy Instructora Software Carpentry."
+    content: "Soy una especialista en técnicas cuantitativas para la gestión empresarial con amplia experiencia en análisis de datos, mejora de procesos empresariales y en la enseñanza. Poseo una sólida formación académica, habilidades técnicas en programación y pensamiento crítico. Me caracterizo por mi alto grado de compromiso, planificación y responsabilidad en alcanzar mis objetivos, siempre en busca de aprender nuevas tecnologías y herramientas para mejorar mis habilidades técnicas."
     image: /images/analize.png
     button:
       enable: true
       name: "Curriculum Vitae"
-      url: "https://github.com/lindajzmin/My-CV/blob/main/myCV.pdf"
+      url: "https://github.com/lindajzmin/My-CV/blob/main/mi-CV_LindaCabrera.pdf"
       download: true
     socialLinks:
       fontAwesomeIcons:
@@ -130,20 +130,34 @@ params:
   about:
     enable: true
     title: "Sobre mi"
-    image: "/images/ljco.jpeg"
+    image: "/images/lindacv2.jpg"
     content: |-
-      Soy una científica de datos en construcción, apasionada por la comunicación y visualización de datos. Tengo un background en matemáticas y técnicas cuantitativas para la gestión empresarial. Actualmente trabajo como instructora de software online en la [Sociedad Ecuatoriana de Estadística](https://see-ec.org/wordpress/programas/). 
+      Soy especialista en técnicas cuantitativas para la gestión empresarial, con amplia experiencia en la implementación de mejoras en procesos empresariales a través del análisis de datos. 
+      
+      Tengo una sólida formación académica en Ingeniería en Auditoría y Contabilidad, con un enfoque en finanzas, poseo un Máster en Investigación Matemática y otro que estoy culminando en Técnicas Cuantitativas para la Gestión Empresarial. 
+      
+      Durante mi trayectoria profesional, trabajé como Asistente de Calidad de Procesos donde me enfoqué en la aplicación de herramientas de análisis de datos para la toma de decisiones basadas en datos, incluyendo la implementación de la norma ISO 9001:2008 y luego como Jefa Administrativa, liderando equipos, coordiné diversas áreas como talento humano, compras, inventario, seguros y servicios generales, donde desarrollé procesos eficientes como por ejemplo para la toma física de inventario y su control.
+      
+      Además, tuve la oportunidad de desempeñarme como profesora universitaria en áreas como cálculo, ecuaciones diferenciales y estadística. Esta experiencia me permitió desarrollar habilidades en la enseñanza efectiva de conceptos complejos, y he logrado transmitir mi pasión por el aprendizaje a mis estudiantes. Además de la enseñanza, también me dediqué a promover la participación de los estudiantes en actividades complementarias, las cuales los ayudaron a ampliar sus horizontes y a enriquecer su experiencia universitaria. 
+      
+      Desde 2021 soy co-organizadora de RLadies Guayaquil, un pasatiempo maravilloso que me ha ayudado a expandir mis habilidades en programación y análisis de datos. Como miembro activo de la comunidad de R he contribuido en la planificación y ejecución de talleres en las áreas de estadística, visualización de datos y ciencia de datos con R. Estos talleres son una oportunidad para que los miembros de la comunidad aprendan nuevas habilidades y compartan conocimientos.
 
+      Además de mi experiencia profesional y mi trabajo voluntario, soy Instructora de Software Carpentry por lo que he brindado cursos de R para análisis de datos y para investigación científica, donde he tenido la oportunidad de conocer y enseñar a personas de diferentes niveles y contextos a mejorar sus habilidad técnológicas. Soy una apasionada por el lenguaje de programación R y tengo un interés particular en la visualización de datos.
+      
+      Soy una apasionada por la aplicación de técnicas cuantitativas en la gestión empresarial, con un alto grado de compromiso en seguir aprendiendo y compartiendo mis conocimientos con la comunidad empresarial y educativa. 
+      
     skills:
       enable: true
-      title: "Aquí algunas tecnologías y programas en los que he trabajado recientemente:"
+      title: "Algunas de las tecnologías y programas en los que he trabajado recientemente:"
       items:
         - "R"
         - "Python"
-        - "Git"
+        - "GitHub"
         - "Power Bi"
         - "LaTeX"
         - "Excel"
+
+
 
   # Experience
   # experience:
@@ -216,7 +230,7 @@ params:
     title: "Educación"
     # index: true
     items:
-      - title: "Máster en Técnicas Cuentitativas para la Gestión Empresarial"
+      - title: "Máster en Técnicas Cuantitativas para la Gestión Empresarial"
         school:
           name: "Universidad de Granada, España"
           url: "https://masteres.ugr.es/tecnicas-cuantitativas-empresas/"
@@ -233,16 +247,13 @@ params:
         content: |-
           Herramientas metodológicas en la investigación matemática, Modelamiento matemático en la industria, Matemática aplicada.
           
-          Participé en el Congreso Anual del Máster de Investigación Matemática con la ponencia:
-          - [Una solución probabilística de modelos epidemiológicos tipo SIS aleatorios](http://www.investmat.webs.upv.es/wp-content/uploads/2019/10/18-Abstract-linda.pdf)
-
           Trabajo Final de Máster:
           - Algoritmos matemáticos para la detección de tendencias en señales financieras.
         featuredLink:
           enable: true
           name: "Trabajo Final de Máster"
           url: "https://riunet.upv.es/handle/10251/111119"
-      - title: "Ingeniería en Auditoría y Contaduría Pública Autorizada"
+      - title: "Ingeniería en Auditoría y Contabilidad"
         school:
           name: "Escuela Superior Politécnica del Litoral, Ecuador"
           url: "https://www.espol.edu.ec/"
