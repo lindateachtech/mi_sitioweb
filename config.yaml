@@ -4,7 +4,7 @@ title: "Hugo Profile"
 theme: hugo-profile
 
 Paginate: 3
-disqusShortname: gurusabarish
+disqusShortname: lindajzmin
 googleAnalytics: G-DWJJVE27WD
 
 markup:
@@ -111,7 +111,7 @@ params:
     intro: "Hola, mi nombre es"
     title: "Linda."
     content: "Soy una especialista en técnicas cuantitativas para la gestión empresarial con amplia experiencia en análisis de datos, mejora de procesos empresariales y en la enseñanza. Poseo una sólida formación académica, habilidades técnicas en programación y pensamiento crítico. Me caracterizo por mi alto grado de compromiso, planificación y responsabilidad en alcanzar mis objetivos, siempre en busca de aprender nuevas tecnologías y herramientas para mejorar mis habilidades técnicas."
-    image: /images/analize.png
+    image: /images/ljco2.png
     button:
       enable: true
       name: "Curriculum Vitae"
@@ -148,7 +148,7 @@ params:
       
     skills:
       enable: true
-      title: "Algunas de las tecnologías y programas en los que he trabajado recientemente:"
+      title: "Algunas de las tecnologías y programas en los que he trabajado:"
       items:
         - "R"
         - "Python"
