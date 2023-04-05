@@ -1,0 +1,104 @@
+---
+author: lindajzmin
+date: "2023-04-02"
+description: ""
+draft: false
+image: /images/instalacion_r_rstudio.png
+tags:
+- rprogramming
+- rstudio
+- instalacion
+- tutorial
+title: ¿Cómo instalar R y RStudio?
+toc: FALSE
+---
+
+> RStudio es una herramienta poderosa para hacer que la programación en R sea más fácil, más atractiva y más productiva. </p>
+> — <cite>Hadley Wickham[^1]</cite>
+
+[^1]: Hadley Wickham es un estadístico de Nueva Zelanda y científico jefe de [Posit, PBC](https://posit.co/) (anteriormente RStudio Inc.) y profesor adjunto de estadística en la Universidad de Auckland. Es mejor conocido por su desarrollo de software de código abierto para el lenguaje de programación estadística R para visualización de datos, que admiten un enfoque de datos ordenados para la ciencia de datos.
+
+Bienvenidas a todas las personas interesadas en aprender sobre la programación en R. Al instalar y configurar adecuadamente R y RStudio, podrás aprovechar al máximo su potencial y acelerar tu proceso de aprendizaje en el análisis de datos y la ciencia de datos.
+
+Es importante tener en cuenta que R y RStudio son dos herramientas distintas, pero que trabajan en conjunto para crear un entorno óptimo para la programación en R.
+
+<div>
+<p style = 'text-align:center;'>
+<img src="/images/instalacion_r/r_rstudio.png" width="650px">
+</p>
+</div>
+
+Primero, tenemos que instalar R, este es el lenguaje de programación y un entorno para programar. Y luego, instalamos RStudio que es un Entorno de Desarrollo Integral que ofrece una interfaz amigable para trabajar con R. RStudio nos proporciona una consola para escribir y ejecutar código, además de funciones adicionales como autocompletado de código, ayuda y debugging.
+
+En este tutorial, nos centraremos en la instalación de ambas herramientas y cómo dejarlas operativas para iniciar a programar. Si eres nuevo en este tema, ten por seguro que este es un gran punto de partida para iniciar tu viaje en el mundo de la programación en R.
+
+
+## Instalación de R
+
+Empezamos con la descarga e instalación de R, para lo cual, nos dirigimos a la siguiente dirección [https://posit.co/download/rstudio-desktop/](https://posit.co/download/rstudio-desktop/) donde encontraremos los instaladores tanto de R como de RStudio.
+
+Nos aparecerá la siguiente pantalla, aquí haremos clic en la opción que dice _“Download and Install R”_, y esto nos llevará al CRAN[^2]. 
+
+<div>
+<p style = 'text-align:center;'>
+<img src="/images/instalacion_r/rstudio_desktop.png" width="750px">
+</p>
+</div>
+
+En el CRAN, elegimos el sistema operativo de nuestro ordenador. En este caso, hacemos click en la opción que dice _R para Windows_, y en la siguiente pantalla que nos aparece elegimos la primera opción que dice _base_. En este momento nos aparece el instalador de la última versión de R y hacemos clic para iniciar la descarga.
+
+[^2]: CRAN es una red de servidores _ftp_ y _web_ en todo el mundo que almacenan versiones idénticas y actualizadas de código y documentación para R.
+
+<div>
+<p style = 'text-align:center;'>
+<img src="/images/instalacion_r/descarga_r.png" width="750px">
+</p>
+</div>
+
+Cuando se haya terminado de descargar el instalador, abrimos el ejecutable, y damos los permisos para que inicie el proceso del asistente de instalación de R.
+
+1. Elegimos el idioma _Español_ para la instalación de R y hacemos clic en el botón "Aceptar".
+
+<div>
+<p style = 'text-align:center;'>
+<img src="/images/instalacion_r/01_idioma.png" width="250px">
+</p>
+</div>
+
+2. Luego nos aparecen los términos de la instalación del software, los leemos y hacemos clic en "Siguiente".
+
+<div>
+<p style = 'text-align:center;'>
+<img src="/images/instalacion_r/02_info.png" width="450px">
+</p>
+</div>
+
+3. En esta parte, elegimos la carpeta de destino para la instalación de R, podemos dejar la que nos aparece que es en el disco C, o si desean cambiarlo pueden hacer clic en el botón "Examinar ..." y buscar la carpeta que deseen. Asegúrense que la dirección no contenga caracteres especiales como palabras con tildes u otros signos. Hacemos clic en "Siguiente".
+
+<div>
+<p style = 'text-align:center;'>
+<img src="/images/instalacion_r/03_carpeta.png" width="450px">
+</p>
+</div>
+
+
+4. Luego, seleccionamos los componentes que deseamos instalar, se recomienda que mantengan los que se señalan por defecto. Hacemos clic en "Siguiente". Después, indicamos que NO deseamos utilizar las opciones de configuración. Otra vez hacemos clic en "Siguiente".
+
+<div>
+<p style = 'text-align:center;'>
+<img src="/images/instalacion_r/04_comp_conf.png" width="900px">
+</p>
+</div>
+
+
+
+## Instalación de RStudio
+
+
+## Youtube: Tutorial para la instalación paso a paso de R y RStudio
+
+<br>
+{{< youtube wM6K81wm2jQ >}}
+<br>
+
+
