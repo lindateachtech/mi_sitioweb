@@ -16,6 +16,7 @@ toc: FALSE
 > RStudio es una herramienta poderosa para hacer que la programación en R sea más fácil, más atractiva y más productiva. </p>
 > — <cite>Hadley Wickham[^1]</cite>
 
+
 [^1]: Hadley Wickham es un estadístico de Nueva Zelanda y científico jefe de [Posit, PBC](https://posit.co/) (anteriormente RStudio Inc.) y profesor adjunto de estadística en la Universidad de Auckland. Es mejor conocido por su desarrollo de software de código abierto para el lenguaje de programación estadística R para visualización de datos, que admiten un enfoque de datos ordenados para la ciencia de datos.
 
 Bienvenidas a todas las personas interesadas en aprender sobre la programación en R. Al instalar y configurar adecuadamente R y RStudio, podrás aprovechar al máximo su potencial y acelerar tu proceso de aprendizaje en el análisis de datos y la ciencia de datos.
@@ -81,7 +82,6 @@ Cuando se haya terminado de descargar el instalador, abrimos el ejecutable, y da
 </p>
 </div>
 
-
 4. Luego, seleccionamos los componentes que deseamos instalar, se recomienda que mantengan los que se señalan por defecto. Hacemos clic en "Siguiente". Después, indicamos que NO deseamos utilizar las opciones de configuración. Otra vez hacemos clic en "Siguiente".
 
 <div>
@@ -90,9 +90,48 @@ Cuando se haya terminado de descargar el instalador, abrimos el ejecutable, y da
 </p>
 </div>
 
+5. Mantenemos la carpeta del menú inicio en R. Hacemos clic en "Siguiente". Luego, seleccionamos las tareas adicionales, esto es si queremos crear accesos directos, guardar número de versión y asociar archivos `.RData` a R. Otra vez hacemos clic en "Siguiente".
+
+<div>
+<p style = 'text-align:center;'>
+<img src="/images/instalacion_r/05_menu_tareas.png" width="900px">
+</p>
+</div>
+
+6. Esperamos unos segundos mientras se instala R y cuando se haya completado la instalación, cerramos la ventana dando clic en "Finalizar".
+
+<div>
+<p style = 'text-align:center;'>
+<img src="/images/instalacion_r/06_r-instalado.png" width="900px">
+</p>
+</div>
+
+En este momento puedes hacer una prueba para confirmar que la instalación se hizo correctamente.
 
 
 ## Instalación de RStudio
+
+Una vez que tengamos R instalado en nuestros ordenadores, regresamos a la página de [Posit, PBC](https://posit.co/) y ahora procederemos a descargar RStudio. Posit reconoce automáticamente nuestro sistema operativo y nos propone el instalador adecuado.
+
+Hacemos clic en el ejecutable que se ha descargado e iniciamos la instalación de RStudio siguiendo todos los pasos que vienen por defecto, damos clic en "Siguiente". Tener en cuenta que la ruta de instalación no contenga caracteres especiales.
+
+<div>
+<p style = 'text-align:center;'>
+<img src="/images/instalacion_r/07_directorio.png" width="900px">
+</p>
+</div>
+
+Luego de elegir la carpeta del menú Inicio, inicia la instalación lo que tomará unos dos minutos aproximadamente.
+
+<div>
+<p style = 'text-align:center;'>
+<img src="/images/instalacion_r/08_instalacion.png" width="900px">
+</p>
+</div>
+
+Cuando se haya terminado la instalación hacemos clic en "Terminar". En el menú de aplicaciones del ordenador nos aparecerá un nuevo ícono de RStudio. Con esto, ya tenemos listo nuestro entorno de desarrollo integral para trabajar. 
+
+También puedes visualizar el procedimiento de instalación de R y RStudio en el siguiente video tutorial.
 
 
 ## Youtube: Tutorial para la instalación paso a paso de R y RStudio
