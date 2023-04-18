@@ -13,7 +13,7 @@ title: ¿Cómo instalar R y RStudio?
 toc: FALSE
 ---
 
-> RStudio es una herramienta poderosa para hacer que la programación en R sea más fácil, más atractiva y más productiva. </p>
+> No se puede hacer data science desde una interfaz de usuario. </p>
 > — <cite>Hadley Wickham[^1]</cite>
 
 
