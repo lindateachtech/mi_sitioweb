@@ -125,6 +125,55 @@ Al hacer clic en “New SSH key”, se abrirá una ventana donde debemos introdu
 </p>
 </div>
 
+<br>
+
+## Crear repositorio en GitHub
+
+Para trabajar de forma sincronizada entre GitHub y RStudio, es necesario trabajar con un repositorio en GitHub y con un proyecto en RStudio, estos se van a conectar y van a compartir todos los archivos que tu decidas, de tal manera que lo que realices en tu ordenador desde RStudio pueda ser visualizado en la plataforma de GitHub, siempre y cuando agregues los cambios, y todo lo que pueda ser visualizado en GitHub estará disponible para tus colegas o compañeros de equipo.
+
+Entonces vamos a crear primero el repositorio en GitHub, ten en cuenta que este repositorio puede ser nuevo o puede ser un repositorio ya existente, en ambos casos debe funcionar igual.
+
+Para crear un repositorio nos dirigimos a la pantalla principal de GitHub, aquí visualizaremos la pestaña que indica “Your Repositories”, hacemos clic en esta y luego hacemos clic en el botón verde que dice “New”.
+
+<div>
+<p style = 'text-align:center;'>
+<img src="/images/r_github/repositorio1.png" width="750px">
+</p>
+</div>
+
+Nos aparecerá un anueva ventana para configurar el nuevo repositorio donde debemos agregar un nombre, una descripción, elegimos si deseamos crear un repositorio público o privado, agregamos un archivo README y hacemos clic en "Create repository".
+
+<div>
+<p style = 'text-align:center;'>
+<img src="/images/r_github/repositorio2.png" width="550px">
+</p>
+</div>
+
+Después de crear el repositorio, al volver a la pantalla de Repositorios de GitHub nos aparecerá el nuevo repositorio creado y en la esquina superior derecha del nuevo repositorio habrá un botón verde que dice "<> Code", haremos clic aquí y en la pestaña "Local" copiaremos la dirección HTTPS. Esta dirección nos servirá para clonar el repositorio en RStudio.
+
+<div>
+<p style = 'text-align:center;'>
+<img src="/images/r_github/repositorio3.png" width="550px">
+</p>
+</div>
+
+<br>
+
+
+## Clonar repositorio en RStudio
+
+Luego de tener un repositorio en GitHub, el cual deseo utilizar para trabajar de forma colaborativa con mi equipo o simplemente guardar mi proyecto para llevar un control de versiones eficiente, necesito clonarlo en mi ordenador. Clonar es extraer una copia integral de todos los datos del repositorio que GitHub tiene en ese momento, incluidas todas las versiones de cada archivo y carpeta del proyecto.
+
+En esta ocasión, abarcaremos solo la parte de clonar el repositorio para ejecutar un trabajo mediante la conexión entre GitHub y RStudio. Entonces, regresamos a RStudio y vamos a crear un nuevo proyecto en “New Project…”, luego hacemos clic en la tercera opción “Version Control” y hacemos clic en “Git”. En esta parte tenemos que introducir la dirección HTTPS en la celda de “Repository URL:” y automáticamente se agregará el nombre del proyecto que será igual al nombre del repositorio clonado de GitHub, y luego hacemos clic en “Create Project”.
+
+<div>
+<p style = 'text-align:center;'>
+<img src="/images/r_github/rstudio.png" width="850px">
+</p>
+</div>
+ 
+
+Y ¡voilá!... Tienes un proyecto clonado del repositorio de GitHub, compruébalo revisando que en RStudio tendrás el mismo archivo README que tiene el repositorio de GitHub. En un próximo tutorial te enseñaré cuál es la dinámica de trabajo en GitHub y todo lo que necesitas conocer para trabajar y sacarle provecho a la conexión de estas maravillosas herramientas.
 
 <br>
 
