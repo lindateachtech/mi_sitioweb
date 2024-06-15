@@ -1,6 +1,6 @@
 baseURL: "https://lindajzmin-website.netlify.app"
 languageCode: "es"
-title: "Hugo Profile"
+title: "Linda Cabrera"
 theme: hugo-profile
 
 Paginate: 3
@@ -122,9 +122,9 @@ params:
         - icon: fab fa-github
           url: https://github.com/lindajzmin
         - icon: fab fa-twitter
-          url: https://twitter.com/lindajzmin
+          url: https://twitter.com/lindateachtech
         - icon: fab fa-linkedin
-          url: https://www.linkedin.com/in/lindajzmin/
+          url: https://www.linkedin.com/in/lindateachtech/
 
   # About
   about:
@@ -134,7 +134,7 @@ params:
     content: |-
       Soy especialista en técnicas cuantitativas para la gestión empresarial, con amplia experiencia en la implementación de mejoras en procesos empresariales a través del análisis de datos. 
       
-      Tengo una sólida formación académica en Ingeniería en Auditoría y Contabilidad, con un enfoque en finanzas, poseo un Máster en Investigación Matemática y otro que estoy culminando en Técnicas Cuantitativas para la Gestión Empresarial. 
+      Tengo una sólida formación académica en Ingeniería en Auditoría, con un enfoque en procesos, poseo un Máster en Investigación Matemática y otro en Técnicas Cuantitativas para la Gestión Empresarial. 
       
       Durante mi trayectoria profesional, trabajé como Asistente de Calidad de Procesos donde me enfoqué en la aplicación de herramientas de análisis de datos para la toma de decisiones basadas en datos, incluyendo la implementación de la norma ISO 9001:2008 y luego como Jefa Administrativa, liderando equipos, coordiné diversas áreas como talento humano, compras, inventario, seguros y servicios generales, donde desarrollé procesos eficientes como por ejemplo para la toma física de inventario y su control.
       
@@ -150,11 +150,10 @@ params:
       enable: true
       title: "Algunas de las tecnologías y programas en los que he trabajado:"
       items:
-        - "R"
-        - "Python"
-        - "GitHub"
-        - "Power Bi"
-        - "LaTeX"
+        - "R, Python"
+        - "LaTeX, Rmarkdown"
+        - "Power Bi, Data Studio, Looker"
+        - "GitHub, GitLab"
         - "Excel"
 
 
@@ -234,18 +233,22 @@ params:
         school:
           name: "Universidad de Granada, España"
           url: "https://masteres.ugr.es/tecnicas-cuantitativas-empresas/"
-        date: "2021 - presente"
-#       content: |-
-#       Extracurricular Activities
-#           - Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-#           - Tempora esse, eaque delectus nulla quo doloribus itaque expedita alias natus optio totam maxime nihil excepturi velit a animi laborum hic similique.
+        date: "2023"
+        content: |-
+          Técnicas econométricas, Herramientas cuantitativas para el análisis de datos económicos y/o empresariales,
+          Técnicas Cuantitativas para variables empresariales multidimensionales,
+          Técnicas Cuantitativas para la calidad de la Producción Empresarial,
+          Gestión de la cadena de suministro.
+          
+          Trabajo Final de Máster:
+          Análisis econométrico de las variables que influyen en los salarios de los futbolistas profesionales de las ligas francesa e inglesa.
       - title: "Máster en Investigación Matemática"
         school:
           name: "Universitat Politècnica de València, España"
           url: "http://www.upv.es/titulaciones/MUIMA/indexc.html"
-        date: "2017 - 2018"
+        date: "2018"
         content: |-
-          Herramientas metodológicas en la investigación matemática, Modelamiento matemático en la industria, Matemática aplicada.
+          Herramientas metodológicas en la investigación matemática, Modelamiento matemático en la industria, Matemática aplicada, Ecuaciones diferenciales aleatorias, Optimización.
           
           Trabajo Final de Máster:
           - Algoritmos matemáticos para la detección de tendencias en señales financieras.
@@ -253,10 +256,11 @@ params:
           enable: true
           name: "Trabajo Final de Máster"
           url: "https://riunet.upv.es/handle/10251/111119"
-      - title: "Ingeniería en Auditoría y Contabilidad"
+      - title: "Ingeniería en Auditoría"
         school:
           name: "Escuela Superior Politécnica del Litoral, Ecuador"
           url: "https://www.espol.edu.ec/"
+        date: "2014"
         content: |-
           Métodos cuantitativos, Matemáticas financieras, Estadística inferencial, Muestreo y diseño de cuestionarios, Administración financiera, Base de datos para auditores, Análisis multivariado y muestreo, Ingeniería de calidad, Auditoría operacional, Auditoría de sistemas informáticos, entre otras 34 asignaturas más.
           
@@ -265,7 +269,7 @@ params:
         featuredLink:
           enable: true
           name: "Tesis"
-          url: "http://www.dspace.espol.edu.ec/xmlui/handle/123456789/39500"
+          url: "https://www.dspace.espol.edu.ec/handle/123456789/39500"
 
   # Achievements
   # achievements:
@@ -317,12 +321,12 @@ params:
     enable: true
     title: "Contacto"
     content: Mi bandeja de entrada siempre está abierta. Ya sea que tenga una pregunta o simplemente quiera saludar, ¡haré todo lo posible para responderle!
-    email: lindaj.cabrera@gmail.com
+    email: lindateachtech@gmail.com
     btnName: Escríbeme
 
   footer:
     # recentPosts: false
     socialNetworks:
       github: https://github.com/lindajzmin
-      twitter: https://twitter.com/lindajzmin
-      linkedin: https://www.linkedin.com/in/lindajzmin/
+      twitter: https://twitter.com/lindateachtech
+      linkedin: https://www.linkedin.com/in/lindateachtech/
