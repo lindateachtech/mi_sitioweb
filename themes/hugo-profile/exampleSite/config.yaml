@@ -48,7 +48,7 @@ params:
   title: "Hugo Profile"
   description: Text about my cool site
   # staticPath: ""  # The path to serve the static files from
-  favicon: "/fav.png"
+  favicon: "/hex-l.png"
 
   # Whether to serve bootstrap css and js files from CDN or not. Can be set to true, "css" or "js" to choose between
   # serving both, only the css, or only the js files through the CDN. Any other value will make so that CDN is not used.
@@ -86,18 +86,18 @@ params:
   #     secondaryColor:
 
   # If you want to customize the menu, you can change it here
-  # navbar:
-  #   align: mx-auto # Left: ms-auto | center: mx-auto | right: me-auto | Default: ms-auto
-  #   brandLogo: "/logo.png" # Logo for the brand | default is the favicon variable
-  #   brandName: "Profile" # Brand name for the brand | default is the title variable
+  navbar:
+     align: ms-auto # Left: ms-auto | center: mx-auto | right: me-auto | Default: ms-auto
+     brandLogo: "/hex-l.png" # Logo for the brand | default is the favicon variable
+     brandName: "Perfil" # Brand name for the brand | default is the title variable
 
-  #   menus:
-  #     disableAbout: true
-  #     disableExperience: true
-  #     disableEducation: true
-  #     disableProjects: true
-  #     disableAchievements: true
-  #     disableContact: true
+     menus:
+       disableAbout: false
+       disableExperience: false
+       disableEducation: false
+       disableProjects: false
+       disableAchievements: false
+       disableContact: false
 
   # Hero
   hero:

@@ -18,11 +18,11 @@
         </div>
         <div class="row justify-content-center">
             {{ if .Params.image }}
-            <div class="col-sm-12 col-md-12 col-lg-3 px-3">
+            <div class="col-sm-11 col-md-11 col-lg-4 px-1">
                 <div class="sticky-sidebar">
                     <aside class="aboutImg">
                         <div class="text-center">
-                            <img src="{{ .Params.image }}" class="mx-auto rounded" alt="">
+                            <img src="{{ .Params.image }}" class="mx-auto rounded" style="border-radius: 50%; width: 400px; height: 400px; object-fit: cover;" alt="">
                         </div>
                         <h2 class="text-center pt-3">
                             {{ .Params.name }}
