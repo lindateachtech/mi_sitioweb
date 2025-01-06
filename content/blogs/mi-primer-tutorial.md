@@ -10,7 +10,7 @@ tags:
 - instalacion
 - tutorial
 title: La herramienta que necesitas para analizar tus datos
-toc: FALSE
+toc: TRUE
 ---
 
 

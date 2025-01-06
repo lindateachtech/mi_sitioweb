@@ -10,7 +10,7 @@ tags:
 - instalacion
 - tutorial
 title: ¿Cómo instalar R y RStudio?
-toc: FALSE
+toc: TRUE
 ---
 
 > No se puede hacer data science desde una interfaz de usuario. </p>

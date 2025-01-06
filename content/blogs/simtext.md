@@ -13,7 +13,7 @@ tags:
 - Rstats
 - Automatization
 title: ¿Cómo comparar grandes listados de texto de forma precisa?
-toc: FALSE
+toc: TRUE
 ---
 
 

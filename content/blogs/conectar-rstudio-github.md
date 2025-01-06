@@ -10,7 +10,7 @@ tags:
 - tutorial
 - control de versiones
 title: ¿Cómo conectar RStudio con GitHub?
-toc: FALSE
+toc: TRUE
 ---
 
 
