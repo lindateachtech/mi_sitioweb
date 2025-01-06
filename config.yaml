@@ -39,7 +39,7 @@ Menus:
     #  weight: 4
     
     - identifier: courses
-      name: Cursos
+      name: Cursos impartidos
       title: Blog posts
       url: /cursos
       weight: 5
@@ -90,9 +90,9 @@ params:
   color:
   #   textColor:
   #   secondaryTextColor:
-    backgroundColor: "white"
+     backgroundColor: "white"
   #  secondaryBackgroundColor: "linen"
-    primaryColor: "purple"
+     primaryColor: "purple"
   #   secondaryColor:
 
   #   darkmode:
