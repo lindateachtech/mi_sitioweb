@@ -9,6 +9,7 @@ tags:
 - rstudio
 - rstats
 - igualdad
+- diversidad en la programación
 title: Promoviendo la diversidad en la programación con R-Ladies
 toc: TRUE
 ---
