@@ -84,6 +84,10 @@ Es fundamental abordar los estereotipos de género desde la niñez, creando ento
 
 <br>
 
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">With my little girl at <a href="https://twitter.com/hashtag/rstudioconf?src=hash&amp;ref_src=twsrc%5Etfw">#rstudioconf</a> 2019.<br>Let’s inspire the next generation to see themselves in careers underrepresented by women ✨✨✨<a href="https://twitter.com/hashtag/rgirls?src=hash&amp;ref_src=twsrc%5Etfw">#rgirls</a> <a href="https://twitter.com/hashtag/rladies?src=hash&amp;ref_src=twsrc%5Etfw">#rladies</a> <a href="https://twitter.com/hashtag/rstats?src=hash&amp;ref_src=twsrc%5Etfw">#rstats</a> <a href="https://t.co/olQHXrZbaQ">pic.twitter.com/olQHXrZbaQ</a></p>&mdash; Marcela (@osornomarcela) <a href="https://twitter.com/osornomarcela/status/1086978271332331520?ref_src=twsrc%5Etfw">January 20, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<br>
+
 ## Un futuro sin brechas de género
 
 Aunque el camino hacia una industria tecnológica equitativa es desafiante, la colaboración entre iniciativas como R-Ladies, PyLadies y otras redes similares es clave para cerrar la brecha de género. Necesitamos visibilizar más referentes femeninos, fomentar entornos inclusivos y garantizar el acceso equitativo a recursos educativos y profesionales. Solo así podremos construir una industria que refleje la diversidad y riqueza del talento humano global.
