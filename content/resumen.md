@@ -5,7 +5,7 @@ draft: false
 image: "/images/lindacv2.jpg"  
 layout: about
 title: Sobre mí
----
+--- 
 
 
 Soy especialista en técnicas cuantitativas para la gestión empresarial, con amplia experiencia en la implementación de mejoras en procesos empresariales y análisis de datos.
