@@ -20,12 +20,12 @@
 
             <!-- Contenido del blog (columna derecha) -->
             <div class="col-md-9">
-                <a href="{{ .RelPermalink }}" class="text-dark text-decoration-none">
+                <a href="{{ .RelPermalink }}" class="blog-title-link text-decoration-none">
                     <h4 class="fw-bold">{{ .Title }}</h4>
                 </a>
                 <p class="text-secondary">{{ .Summary | truncate 350 }}</p>
                 <span class="text-muted">{{ .Date.Format "January 2, 2006" }}</span>
-                <a href="{{ .RelPermalink }}" class="btn btn-outline-info btn-sm float-end">Read more</a>
+                <a href="{{ .RelPermalink }}" class="btn read-more-btn btn-sm float-end">Leer más</a>
             </div>
         </div>
         <hr>

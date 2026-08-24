@@ -65,3 +65,29 @@
     background-color: var(--primary-color) !important;
     color: var(--secondary-color) !important;
 }
+
+/* título del post en la lista */
+#list-page .blog-title-link h4 {
+    color: var(--text-color) !important;
+    font-weight: 700 !important;
+    transition: opacity 0.2s ease-out;
+}
+
+#list-page .blog-title-link:hover h4 {
+    opacity: 0.75;
+}
+
+/* botón "Read more" */
+#list-page .read-more-btn {
+    color: var(--primary-color) !important;
+    border-color: var(--primary-color) !important;
+    background-color: transparent !important;
+    transition: all 0.2s ease-out;
+}
+
+#list-page .read-more-btn:hover,
+#list-page .read-more-btn:focus {
+    color: var(--secondary-color) !important;
+    background-color: var(--primary-color) !important;
+    box-shadow: none !important;
+}

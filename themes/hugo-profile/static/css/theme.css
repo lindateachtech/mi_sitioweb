@@ -42,6 +42,6 @@ body:not(.dark) #sun {
 }
 
 body *::selection {
-    color: var(--text-color) !important;
-    background-color: var(--primary-color) !important;
+    color: #ffffff !important;
+    background-color: #76e8ed !important;
 }
