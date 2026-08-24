@@ -1,7 +1,7 @@
 ---
 author: lindateachtech
 date: "2026-08-24"
-description: ""
+description: "Qué es Air, el formateador de código R escrito en Rust, por qué mejora la legibilidad de tus scripts y cómo instalarlo y conectarlo con RStudio."
 draft: false
 image: /images/instalacion_air/instalacion_air.jpg
 tags:

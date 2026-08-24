@@ -1,7 +1,7 @@
 ---
 author: lindateachtech
 date: "2023-03-30"
-description: ""
+description: "Por qué R es una herramienta poderosa para analizar y visualizar datos, con un tutorial en video para instalar R y RStudio desde cero."
 draft: false
 image: /images/blog1.png
 tags:

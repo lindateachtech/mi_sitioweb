@@ -1,7 +1,7 @@
 ---
 author: lindateachtech
 date: "2025-02-17"
-description: ""
+description: "Reseña de Storytelling con Datos de Cole Nussbaumer Knaflic, un libro clave para aprender a comunicar datos de forma clara y convincente."
 draft: false
 image: /images/storytelling_con_datos2.jpg
 tags:

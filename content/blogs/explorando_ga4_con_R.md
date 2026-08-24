@@ -1,7 +1,7 @@
 ---
 author: lindateachtech
 date: "2025-01-06"
-description: ""
+description: "Aprende a conectar R con la API de Google Analytics 4 para descargar y analizar tus propios datos, y construir dashboards personalizados."
 draft: false
 image: /images/ga4_r/blog5_portada2.jpg
 tags:
