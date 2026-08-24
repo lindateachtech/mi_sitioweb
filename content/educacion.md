@@ -1,5 +1,5 @@
 ---
-date: "2024-12-01"
+date: "2026-08-24"
 author: "Actualizado al"
 description: 'Formación académica'
 draft: false
@@ -65,10 +65,18 @@ title: Educación
 
 ## Certificaciones
 
+
+### PL-300 Microsoft Power BI Data Analyst
+**Microsoft** - [Sitio web](https://learn.microsoft.com/es-es/credentials/certifications/data-analyst-associate/?practice-assessment-type=certification)  
+**Año de finalización:** 2026  
+**Credencial:** [Certificación](https://learn.microsoft.com/es-es/users/lindacabreraorellana/credentials/9e6fbf547737cd4b?ref=https%3A%2F%2Fwww.linkedin.com%2F)
+
+---
+
 ### Ciencia de Datos
 **Sociedad Ecuatoriana de Estadística, Ecuador** - [Sitio web](https://see-ec.org/wordpress/wp-content/uploads/2024/12/Brochure-Programa-Ciencia-de-Datos-11va-Edicion-1.pdf)  
 **Año de finalización:** 2022  
-**Credencial:** [Programa Internacional de Ciencia de Datos - 5ta Edición](https://www.credly.com/badges/61943c4c-ae68-49aa-9eac-c26315124242/linked_in_profile)
+**Credencial:** [Certificación](https://www.credly.com/badges/61943c4c-ae68-49aa-9eac-c26315124242/linked_in_profile)
 
 ---
 
