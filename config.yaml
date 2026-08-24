@@ -32,17 +32,23 @@ Menus:
       url: /blogs
       weight: 3
       
-    # - identifier: gallery
-    #  name: Galeria
-    #  title: Blog posts
-    #  url: /gallery
-    #  weight: 4
-    
     - identifier: courses
       name: Cursos impartidos
-      title: Blog posts
+      title: Cursos impartidos
       url: /cursos
       weight: 5
+      
+    - identifier: projects
+      name: Proyectos
+      title: Proyectos
+      url: /projects
+      weight: 6
+
+    - identifier: contact
+      name: Contacto
+      title: Contacto
+      url: /contacto
+      weight: 7
 
     #Dropdown menu
     # - identifier: dropdown
@@ -64,7 +70,7 @@ Menus:
 
 params:
   title: "Linda Cabrera Orellana"
-  description: Text about my cool site
+  description: "Linda Cabrera Orellana — Analista de datos, Instructora de Software y Desarrolladora en R. Tutoriales, cursos y reflexiones sobre R, ciencia de datos y visualización. Coorganizadora de R-Ladies Guayaquil."
   # staticPath: ""  # The path to serve the static files from
   favicon: "/hex-l.png"
 
@@ -120,12 +126,12 @@ params:
   # Hero
   hero:
     enable: true
-    intro: "Hola, mi nombre es"
+    intro: "Hola, soy"
     title: "Linda."
-    content: "Soy una profesional con experiencia en análisis de datos, modelado predictivo, visualización avanzada de datos y la enseñanza en el manejo de softwares. Especializada en programación en R, Python, y herramientas como SQL, Power BI y Looker, aplico algoritmos de machine learning para generar estrategias que optimicen procesos y el flujo empresarial. Apasionada por transformar datos en soluciones innovadoras, tengo un fuerte interés en roles relacionados con ciencia de datos, investigación y mejora continua en entornos dinámicos y tecnológicos. Desde hace 4 años, estoy profundamente comprometida con la comunidad de R y su desarrollo, aportando desde R‑Ladies y en la organización de varios eventos relacionados."
-    image: /images/ljco3.png
+    content: "Mi carrera profesional siempre ha estado marcada por la misma pregunta: ¿qué nos están diciendo realmente los datos?. Mi trayectoria comenzó en procesos de negocio y evolucionó hacia el análisis de datos y la estadística aplicada al negocio. He trabajado en proyectos de datos, BI y marketing digital. R ocupa un lugar central en mi carrera, tanto como herramienta de trabajo como por la comunidad que me ha permitido construir. Co-organizo R-Ladies Guayaquil y soy instructora certificada de The Carpentries. Actualmente también estoy desarrollando mi primer paquete de R con el acompañamiento de rOpenSci."
+    image: /images/ljco4.jpg
     button:
-      enable: true
+      enable: false
       name: "Curriculum Vitae"
       url: "https://github.com/lindateachtech/mi-cv/blob/main/CV.pdf"
       download: true
@@ -136,41 +142,7 @@ params:
         - icon: fab fa-twitter
           url: https://twitter.com/lindateachtech
         - icon: fab fa-linkedin
-          url: https://www.linkedin.com/in/lindateachtech/
-
-  # About
-  # about:
-  #    enable: true
-  #    title: "Sobre mi"
-  #    image: "/images/lindacv2.jpg"
-  #    content: |-
-  #    Soy especialista en técnicas cuantitativas para la gestión empresarial, con amplia experiencia en la implementación de mejoras en procesos empresariales y análisis de datos.
-      
-  #    Tengo una sólida formación académica en Auditoría, con un enfoque en procesos, poseo un Máster en Investigación Matemática y otro en Técnicas Cuantitativas para la Gestión Empresarial. 
-      
-  #    Durante mi trayectoria profesional, trabajé como Especialista de Planificación y Gestión de Procesos donde me enfoqué en la aplicación de herramientas de análisis de datos para la toma de decisiones basadas en datos, incluyendo la implementación de la norma ISO 9001:2008 y luego como Directora Administrativa, liderando equipos, coordiné diversas áreas como talento humano, compras, inventario, seguros y servicios generales, donde desarrollé procesos eficientes como por ejemplo para la toma física de inventario y su control, lo que permitió a la empresa generar ahorros significativos.
-      
-  #    Además, tuve la oportunidad de desempeñarme como profesora universitaria en áreas como cálculo, ecuaciones diferenciales y estadística. Esta experiencia me permitió desarrollar habilidades en la enseñanza efectiva de conceptos complejos, y he logrado transmitir mi pasión por el aprendizaje a mis estudiantes. Además de la enseñanza, también me dediqué a promover la participación de los estudiantes en actividades complementarias, las cuales los ayudaron a ampliar sus horizontes y a enriquecer su experiencia universitaria. 
-      
-  #    En mi rol más reciente como Data Analyst, me he dedicado a la creación de dashboards interactivos con herramientas como Looker, Looker Studio y Power BI. He liderado proyectos de análisis de datos avanzados, como el desarrollo de un modelo de Marketing Mix Modeling, la segmentación de datos mediante clústeres y la implementación de análisis de textos con técnicas de procesamiento de lenguaje natural (NLP). Mi trabajo se ha enfocado en áreas clave como marketing digital, optimización de procesos empresariales y medición de resultados, siempre asegurando la precisión y calidad de los datos.
-      
-  #    Desde 2021 soy co-organizadora de R-Ladies Guayaquil, un pasatiempo maravilloso que me ha ayudado a expandir mis habilidades en programación y análisis de datos. Como miembro activo de la comunidad de R he contribuido en la planificación y ejecución de talleres en las áreas de estadística, visualización de datos y ciencia de datos con R. Estos talleres son una oportunidad para que los miembros de la comunidad aprendan nuevas habilidades y compartan conocimientos.
-
-  #    Además de mi experiencia profesional y mi trabajo voluntario, soy Instructora de Software Carpentry por lo que he brindado cursos de R para análisis de datos y para investigación científica, donde he tenido la oportunidad de conocer y enseñar a personas de diferentes niveles y contextos a mejorar sus habilidad técnológicas. Soy una apasionada por el lenguaje de programación R y tengo un interés particular en la visualización de datos.
-      
-  #    Soy una apasionada por la aplicación de técnicas cuantitativas en la gestión empresarial, con un alto grado de compromiso en seguir aprendiendo y compartiendo mis conocimientos con la comunidad empresarial y educativa. 
-      
-  #  skills:
-  #    enable: true
-  #    title: "Algunas de las tecnologías y programas en los que he trabajado:"
-  #    items:
-  #      - "R, Python, SQL"
-  #      - "LaTeX, Markdown"
-  #      - "Power Bi, Looker, Looker Studio"
-  #      - "Git, Shiny, BigQuery"
-  #      - "Excel"
-
-
+          url: https://www.linkedin.com/in/lindatech/
 
   # Experience
   # experience:
@@ -235,55 +207,6 @@ params:
     #      - Data analysis with Excel and Bizagi.
     #      - Cost reduction ($140,000) in inventory optimization and process standardization.
     #      - Strategic planning.
-
-
-  # Education
-  # education:
-  #  enable: true
-  #  title: "Educación"
-    # index: true
-  #  items:
-  #    - title: "Máster en Técnicas Cuantitativas para la gestión empresarial"
-  #      school:
-  #        name: "Universidad de Granada, España"
-  #        url: "https://masteres.ugr.es/tecnicas-cuantitativas-empresas/"
-  #      date: "2024"
-  #      content: |-
-  #        Técnicas econométricas, Herramientas cuantitativas para el análisis de datos económicos y/o empresariales,
-  #        Técnicas Cuantitativas para variables empresariales multidimensionales,
-  #        Técnicas Cuantitativas para la calidad de la Producción Empresarial,
-  #        Gestión de la cadena de suministro.
-          
-  #        TFM:
-  #        Análisis econométrico de las variables que influyen en los salarios de los futbolistas profesionales de las ligas francesa e inglesa.
-  #    - title: "Máster en Investigación Matemática"
-  #      school:
-  #        name: "Universitat Politècnica de València, España"
-  #        url: "http://www.upv.es/titulaciones/MUIMA/indexc.html"
-  #      date: "2018"
-  #      content: |-
-  #        Herramientas metodológicas en la investigación matemática, Modelamiento matemático en la industria, Matemática aplicada, Ecuaciones diferenciales aleatorias, Optimización.
-          
-  #        TFM:
-  #        - Algoritmos matemáticos para la detección de tendencias en señales financieras.
-  #      featuredLink:
-  #        enable: true
-  #        name: "TFM"
-  #        url: "https://riunet.upv.es/handle/10251/111119"
-  #    - title: "Ingeniería en Auditoría"
-  #      school:
-  #        name: "Escuela Superior Politécnica del Litoral, Ecuador"
-  #        url: "https://www.espol.edu.ec/"
-  #      date: "2014"
-  #      content: |-
-  #        Métodos cuantitativos, Matemáticas financieras, Estadística inferencial, Muestreo y diseño de cuestionarios, Administración financiera, Base de datos para auditores, Análisis multivariado y muestreo, Ingeniería de calidad, Auditoría operacional, Auditoría de sistemas informáticos, entre otras 34 asignaturas más.
-          
-  #        Tesis:
-  #        - Diseño de un sistema de gestión por procesos, aplicado a una empresa dedicada a la rectificación de motores.
-  #      featuredLink:
-  #        enable: true
-  #        name: "Tesis"
-  #        url: "https://www.dspace.espol.edu.ec/handle/123456789/39500"
 
   # Achievements
   # achievements:
@@ -362,4 +285,4 @@ params:
     socialNetworks:
       github: https://github.com/lindateachtech
       twitter: https://twitter.com/lindateachtech
-      linkedin: https://www.linkedin.com/in/lindateachtech/
+      linkedin: https://www.linkedin.com/in/lindatech/
