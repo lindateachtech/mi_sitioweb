@@ -3,7 +3,7 @@ author: lindateachtech
 date: "2024-06-17"
 description: ""
 draft: false
-image: /images/projects/rladies_igualdad.png
+image: /images/projects/rladies_igualdad2.jpg
 tags:
 - rladies
 - rstudio
