@@ -1,9 +1,9 @@
 ---
-author: lindajzmin
+author: lindateachtech
 date: "2023-04-02"
 description: ""
 draft: false
-image: /images/instalacion_r_rstudio.png
+image: /images/instalacion_r_rstudio2.jpg
 tags:
 - rprogramming
 - rstudio
