@@ -3,7 +3,7 @@ author: lindateachtech
 date: "2025-01-06"
 description: ""
 draft: false
-image: /images/ga4_r/blog5_portada.jpg
+image: /images/ga4_r/blog5_portada2.jpg
 tags:
 - API
 - GoogleCloud
