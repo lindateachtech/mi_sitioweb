@@ -8,7 +8,7 @@ tags:
 - Git
 - GitHub
 - Control de versiones
-title: Control de versiones con Git y GitHub
+title: UTMACH - Control de versiones con Git y GitHub
 toc: TRUE
 ---
 
