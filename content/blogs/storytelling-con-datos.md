@@ -3,7 +3,7 @@ author: lindateachtech
 date: "2025-02-17"
 description: ""
 draft: false
-image: /images/storytelling_con_datos.jpg
+image: /images/storytelling_con_datos2.jpg
 tags:
 - storytelling
 - visualización
