@@ -3,7 +3,7 @@ author: lindateachtech
 date: "2023-04-18"
 description: ""
 draft: false
-image: /images/conectar_rstudio_gith.jpg
+image: /images/conectar_rstudio_gith2.jpg
 tags:
 - rstudio
 - github
