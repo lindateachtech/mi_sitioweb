@@ -45,8 +45,15 @@
     width: 100%;
 }
 
-#single .page-content h1, #single .page-content h2, #single .page-content h3, #single .page-content h4, #single .page-content h5, #single .page-content h6 {
-    color: var(--primary-color) !important;
+#single .page-content h1, #single .page-content h2 {
+    color: #a3238e !important;
+    margin-bottom: 0.7em;
+    opacity: 0.9;
+}
+
+#single .page-content h3, #single .page-content h4, #single .page-content h5, #single .page-content h6 {
+    color: var(--text-color) !important;
+    font-weight: 700;
     margin-bottom: 0.7em;
     opacity: 0.9;
 }
@@ -118,6 +125,61 @@
 
 #single .page-content code {
   color: var(--primary-color) !important;
+}
+
+/* resaltado de sintaxis en bloques de código */
+#single .page-content pre .k,
+#single .page-content pre .kc,
+#single .page-content pre .kd,
+#single .page-content pre .kn,
+#single .page-content pre .kp,
+#single .page-content pre .kr,
+#single .page-content pre .kt {
+  color: var(--code-keyword, #a3238e) !important;
+}
+
+#single .page-content pre .s,
+#single .page-content pre .s1,
+#single .page-content pre .s2,
+#single .page-content pre .sb,
+#single .page-content pre .sc,
+#single .page-content pre .sd,
+#single .page-content pre .se,
+#single .page-content pre .sh,
+#single .page-content pre .si,
+#single .page-content pre .sx,
+#single .page-content pre .sr,
+#single .page-content pre .ss,
+#single .page-content pre .sa {
+  color: var(--code-string, #0a6b73) !important;
+}
+
+#single .page-content pre .nb,
+#single .page-content pre .nf,
+#single .page-content pre .nx {
+  color: var(--code-function, #0958d9) !important;
+}
+
+#single .page-content pre .m,
+#single .page-content pre .mf,
+#single .page-content pre .mh,
+#single .page-content pre .mi,
+#single .page-content pre .mo {
+  color: var(--code-number, #b3261e) !important;
+}
+
+#single .page-content pre .c,
+#single .page-content pre .c1,
+#single .page-content pre .cm,
+#single .page-content pre .cp,
+#single .page-content pre .cs {
+  color: var(--text-secondary-color) !important;
+}
+
+#single .page-content pre .o,
+#single .page-content pre .ow,
+#single .page-content pre .p {
+  color: var(--text-color) !important;
 }
 
 /* kbd and mark */

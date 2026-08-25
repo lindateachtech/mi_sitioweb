@@ -11,6 +11,9 @@ markup:
   goldmark:
     renderer:
       unsafe: true
+  highlight:
+    noClasses: false
+    style: monokai
 
 Menus:
   main:
@@ -98,7 +101,7 @@ params:
   #   secondaryTextColor:
      backgroundColor: "white"
   #  secondaryBackgroundColor: "linen"
-     primaryColor: "purple"
+     primaryColor: "#0958d9"
   #   secondaryColor:
 
   #   darkmode:
@@ -126,8 +129,8 @@ params:
   # Hero
   hero:
     enable: true
-    intro: "Hola, soy"
-    title: "Linda."
+    intro: "DATA ANALYST · SOFTWARE INSTRUCTOR · R DEVELOPER"
+    title: "Linda Cabrera"
     content: "Mi carrera profesional siempre ha estado marcada por la misma pregunta: ¿qué nos están diciendo realmente los datos?. Mi trayectoria comenzó en procesos de negocio y evolucionó hacia el análisis de datos y la estadística aplicada al negocio. He trabajado en proyectos de datos, BI y marketing digital. R ocupa un lugar central en mi carrera, tanto como herramienta de trabajo como por la comunidad que me ha permitido construir. Co-organizo R-Ladies Guayaquil y soy instructora certificada de The Carpentries. Actualmente también estoy desarrollando mi primer paquete de R con el acompañamiento de rOpenSci."
     image: /images/ljco4.jpg
     button:
@@ -137,12 +140,14 @@ params:
       download: true
     socialLinks:
       fontAwesomeIcons:
+        - icon: fab fa-linkedin
+          url: https://www.linkedin.com/in/lindatech/
         - icon: fab fa-github
           url: https://github.com/lindateachtech
         - icon: fab fa-twitter
           url: https://twitter.com/lindateachtech
-        - icon: fab fa-linkedin
-          url: https://www.linkedin.com/in/lindatech/
+        - icon: fa fa-envelope
+          url: mailto:lindateachtech@gmail.com
 
   # Experience
   # experience:
@@ -209,23 +214,28 @@ params:
     #      - Strategic planning.
 
   # Achievements
-  # achievements:
-    # enable: true
-    # title: "Custom Name"
-    # items:
-      #- title: Google kickstart runner
-      #  content: I solved all problems with optimal solution.
-      #  url: https://example.com
-      #- title: Facebook Hackathon Winner
-      #  content: Developed a product using Artificial Intelligence.
-      #- title: Hugo Profile
-      #  content: Developed a theme and getting 1K+ downloads per month.
-      #  url: "https://github.com/gurusabarish/hugo-profile"
-      #- title: Microsoft Imagine Runner
-      #  content: We are developed a product which can help others.
-      #- title: Google Summer of Code
-      #  content: Contributed to a open source project.
-      #  url: https://example.com
+  achievements:
+    enable: true
+    title: "Logros"
+    items:
+      # agrega aquí tus logros cuando quieras publicarlos, por ejemplo:
+      - title: Programa de Campeones rOpenSci 2026
+        content: Seleccionada como una de las once voces latinoamericanas de la nueva cohorte de Campeones de rOpenSci 2026, un programa que impulsa la ciencia abierta en la región.
+        url: https://ropensci.org/blog/2026/06/09/champions-2026/
+        image: /images/achievements/ropensci.png
+      - title: Embajadora WiDS Machala Ecuador 2022
+        content: Embajadora de WiDS (Women in Data Science) Machala en la primera edición de WiDS Ecuador, iniciativa de Stanford presente en más de 200 ciudades del mundo para impulsar a las mujeres en estadística y ciencia de datos.
+        url: https://see-ec.org/wordpress/women-in-data-science-wids-ecuador-impulsando-la-estadistica-y-la-ciencia-de-datos/
+        image: /images/WiDS_logo.png
+      - title: Co-organizadora de R-Ladies Guayaquil
+        content: Coorganizo la comunidad R-Ladies Guayaquil desde 2021, impulsando talleres de estadística, visualización y ciencia de datos con R.
+        url: https://twitter.com/RLadiesGye
+        image: /images/achievements/rladies.svg
+      - title: Instructora de Software certificada de The Carpentries
+        content: Certificada como Software Carpentry Instructor desde 2021, dictando cursos de R para análisis de datos e investigación científica a personas de distintos niveles y contextos.
+        url: https://carpentries.org/community/instructors/
+        image: /images/achievements/carpentries.svg
+
 
   # projects
   projects:
@@ -277,12 +287,15 @@ params:
     enable: true
     title: "Contacto"
     content: Mi bandeja de entrada siempre está abierta. Ya sea que tenga una pregunta o simplemente quiera saludar, ¡haré todo lo posible para responderle!
+    availability: "Disponible para charlas y colaboraciones en R."
+    location: "Granada, España"
     email: lindateachtech@gmail.com
     btnName: Escríbeme
 
   footer:
     # recentPosts: false
     socialNetworks:
+      linkedin: https://www.linkedin.com/in/lindatech/
       github: https://github.com/lindateachtech
       twitter: https://twitter.com/lindateachtech
-      linkedin: https://www.linkedin.com/in/lindatech/
+      email: lindateachtech@gmail.com

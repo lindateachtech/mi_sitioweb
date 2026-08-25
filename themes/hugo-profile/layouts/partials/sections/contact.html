@@ -8,9 +8,46 @@
                     <div class="text-center">
                         {{ .Site.Params.contact.content | emojify | markdownify }}
                     </div>
+
+                    {{ if or .Site.Params.contact.availability .Site.Params.contact.location }}
+                    <div class="contact-meta text-center pt-2">
+                        {{ if .Site.Params.contact.availability }}
+                        <p class="mb-1"><i class="fas fa-briefcase"></i> {{ .Site.Params.contact.availability }}</p>
+                        {{ end }}
+                        {{ if .Site.Params.contact.location }}
+                        <p class="mb-0"><i class="fas fa-map-marker-alt"></i> {{ .Site.Params.contact.location }}</p>
+                        {{ end }}
+                    </div>
+                    {{ end }}
+
+                    <div class="contact-card mt-4">
+                        <form name="contacto" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+                            <input type="hidden" name="form-name" value="contacto" />
+                            <p class="d-none">
+                                <label>No llenar si eres humano: <input name="bot-field" /></label>
+                            </p>
+                            <div class="mb-3">
+                                <label for="contact-name" class="form-label">Nombre</label>
+                                <input type="text" class="form-control" id="contact-name" name="nombre" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="contact-email" class="form-label">Correo electrónico</label>
+                                <input type="email" class="form-control" id="contact-email" name="email" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="contact-message" class="form-label">Mensaje</label>
+                                <textarea class="form-control" id="contact-message" name="mensaje" rows="4" required></textarea>
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" class="btn read-more-btn">Enviar mensaje</button>
+                            </div>
+                        </form>
+                    </div>
+
                     {{ if .Site.Params.contact.email }}
-                    <div class="text-center pt-3">
-                        <a href="mailto:{{ .Site.Params.contact.email }}" class="btn">
+                    <div class="text-center pt-4">
+                        <span class="text-muted">o escríbeme directo a</span><br>
+                        <a href="mailto:{{ .Site.Params.contact.email }}" class="btn read-more-btn mt-2">
                             {{ .Site.Params.contact.btnName | default "Get in Touch" }}
                         </a>
                     </div>

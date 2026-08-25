@@ -12,6 +12,12 @@
     --text-secondary-color: var(--text-secondary-color-dark) !important;
     --primary-color: var(--primary-color-dark);
     --secondary-color: var(--secondary-color-dark);
+
+    /* resaltado de sintaxis en modo oscuro */
+    --code-keyword: #f64dc5;
+    --code-string: #76e8ed;
+    --code-function: #5ca3ff;
+    --code-number: #ffcd3a;
 }
 
 .text-secondary {
@@ -42,6 +48,6 @@ body:not(.dark) #sun {
 }
 
 body *::selection {
-    color: #ffffff !important;
-    background-color: #76e8ed !important;
+    color: #343a40 !important;
+    background-color: #ffcd3a !important;
 }

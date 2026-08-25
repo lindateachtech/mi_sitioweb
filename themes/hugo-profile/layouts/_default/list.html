@@ -24,7 +24,7 @@
                     <h4 class="fw-bold">{{ .Title }}</h4>
                 </a>
                 <p class="text-secondary">{{ .Summary | truncate 350 }}</p>
-                <span class="text-muted">{{ .Date.Format "January 2, 2006" }}</span>
+                <span class="text-muted">{{ .Date | time.Format ":date_long" }}</span>
                 <a href="{{ .RelPermalink }}" class="btn read-more-btn btn-sm float-end">Leer más</a>
             </div>
         </div>
