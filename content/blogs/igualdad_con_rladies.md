@@ -92,19 +92,3 @@ Es fundamental abordar los estereotipos de género desde la niñez, creando ento
 
 Aunque el camino hacia una industria tecnológica equitativa es desafiante, la colaboración entre iniciativas como R-Ladies, PyLadies y otras redes similares es clave para cerrar la brecha de género. Necesitamos visibilizar más referentes femeninos, fomentar entornos inclusivos y garantizar el acceso equitativo a recursos educativos y profesionales. Solo así podremos construir una industria que refleje la diversidad y riqueza del talento humano global.
 
-<br>
-
-
-## Youtube: R Ladies, la igualdad también se programa
-
-<br>
-{{< youtube AtRhU8ULMtw >}}
-<br>
-
-<br>
-
-## Spotify: R Ladies, la igualdad también se programa
-
-<iframe style="border-radius:12px" src="https://open.spotify.com/embed/episode/0Z64EotXVpV1oTBtU62TpP?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-
-<br>

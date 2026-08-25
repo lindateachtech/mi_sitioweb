@@ -1,18 +1,22 @@
 ---
 author: Linda Cabrera Orellana
-date: "2022-10-11T23:29:21+05:30"
+date: "2023-03-30T23:29:21+05:30"
 description: ""
 draft: false
 image: /images/software.jpg
 tags:
-- Programación con R
-- Analisis de datos
+- RStudio
+- análisis de datos
 - tidyverse
-title: Manejo de software
+- ggplot2
+- visualización de datos
+- análisis expliratorio
+- EDA
+title: Manejo de software RStudio
 toc: TRUE
 ---
 
-**Manejo de software**: Curso de 15 horas dictado a través de la [Sociedad Ecuatoriana de Estadística](https://see-ec.org/wordpress/) como parte del Programa Internacional de Estadística aplicada a la Investigación Científica.
+2 Ediciones, curso de 15 horas dictado a través de la [Sociedad Ecuatoriana de Estadística](https://see-ec.org/wordpress/) como parte del Programa Internacional de Estadística aplicada a la Investigación Científica.
 
 <!--more-->
 
@@ -38,20 +42,47 @@ El curso tiene una duración de 15 horas. Se realizaron 6 sesiones de 2.5 horas 
 
 ## Contenido
 
+### 1era Edición - Del 3 al 19 de octubre de 2022
+
 - **Capítulo 1: Introducción a RStudio.** R, RStudio, RStudio Cloud, Ayuda, Paquetes, Proyectos, Scripts y Generalidades. 
 - **Capítulo 2: Importación y orden de los datos en R.** Calidad de los datos, Importar datos, Estructuras de datos y Tipos de datos.
 - **Capítulo 3: Manipulación de datos en R.** Transformación de datos, Datos relacionales, Datos ordenados.
 - **Capítulo 4: Análisis exploratorio de datos.** Creación de gráficos, Estadística descriptiva.
 - **Capítulo 5: Comunicando resultados con R.** Introducción a Rmarkdown, Notebooks para ejecutar directamente fragmentos de código de forma interactiva incluyendo gráficos y tablas, Diapositivas para presentaciones (HTML5, LaTeX Beamer o PowerPoint), Formatos de artículos de revistas y libros, Conectar RStudio y GitHub.
 
+### 2da Edición - Del 13 al 30 de marzo de 2023
+
+- **Sección 1: Introducción a RStudio.** Instalación de R y RStudio, Posit Cloud, Paquetes, Proyectos y Scripts.
+- **Sección 2: Generalidades.** Operadores, Variables, Funciones, Ayuda, Proceso del _tidyverse_.
+- **Sección 3: Estructuras de datos.** Importar datos, Vectores, Data.frames y Listas.
+- **Sección 4: Tipos de datos.** Numéricos, Caracteres, Factores, Fecha y Hora.
+- **Sección 5: Manipulación de datos.** Modificar el nombre de las variables, Seleccionar o descartar variables, Operador pipe `%>%`, Filtrar observaciones, Agregar o editar variables, Resumir información, Agrupar o segmentar datos. _**Adicional: Datos relacionales y Datos ordenados.**_
+- **Sección 6: Gráficos con `ggplot2`.** Gramática de gráficos, Datos, Estética, Geometría, Facetas, Transformaciones Estadísticas, Coordenadas, Escalas y Temas.
+- **Sección 7: Análisis exploratorio de datos.** Histogramas, Gráfico de cajas, Gráfico de barras, Gráficos de dispersión, Varias variables numéricas con una categórica. _**Adicional: Gráfico de violín, Gráfico de pastel, Lollipop, Gráfico de cascada**_
+- **Sección 8: Comunicando resultados en R.** Introducción a Rmarkdown, Notebooks para ejecutar directamente fragmentos de código de forma interactiva incluyendo gráficos y tablas, Diapositivas para presentaciones (HTML5, LaTeX Beamer o PowerPoint), Formatos de artículos de revistas y libros. _**Adicional: ¿Qué es GitHub?, Conectar RStudio y GitHub.**_
+
 
 ## Material utilizado
 
-1. Capítulo 1: [Introducción a RStudio](https://lindajzmin.github.io/r-research/intro_rstudio.html)
-2. Capítulo 2: [Importación y orden de los datos en R](https://lindajzmin.github.io/r-research/datos_en_r.html)
-3. Capítulo 3: [Manipulación de datos en R](https://lindajzmin.github.io/r-research/manipulacion_datos.html)
-4. Capítulo 4: [Análisis exploratorio de datos](https://lindajzmin.github.io/r-research/visualizacion.html)
-5. Capítulo 5: [Comunicando resultados con R](https://lindajzmin.github.io/r-research/comunicacion.html)
+### 1era Edición - Del 3 al 19 de octubre de 2022
+1. Capítulo 1: [Introducción a RStudio](https://lindateachtech.github.io/r-research/intro_rstudio.html)
+2. Capítulo 2: [Importación y orden de los datos en R](https://lindateachtech.github.io/r-research/datos_en_r.html)
+3. Capítulo 3: [Manipulación de datos en R](https://lindateachtech.github.io/r-research/manipulacion_datos.html)
+4. Capítulo 4: [Análisis exploratorio de datos](https://lindateachtech.github.io/r-research/visualizacion.html)
+5. Capítulo 5: [Comunicando resultados con R](https://lindateachtech.github.io/r-research/comunicacion.html)
+
+### 2da Edición - Del 13 al 30 de marzo de 2023
+1. Capítulo 1: [Introducción a RStudio](https://lindateachtech.github.io/r-research/1_Intoduccion_rstudio_2E.html)
+2. Capítulo 2: [Generalidades](https://lindateachtech.github.io/r-research/2_Generalidades_2E.html)
+3. Capítulo 3: [Estructuras de datos](https://lindateachtech.github.io/r-research/3_Estructuras_datos_2E.html)
+4. Capítulo 4: [Tipos de datos](https://lindateachtech.github.io/r-research/4_Tipos_datos_2E.html)
+5. Capítulo 5: [Manipulación de datos](https://lindateachtech.github.io/r-research/5_Manipulacion_datos_2E.html)
+6. Capítulo 5 - Adicional: [Datos relacionales y Datos ordenados](https://lindateachtech.github.io/r-research/5_Manipulacion_datos_2E_Extra.html)
+7. Capítulo 6: [Gráficos con ggplot2](https://lindateachtech.github.io/r-research/6_Graficos_con_ggplot2_2E.html)
+8. Capítulo 7: [Análisis exploratorio de datos](https://lindateachtech.github.io/r-research/7_Analisis_Exp_Datos_2E.html)
+9. Capítulo 7 - Adicional: [Gráfico de violín, Gráfico de pastel, Lollipop, Gráfico de cascada](https://lindateachtech.github.io/r-research/7_Analisis_Exp_Datos_2E_Extra.html)
+10. Capítulo 8: [Comunicando resultados con R](https://lindateachtech.github.io/r-research/8_Comunicando_resultados.html)
+
 
 
 ## Aprobación

@@ -5,14 +5,18 @@ description: ""
 draft: false
 image: /images/manejo_r.jpeg
 tags:
-- Programación con R
-- Analisis de datos
+- RStudio
+- análisis de datos
 - tidyverse
+- ggplot2
+- visualización de datos
+- análisis expliratorio
+- EDA
 title: Manejo de datos y reportería con R
 toc: TRUE
 ---
 
-**Manejo de datos y reportería con R**: Curso de 40 horas dictado a través de la [Sociedad Ecuatoriana de Estadística](https://see-ec.org/wordpress/).
+Curso de 20 horas dictado a través de la [Sociedad Ecuatoriana de Estadística](https://see-ec.org/wordpress/).
 
 <!--more-->
 

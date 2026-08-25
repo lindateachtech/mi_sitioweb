@@ -1,4 +1,4 @@
-baseURL: "https://lindajzmin-website.netlify.app"
+baseURL: "https://lindateachtech.netlify.app"
 languageCode: "es"
 title: "Linda Cabrera"
 theme: hugo-profile
@@ -36,8 +36,8 @@ Menus:
       weight: 3
       
     - identifier: courses
-      name: Cursos impartidos
-      title: Cursos impartidos
+      name: Cursos
+      title: Cursos
       url: /cursos
       weight: 5
       
@@ -279,7 +279,7 @@ params:
         #  - icon: fab fa-twitter
         #    url: https://twitter.com/intent/tweet?text=Check+it+out:&url=https%3A%2F%2Fgithub.com%2Fgurusabarish%2Fhugo-profile
           - icon: fas fa-link
-            url: https://lindajzmin-website.netlify.app/blogs/simtext/
+            url: https://lindateachtech.netlify.app/blogs/simtext/
 
 
   #Contact
