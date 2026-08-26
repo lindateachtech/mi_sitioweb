@@ -129,15 +129,15 @@ params:
   # Hero
   hero:
     enable: true
-    intro: "DATA ANALYST · SOFTWARE INSTRUCTOR · R DEVELOPER"
+    intro: "SENIOR DATA ANALYST · SOFTWARE INSTRUCTOR"
     title: "Linda Cabrera"
-    content: "Mi carrera profesional siempre ha estado marcada por la misma pregunta: ¿qué nos están diciendo realmente los datos?. Mi trayectoria comenzó en procesos de negocio y evolucionó hacia el análisis de datos y la estadística aplicada al negocio. He trabajado en proyectos de datos, BI y marketing digital. R ocupa un lugar central en mi carrera, tanto como herramienta de trabajo como por la comunidad que me ha permitido construir. Co-organizo R-Ladies Guayaquil y soy instructora certificada de The Carpentries. Actualmente también estoy desarrollando mi primer paquete de R con el acompañamiento de rOpenSci."
-    image: /images/ljco4.jpg
+    content: "Soy analista de datos con formación en técnicas cuantitativas para la gestión empresarial. Construyo dashboards y modelos analíticos, y enseño R y ciencia de datos como instructora certificada de The Carpentries. Co-organizo R-Ladies Guayaquil y desarrollo mi primer paquete de R con el acompañamiento de rOpenSci."
+    image: /images/ljco1.png
     button:
-      enable: false
-      name: "Curriculum Vitae"
-      url: "https://github.com/lindateachtech/mi-cv/blob/main/CV.pdf"
-      download: true
+      enable: true
+      name: "Leer más sobre mí →"
+      url: "/resumen"
+      download: false
     socialLinks:
       fontAwesomeIcons:
         - icon: fab fa-linkedin

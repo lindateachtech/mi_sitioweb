@@ -1,7 +1,7 @@
 ---
 author: Linda Cabrera Orellana
 date: "2022-05-16T23:29:21+05:30"
-description: ""
+description: "Curso de 20 horas enfocado en transformar, preparar y visualizar datos con R, y generar reportes automatizados y reproducibles en Rmarkdown."
 draft: false
 image: /images/manejo_r.jpeg
 tags:

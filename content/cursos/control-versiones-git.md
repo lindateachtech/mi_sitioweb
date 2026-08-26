@@ -1,7 +1,7 @@
 ---
 author: Linda Cabrera Orellana
 date: "2022-09-26T23:29:21+05:30"
-description: ""
+description: "Taller práctico de control de versiones con Git y GitHub, y su conexión con RStudio, dictado con la metodología Software Carpentry. No requiere experiencia previa."
 draft: false
 image: /images/github_curso.jpg
 tags:
@@ -13,18 +13,18 @@ title: Control de versiones con Git y GitHub
 toc: TRUE
 ---
 
-Taller de 3 horas dictado en la Universidad Técnica de Machala (26/09/2022) y FLISOL Loja (27/04/2022) con la metodología [Software Carpentry](https://carpentries.org/).
+2 Talleres. Taller de 3 horas sobre el control de versiones con Git y GitHub, y su conexión con RStudio, taller con la metodología [Software Carpentry](https://carpentries.org/).
+
+
+<!--more-->
 
 ## UTMACH
-
 
 <div>
 <p style = 'text-align:center;'>
 <img src="/images/gitutmach.jpeg" width="750px">
 </p>
 </div>
-
-<!--more-->
 
 [![Ghost](https://img.shields.io/badge/WEBSITE-000?style=for-the-badge&logo=ghost&logoColor=%23F7DF1E)](https://lidefi87.github.io/2022-09-26-UTMach_enlinea/#setup)
 [![github](https://img.shields.io/badge/CODE-12100E.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/lindateachtech/taller_git_utmach)
@@ -77,6 +77,9 @@ El taller tiene una duración de 3 horas con un intervalo de descanso (preferent
 
 <br>
 
+
+<!--more-->
+
 ## FLISOL
 
 <div>
@@ -84,8 +87,6 @@ El taller tiene una duración de 3 horas con un intervalo de descanso (preferent
 <img src="/images/tallergit.jpg" width="900px">
 </p>
 </div>
-
-<!--more-->
 
 [![Ghost](https://img.shields.io/badge/WEBSITE-000?style=for-the-badge&logo=ghost&logoColor=%23F7DF1E)](https://lidefi87.github.io/2022-04-26-control-version-Git/)
 [![github](https://img.shields.io/badge/CODE-12100E.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/lindateachtech/taller_git_flisol)

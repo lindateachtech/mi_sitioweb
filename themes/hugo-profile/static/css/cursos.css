@@ -60,6 +60,16 @@
     transition: transform 0.3s;
 }
 
+/* tamaño de letra del título y del texto de cada curso */
+#courses .card-title {
+    font-size: 1rem;
+    line-height: 1.35;
+}
+
+#courses .card-text {
+    font-size: 0.85rem;
+}
+
 /* botón "Ver curso" con la misma dinámica que "Leer más" del Blog */
 #courses .float-end .read-more-btn {
     color: var(--primary-color) !important;

@@ -1,7 +1,7 @@
 ---
 author: Linda Cabrera Orellana
 date: "2023-03-30T23:29:21+05:30"
-description: ""
+description: "Curso de 15 horas para aprender a usar RStudio en investigación científica, desde los conceptos básicos de estadística hasta el procesamiento de datos de proyectos propios."
 draft: false
 image: /images/software.jpg
 tags:
