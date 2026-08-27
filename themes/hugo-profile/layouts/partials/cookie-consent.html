@@ -1,0 +1,103 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.0.1/dist/cookieconsent.css">
+<script defer src="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.0.1/dist/cookieconsent.umd.js"></script>
+
+<style>
+    #cc-main {
+        --cc-font-family: inherit;
+        --cc-btn-primary-bg: var(--primary-color);
+        --cc-btn-primary-border-color: var(--primary-color);
+        --cc-btn-primary-hover-bg: var(--primary-color);
+        --cc-btn-primary-hover-border-color: var(--primary-color);
+        --cc-btn-secondary-bg: transparent;
+        --cc-btn-secondary-color: var(--primary-color);
+        --cc-btn-secondary-border-color: var(--primary-color);
+        --cc-btn-secondary-hover-bg: var(--primary-color);
+        --cc-btn-secondary-hover-color: #fff;
+        --cc-btn-secondary-hover-border-color: var(--primary-color);
+    }
+</style>
+
+<script>
+    function lindaCargarGoogleAnalytics() {
+        {{ with .Site.Config.Services.GoogleAnalytics.ID }}
+        if (window.__gaCargado) { return; }
+        window.__gaCargado = true;
+        var s = document.createElement('script');
+        s.async = true;
+        s.src = "https://www.googletagmanager.com/gtag/js?id={{ . }}";
+        document.head.appendChild(s);
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){ dataLayer.push(arguments); }
+        window.gtag = gtag;
+        gtag('js', new Date());
+        gtag('config', '{{ . }}', { 'anonymize_ip': true });
+        {{ end }}
+    }
+
+    window.addEventListener('load', function () {
+        if (typeof CookieConsent === 'undefined') { return; }
+
+        CookieConsent.run({
+            guiOptions: {
+                consentModal: {
+                    layout: 'box',
+                    position: 'bottom left',
+                    equalWeightButtons: true,
+                    flipButtons: false
+                },
+                preferencesModal: {
+                    layout: 'box',
+                    equalWeightButtons: true,
+                    flipButtons: false
+                }
+            },
+            categories: {
+                necessary: { readOnly: true },
+                analytics: {}
+            },
+            language: {
+                default: 'es',
+                translations: {
+                    es: {
+                        consentModal: {
+                            title: 'Este sitio usa cookies',
+                            description: 'Utilizo cookies analíticas (Google Analytics) para entender cómo se usa el sitio y mejorarlo. Puedes aceptarlas o rechazarlas; tu elección no afecta tu navegación.',
+                            acceptAllBtn: 'Aceptar todas',
+                            acceptNecessaryBtn: 'Rechazar',
+                            showPreferencesBtn: 'Gestionar preferencias',
+                            footer: '<a href="/privacidad/">Política de privacidad</a>'
+                        },
+                        preferencesModal: {
+                            title: 'Preferencias de cookies',
+                            acceptAllBtn: 'Aceptar todas',
+                            acceptNecessaryBtn: 'Rechazar todas',
+                            savePreferencesBtn: 'Guardar preferencias',
+                            closeIconLabel: 'Cerrar',
+                            sections: [
+                                {
+                                    title: 'Cookies necesarias',
+                                    description: 'Necesarias para el funcionamiento básico del sitio. Siempre están activas.',
+                                    linkedCategory: 'necessary'
+                                },
+                                {
+                                    title: 'Cookies analíticas',
+                                    description: 'Me ayudan a entender, de forma anónima, cómo interactúan las personas con el sitio (Google Analytics).',
+                                    linkedCategory: 'analytics'
+                                }
+                            ]
+                        }
+                    }
+                }
+            },
+            onFirstConsent: function () {
+                if (CookieConsent.acceptedCategory('analytics')) { lindaCargarGoogleAnalytics(); }
+            },
+            onConsent: function () {
+                if (CookieConsent.acceptedCategory('analytics')) { lindaCargarGoogleAnalytics(); }
+            },
+            onChange: function () {
+                if (CookieConsent.acceptedCategory('analytics')) { lindaCargarGoogleAnalytics(); }
+            }
+        });
+    });
+</script>
