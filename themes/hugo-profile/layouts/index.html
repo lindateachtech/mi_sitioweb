@@ -1,17 +1,35 @@
 {{ define "head" }}
-<meta name="description" content={{ .Site.Params.description }}>
+<meta name="description" content="{{ .Site.Params.description }}">
 <link rel="stylesheet" href="{{ .Site.Params.staticPath }}/css/index.css" media="all">
 <link rel="stylesheet" href="{{ .Site.Params.staticPath }}/css/projects.css" media="all">
 
 <!-- fontawesome -->
 <script defer src="{{ .Site.Params.staticPath }}/fontawesome-5/all-5.15.4.js"></script>
+
+<!-- Datos estructurados (Schema.org) -->
+<script type="application/ld+json">
+{{ (dict
+    "@context" "https://schema.org"
+    "@type" "Person"
+    "name" .Site.Params.title
+    "url" .Site.BaseURL
+    "description" .Site.Params.description
+    "jobTitle" "Senior Data Analyst"
+    "sameAs" (slice
+        "https://www.linkedin.com/in/lindatech/"
+        "https://github.com/lindateachtech"
+        "https://twitter.com/lindateachtech"
+    )
+) | jsonify }}
+</script>
 {{ end }}
 
 {{ define "title" }}
-{{ .Site.Title }}
+Linda Cabrera Orellana | Analista de Datos y Docencia en R
 {{ end }}
 
 {{ define "main" }}
+<h1 class="visually-hidden">Linda Cabrera Orellana — Analista de Datos, Instructora de R y Ciencia de Datos</h1>
 {{- partial "sections/hero/index.html" . -}}
 {{- partial "sections/about.html" . -}}
 {{- partial "sections/experience.html" . -}}

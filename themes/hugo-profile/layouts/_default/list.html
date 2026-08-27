@@ -1,5 +1,5 @@
 {{ define "head" }}
-<meta name="description" content="{{ .Title }} of {{ .Site.Title }}">
+<meta name="description" content="Blog sobre R, ciencia de datos, visualización y analítica web, escrito por Linda Cabrera Orellana.">
 <link rel="stylesheet" href="{{ .Site.Params.staticPath }}/css/list.css" media="all">
 {{ end }}
 
@@ -9,7 +9,7 @@
 
 {{ define "main" }}
 <div class="container pt-5" id="list-page">
-    <h2 class="text-center pb-2">{{.Title}}</h2>
+    <h1 class="text-center pb-2">{{.Title}}</h1>
     <div class="row">
         {{ range .Paginator.Pages }}
         <div class="row align-items-center my-4">

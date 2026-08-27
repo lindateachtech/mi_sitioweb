@@ -22,7 +22,7 @@
                 <div class="sticky-sidebar">
                     <aside class="aboutImg">
                         <div class="text-center">
-                            <img src="{{ .Params.image }}" class="mx-auto rounded" style="border-radius: 50%; width: 400px; height: 400px; object-fit: cover;" alt="">
+                            <img src="{{ .Params.image }}" class="mx-auto rounded" style="border-radius: 50%; width: 400px; height: 400px; object-fit: cover;" alt="{{ .Params.name | default .Site.Params.title }}">
                         </div>
                         <h2 class="text-center pt-3">
                             {{ .Params.name }}

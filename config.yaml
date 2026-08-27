@@ -2,9 +2,9 @@ baseURL: "https://lindateachtech.netlify.app"
 languageCode: "es"
 title: "Linda Cabrera"
 theme: hugo-profile
+enableRobotsTXT: true
 
 Paginate: 3
-disqusShortname: lindajzmin
 googleAnalytics: G-3GJZ12CQGE
 
 markup:
