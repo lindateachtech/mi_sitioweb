@@ -8,18 +8,19 @@
 {{ if .Params.description }}
 {{ $ldImage := "" }}
 {{ with .Params.image }}{{ $ldImage = . | absURL }}{{ end }}
+{{ $ldAuthor := .Params.author | default .Site.Params.title }}
 <!-- Datos estructurados (Schema.org) -->
-<script type="application/ld+json">
-{{ (dict
-    "@context" "https://schema.org"
-    "@type" "Article"
-    "headline" .Title
-    "description" .Params.description
-    "datePublished" (.Date.Format "2006-01-02")
-    "author" (dict "@type" "Person" "name" (.Params.author | default .Site.Params.title))
-    "image" $ldImage
-) | jsonify }}
-</script>
+{{ printf `<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": %q,
+  "description": %q,
+  "datePublished": %q,
+  "author": {"@type": "Person", "name": %q},
+  "image": %q
+}
+</script>` .Title .Params.description (.Date.Format "2006-01-02") $ldAuthor $ldImage | safeHTML }}
 {{ end }}
 {{ end }}
 

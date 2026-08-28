@@ -7,21 +7,17 @@
 <script defer src="{{ .Site.Params.staticPath }}/fontawesome-5/all-5.15.4.js"></script>
 
 <!-- Datos estructurados (Schema.org) -->
-<script type="application/ld+json">
-{{ (dict
-    "@context" "https://schema.org"
-    "@type" "Person"
-    "name" .Site.Params.title
-    "url" .Site.BaseURL
-    "description" .Site.Params.description
-    "jobTitle" "Senior Data Analyst"
-    "sameAs" (slice
-        "https://www.linkedin.com/in/lindatech/"
-        "https://github.com/lindateachtech"
-        "https://twitter.com/lindateachtech"
-    )
-) | jsonify }}
-</script>
+{{ printf `<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": %q,
+  "url": %q,
+  "description": %q,
+  "jobTitle": "Senior Data Analyst",
+  "sameAs": [%q, %q, %q]
+}
+</script>` .Site.Params.title .Site.BaseURL .Site.Params.description "https://www.linkedin.com/in/lindatech/" "https://github.com/lindateachtech" "https://twitter.com/lindateachtech" | safeHTML }}
 {{ end }}
 
 {{ define "title" }}
