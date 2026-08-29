@@ -42,7 +42,7 @@
               {{ .Date | time.Format ":date_long" }}
             </div>
           </div>
-          {{ if .Params.image }}
+          {{ if and .Params.image (ne .Section "blogs") }}
           <div class="featured-image">
             <img class="img-fluid" src="{{ .Params.image }}" alt="{{ .Title }}">
           </div>

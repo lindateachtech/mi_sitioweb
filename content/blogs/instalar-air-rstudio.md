@@ -7,8 +7,9 @@ image: /images/instalacion_air/instalacion_air.jpg
 tags:
 - rstudio
 - air
+- buenas prácticas
 - tutorial
-- formato de código
+- principiante
 title: Air, el formateador de código R que necesitas conocer
 toc: TRUE
 ---

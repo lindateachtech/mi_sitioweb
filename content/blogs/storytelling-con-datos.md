@@ -5,11 +5,10 @@ description: "Reseña de Storytelling con Datos de Cole Nussbaumer Knaflic, un l
 draft: false
 image: /images/storytelling_con_datos2.jpg
 tags:
+- visualización de datos
 - storytelling
-- visualización
-- storytelling con datos
-- cole nussbaumer knaflic
-- libro
+- libros recomendados
+- blog
 title: Reseña de 'Storytelling con Datos' de Cole Nussbaumer Knaflic
 toc: TRUE
 ---

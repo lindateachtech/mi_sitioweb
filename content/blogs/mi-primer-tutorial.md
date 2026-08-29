@@ -5,10 +5,8 @@ description: "Por qué R es una herramienta poderosa para analizar y visualizar 
 draft: false
 image: /images/blog1.png
 tags:
-- rprogramming
 - rstudio
-- instalacion
-- tutorial
+- blog
 title: La herramienta que necesitas para analizar tus datos
 toc: TRUE
 ---

@@ -5,11 +5,11 @@ description: "Sobre R-Ladies, la comunidad global que impulsa la diversidad de g
 draft: false
 image: /images/projects/rladies_igualdad2.jpg
 tags:
-- rladies
 - rstudio
-- rstats
-- igualdad
-- diversidad en la programación
+- r-ladies
+- comunidad
+- diversidad
+- blog
 title: Promoviendo la diversidad en la programación con R-Ladies
 toc: TRUE
 ---

@@ -5,12 +5,12 @@ description: "Aprende a conectar R con la API de Google Analytics 4 para descarg
 draft: false
 image: /images/ga4_r/blog5_portada2.jpg
 tags:
-- API
-- GoogleCloud
-- GoogleAnalytics4
-- DataScience
-- RStudio
-- Rstats
+- rstudio
+- api
+- google analytics 4
+- ciencia de datos
+- tutorial
+- intermedio
 title: "Explorando Google Analytics 4 con R: Descarga y Análisis de Datos Simplificado"
 toc: TRUE
 ---

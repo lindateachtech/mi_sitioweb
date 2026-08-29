@@ -5,10 +5,10 @@ description: "Guía paso a paso para instalar R y RStudio, entender la diferenci
 draft: false
 image: /images/instalacion_r_rstudio2.jpg
 tags:
-- rprogramming
 - rstudio
 - instalacion
 - tutorial
+- principiante
 title: ¿Cómo instalar R y RStudio?
 toc: TRUE
 ---

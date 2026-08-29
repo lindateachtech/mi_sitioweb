@@ -4,7 +4,7 @@ title: "Linda Cabrera"
 theme: hugo-profile
 enableRobotsTXT: true
 
-Paginate: 3
+Paginate: 5
 googleAnalytics: G-3GJZ12CQGE
 
 markup:
@@ -223,6 +223,10 @@ params:
         content: Seleccionada como una de las once voces latinoamericanas de la nueva cohorte de Campeones de rOpenSci 2026, un programa que impulsa la ciencia abierta en la región.
         url: https://ropensci.org/blog/2026/06/09/champions-2026/
         image: /images/achievements/ropensci.png
+      - title: Instructora de Software certificada de The Carpentries
+        content: Certificada como Software Carpentry Instructor desde 2022, dictando cursos de R para análisis de datos e investigación científica a personas de distintos niveles y contextos.
+        url: https://carpentries.org/community/instructors/
+        image: /images/achievements/carpentries.svg
       - title: Embajadora WiDS Machala Ecuador 2022
         content: Embajadora de WiDS (Women in Data Science) Machala en la primera edición de WiDS Ecuador, iniciativa de Stanford presente en más de 200 ciudades del mundo para impulsar a las mujeres en estadística y ciencia de datos.
         url: https://see-ec.org/wordpress/women-in-data-science-wids-ecuador-impulsando-la-estadistica-y-la-ciencia-de-datos/
@@ -231,10 +235,6 @@ params:
         content: Coorganizo la comunidad R-Ladies Guayaquil desde 2021, impulsando talleres de estadística, visualización y ciencia de datos con R.
         url: https://twitter.com/RLadiesGye
         image: /images/achievements/rladies.svg
-      - title: Instructora de Software certificada de The Carpentries
-        content: Certificada como Software Carpentry Instructor desde 2021, dictando cursos de R para análisis de datos e investigación científica a personas de distintos niveles y contextos.
-        url: https://carpentries.org/community/instructors/
-        image: /images/achievements/carpentries.svg
 
 
   # projects

@@ -6,9 +6,11 @@ draft: false
 image: /images/conectar_rstudio_gith2.jpg
 tags:
 - rstudio
+- git
 - github
-- tutorial
 - control de versiones
+- tutorial
+- intermedio
 title: ¿Cómo conectar RStudio con GitHub?
 toc: TRUE
 ---

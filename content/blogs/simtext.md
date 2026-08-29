@@ -5,13 +5,13 @@ description: "SIMTEXT, una app en R con Shiny que compara grandes listados de te
 draft: false
 image: /images/projects/simtext2.jpg
 tags:
-- Shiny
-- SimilitudDelCoseno
-- SimilitudTextual
-- DataScience
-- TextMining
-- Rstats
-- Automatization
+- shiny
+- apps
+- ciencia de datos
+- similaridad de textos
+- rstudio
+- minería de textos
+- proyecto
 title: ¿Cómo comparar grandes listados de texto de forma precisa?
 toc: TRUE
 ---
