@@ -72,9 +72,17 @@ header .navbar.animate {
 /* hero */
 
 #hero {
-    min-height: 100vh;
+    min-height: 75vh;
     line-height: 2rem;
     max-width: 100%;
+    /* Manual de marca: teal como color primario dentro del Hero
+       (el tema trae --primary-color en azul #0958d9; lo sobreescribimos
+       solo en este bloque para no afectar el resto del sitio todavía) */
+    --primary-color: #0B6E76;
+    background-color: #FFFFFF;
+}
+body.dark #hero {
+    background-color: #18191A;
 }
 #hero .content.animate {
     animation: fade-left 1s ease-out;
@@ -87,14 +95,22 @@ header .navbar.animate {
     left: -150px;
 }
 
+/* Bloque 3: eyebrow + párrafo de presentación */
 #hero .subtitle {
     font-size: clamp(14px,5vw,16px);
-    opacity: 0.6;
+    color: #6B6F73;
+    opacity: 1;
+}
+body.dark #hero .subtitle {
+    color: #E4CBDF;
 }
 
 #hero h2 {
-    font-size: clamp(40px, 8vw, 80px);
-    color: #a3238e !important;
+    font-size: clamp(30px, 8vw, 70px);
+    color: #9C2C87 !important;
+}
+body.dark #hero h2 {
+    color: #9C2C87 !important;
 }
 
 #hero h3 {
@@ -106,7 +122,12 @@ header .navbar.animate {
 #hero p {
     margin: 20px 0px 0px;
     max-width: 640px;
-    opacity: 0.8;
+    font-size: 16px;
+    color: #6B6F73;
+    opacity: 1;
+}
+body.dark #hero p {
+    color: #E4CBDF;
 }
 
 #hero .image img {
@@ -132,14 +153,16 @@ header .navbar.animate {
     cursor: pointer;
 }
 
+/* Bloque 5: íconos de redes sociales */
 #hero a.btn.social-icon {
-    color: var(--primary-color) !important;
+    color: #9C2C87 !important;
+    background-color: transparent !important;
     line-height: 0%;
     border-radius: 50%;
     margin-top: 50px;
     padding: 0.7rem;
-    border: 1px solid var(--primary-color);
-    transition: none;
+    border: 1px solid #9C2C87;
+    transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 #hero a.btn.social-icon img {
@@ -147,31 +170,30 @@ header .navbar.animate {
 }
 
 #hero a.btn.social-icon:hover {
-    opacity: 0.8;
+    background-color: #9C2C87 !important;
+    color: #E4CBDF !important;
+    opacity: 1;
 }
 
-#hero a.btn {
+/* Bloque 4: botón "Leer más sobre mí" — contorno en reposo, se rellena al pasar el ratón */
+#hero a.btn:not(.social-icon) {
     margin-top: 50px;
-    padding: 0.7rem 1.75rem;
-    border: 1px solid var(--primary-color);
-    color: var(--text-color) !important;
+    padding: 0.7rem calc(1.75rem - 0.5cm);
+    border: 1px solid #9C2C87;
+    background-color: transparent;
+    color: #9C2C87 !important;
     border-radius: .75rem;
-    transition: none;
+    transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 #hero a.btn:focus {
     box-shadow: none;
 }
 
-#hero a.btn:hover {
-    background-color: var(--secondary-color) !important;
-    color: var(--text-color) !important;
-    opacity: 0.9;
-}
-
-#hero a.btn.social-icon:hover {
-    background-color: var(--background-color) !important;
-    opacity: 0.7;
+#hero a.btn:not(.social-icon):hover {
+    background-color: #9C2C87 !important;
+    color: #E4CBDF !important;
+    opacity: 1;
 }
 
 #hero .hero-content > a {

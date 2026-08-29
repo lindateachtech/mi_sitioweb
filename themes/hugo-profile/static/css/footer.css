@@ -15,7 +15,7 @@ footer .card {
     background-color: var(--secondary-color) !important;
     border-radius: .75rem;
     cursor: context-menu;
-    overflow: hidden;
+    overflow: hidden
 }
 
 footer .card:hover {
@@ -73,16 +73,16 @@ footer .card-footer a:focus {
 
 /* botón "Leer" con la misma dinámica que el del Blog */
 #recent-posts .card-footer a.read-more-btn {
-    color: var(--primary-color) !important;
-    border: 1px solid var(--primary-color) !important;
+    color: #9C2C87 !important;
+    border: 1px solid #9C2C87 !important;
     background-color: transparent !important;
     transition: all 0.2s ease-out;
 }
 
 #recent-posts .card-footer a.read-more-btn:hover,
 #recent-posts .card-footer a.read-more-btn:focus {
-    color: var(--secondary-color) !important;
-    background-color: var(--primary-color) !important;
+    color: #E4CBDF !important;
+    background-color: #9C2C87 !important;
     opacity: 1;
     box-shadow: none !important;
 }
@@ -90,18 +90,38 @@ footer .card-footer a:focus {
 /* más espacio y una línea separadora entre el contenido de la página y el footer */
 #recent-posts {
     padding-top: 3.5rem;
-    padding-bottom: 3.5rem;
+    padding-bottom: 7rem;
     margin-top: 1.5rem;
+    margin-bottom: 3rem;
     border-top: 1px solid rgba(15, 80, 100, 0.16);
 }
 
 .social-icons {
-    margin-top: 1.5rem;
-    margin-bottom: 5rem;
+    margin-top: 10rem;
+    margin-bottom: 15rem;
 }
 
 /* aviso de copyright más discreto */
 .site-copyright {
     font-size: 0.8rem;
-    padding-top: 1rem !important;
+    padding-top: 4rem !important;
+}
+
+/* modo oscuro: colores de "Posts recientes" */
+body.dark #recent-posts .h4.text-secondary {
+    color: #E4CBDF !important;
+}
+
+body.dark #recent-posts .card-title {
+    color: #D7E2E1 !important;
+}
+
+/* hover del título del post: mismo color de marca en modo día y modo noche */
+#recent-posts a.card-title:hover,
+#recent-posts a.card-title:hover .card-title {
+    color: #0B6E76 !important;
+}
+
+body.dark #recent-posts .card-text p {
+    color: #E4CBDF !important;
 }

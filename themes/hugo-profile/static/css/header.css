@@ -3,8 +3,12 @@ header {
     position: relative;
 }
 
+/* Bloque 2: texto de la barra de navegación */
 header .navbar .navbar-nav a {
-    color: var(--text-color) !important;
+    color: #435456 !important;
+}
+body.dark header .navbar .navbar-nav a {
+    color: #D7E2E1 !important;
 }
 
 #theme-toggle {
@@ -31,12 +35,19 @@ header .navbar .navbar-nav a {
 header .nav-link{
     transition: none !important;
 }
+/* Bloque 1: logo / nombre de marca */
 .navbar-brand {
-    color: var(--primary-color) !important;
+    color: #0B6E76 !important;
     opacity: 0.95;
-} 
+}
+body.dark .navbar-brand {
+    color: #D7E2E1 !important;
+}
 .navbar .nav-link:hover {
-    color: var(--primary-color) !important;
+    color: #0B6E76 !important;
+}
+body.dark .navbar .nav-link:hover {
+    color: #0B6E76 !important;
 }
 
 li > .dropdown-toggle:focus{

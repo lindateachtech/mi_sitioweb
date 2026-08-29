@@ -5,6 +5,13 @@
 }
 
 /* dark mode */
+/* fondo del body en modo oscuro: evita que se asome el blanco por defecto
+   del navegador en los huecos/márgenes entre secciones (p. ej. antes de
+   "Posts recientes" en el footer, visible en todas las páginas) */
+body.dark {
+    background-color: var(--background-color-dark) !important;
+}
+
 .dark {
     --background-color: var(--background-color-dark) !important;
     --secondary-background-color: var(--secondary-background-color-dark) !important;
@@ -48,6 +55,5 @@ body:not(.dark) #sun {
 }
 
 body *::selection {
-    color: #343a40 !important;
-    background-color: #ffcd3a !important;
+    background-color: rgba(227, 167, 59, 0.5) !important;
 }

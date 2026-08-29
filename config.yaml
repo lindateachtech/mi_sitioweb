@@ -17,34 +17,34 @@ markup:
 
 Menus:
   main:
-    - identifier: about
-      name: Resumen
-      title: About
-      url: /resumen
+    - identifier: courses
+      name: Recursos
+      title: Recursos
+      url: /recursos
       weight: 1
-      
-    - identifier: education
-      name: Educación
-      title: Education
-      url: /educacion
-      weight: 2
 
     - identifier: blog
       name: Blog
       title: Blog posts
       url: /blogs
-      weight: 3
-      
-    - identifier: courses
-      name: Cursos
-      title: Cursos
-      url: /cursos
-      weight: 5
-      
+      weight: 2
+
     - identifier: projects
       name: Proyectos
       title: Proyectos
       url: /projects
+      weight: 4
+
+    - identifier: education
+      name: Educación
+      title: Education
+      url: /educacion
+      weight: 5
+
+    - identifier: about
+      name: Sobre mí
+      title: About
+      url: /resumen
       weight: 6
 
     - identifier: contact
@@ -73,7 +73,7 @@ Menus:
 
 params:
   title: "Linda Cabrera Orellana"
-  description: "Linda Cabrera Orellana — Analista de datos, Instructora de Software y Desarrolladora en R. Tutoriales, cursos y reflexiones sobre R, ciencia de datos y visualización. Coorganizadora de R-Ladies Guayaquil."
+  description: "Linda Cabrera Orellana — Analista de datos e Instructora de Software. Tutoriales, cursos y reflexiones sobre análisis de datos. Coorganizadora de R-Ladies Guayaquil."
   # staticPath: ""  # The path to serve the static files from
   favicon: "/hex-l.png"
 
@@ -131,7 +131,7 @@ params:
     enable: true
     intro: "SENIOR DATA ANALYST · SOFTWARE INSTRUCTOR"
     title: "Linda Cabrera"
-    content: "Soy analista de datos con formación en técnicas cuantitativas para la gestión empresarial. Construyo dashboards y modelos analíticos, y enseño R y ciencia de datos como instructora certificada de The Carpentries. Co-organizo R-Ladies Guayaquil y desarrollo mi primer paquete de R con el acompañamiento de rOpenSci."
+    content: "En este sitio encontrarás recursos, tutoriales y blogs sobre **R, Git, Power BI y Google para analistas**, explicados sin rodeos y pensados para aprender haciendo, no memorizando."
     image: /images/ljco1.png
     button:
       enable: true
