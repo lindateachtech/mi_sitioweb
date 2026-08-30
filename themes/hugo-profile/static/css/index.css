@@ -78,7 +78,7 @@ header .navbar.animate {
     /* Manual de marca: teal como color primario dentro del Hero
        (el tema trae --primary-color en azul #0958d9; lo sobreescribimos
        solo en este bloque para no afectar el resto del sitio todavía) */
-    --primary-color: #0B6E76;
+    --primary-color: var(--brand-teal);
     background-color: #FFFFFF;
 }
 body.dark #hero {
@@ -98,19 +98,19 @@ body.dark #hero {
 /* Bloque 3: eyebrow + párrafo de presentación */
 #hero .subtitle {
     font-size: clamp(14px,5vw,16px);
-    color: #6B6F73;
+    color: var(--brand-gray);
     opacity: 1;
 }
 body.dark #hero .subtitle {
-    color: #E4CBDF;
+    color: var(--brand-lilac);
 }
 
 #hero h2 {
     font-size: clamp(30px, 8vw, 70px);
-    color: #9C2C87 !important;
+    color: var(--brand-berry) !important;
 }
 body.dark #hero h2 {
-    color: #9C2C87 !important;
+    color: var(--brand-berry) !important;
 }
 
 #hero h3 {
@@ -123,11 +123,11 @@ body.dark #hero h2 {
     margin: 20px 0px 0px;
     max-width: 640px;
     font-size: 16px;
-    color: #6B6F73;
+    color: var(--brand-gray);
     opacity: 1;
 }
 body.dark #hero p {
-    color: #E4CBDF;
+    color: var(--brand-lilac);
 }
 
 #hero .image img {
@@ -155,13 +155,13 @@ body.dark #hero p {
 
 /* Bloque 5: íconos de redes sociales */
 #hero a.btn.social-icon {
-    color: #9C2C87 !important;
+    color: var(--brand-berry) !important;
     background-color: transparent !important;
     line-height: 0%;
     border-radius: 50%;
     margin-top: 50px;
     padding: 0.7rem;
-    border: 1px solid #9C2C87;
+    border: 1px solid var(--brand-berry);
     transition: background-color 0.2s ease, color 0.2s ease;
 }
 
@@ -170,8 +170,8 @@ body.dark #hero p {
 }
 
 #hero a.btn.social-icon:hover {
-    background-color: #9C2C87 !important;
-    color: #E4CBDF !important;
+    background-color: var(--brand-berry) !important;
+    color: var(--brand-lilac) !important;
     opacity: 1;
 }
 
@@ -179,9 +179,9 @@ body.dark #hero p {
 #hero a.btn:not(.social-icon) {
     margin-top: 50px;
     padding: 0.7rem calc(1.75rem - 0.5cm);
-    border: 1px solid #9C2C87;
+    border: 1px solid var(--brand-berry);
     background-color: transparent;
-    color: #9C2C87 !important;
+    color: var(--brand-berry) !important;
     border-radius: .75rem;
     transition: background-color 0.2s ease, color 0.2s ease;
 }
@@ -191,8 +191,8 @@ body.dark #hero p {
 }
 
 #hero a.btn:not(.social-icon):hover {
-    background-color: #9C2C87 !important;
-    color: #E4CBDF !important;
+    background-color: var(--brand-berry) !important;
+    color: var(--brand-lilac) !important;
     opacity: 1;
 }
 
@@ -228,19 +228,19 @@ body.dark #hero p {
 
 /* jerarquía de títulos dentro del contenido de "Sobre mí" */
 #about .content h2 {
-    color: #0B6E76 !important;
+    color: var(--brand-teal) !important;
     font-size: 20px;
     font-weight: 600;
 }
 
 #about .content h3 {
-    color: #6B6F73 !important;
+    color: var(--brand-gray) !important;
     font-size: 18px;
     font-weight: 600;
 }
 
 #about .content h4 {
-    color: #6B6F73 !important;
+    color: var(--brand-gray) !important;
     font-size: 16px;
     font-weight: 500;
 }
@@ -287,14 +287,14 @@ body.dark #hero p {
 
 /* texto normal del contenido de "Sobre mí" (portada) */
 #about .content p {
-    color: #6B6F73 !important;
+    color: var(--brand-gray) !important;
     font-size: 14px;
 }
 
 #about a {
     display: inline-block;
     text-decoration: none;
-    color: #9C2C87 !important;
+    color: var(--brand-berry) !important;
 }
 
 #about a::after {
@@ -303,7 +303,7 @@ body.dark #hero p {
     width: 0px;
     height: 2px;
     bottom: 0.37em;
-    background-color: #9C2C87;
+    background-color: var(--brand-berry);
     transition: all 0.25s cubic-bezier(0.645,0.045,0.355,1);
     opacity: 0.5;
 }
@@ -445,26 +445,26 @@ body.dark #hero p {
 
 /* jerarquía de títulos dentro del contenido de cada ítem de Educación */
 #education .education-content h2 {
-    color: #0B6E76 !important;
+    color: var(--brand-teal) !important;
     font-size: 20px;
     font-weight: 600;
 }
 
 #education .education-content h3 {
-    color: #6B6F73 !important;
+    color: var(--brand-gray) !important;
     font-size: 18px;
     font-weight: 600;
 }
 
 #education .education-content h4 {
-    color: #6B6F73 !important;
+    color: var(--brand-gray) !important;
     font-size: 16px;
     font-weight: 500;
 }
 
 /* texto normal del contenido de cada ítem de Educación */
 #education .education-content p {
-    color: #6B6F73 !important;
+    color: var(--brand-gray) !important;
     font-size: 14px;
 }
 
@@ -510,7 +510,7 @@ body.dark #hero p {
 }
 
 #education .card .card-body .education-content a {
-    color: #9C2C87 !important;
+    color: var(--brand-berry) !important;
     text-decoration: none;
     opacity: 0.9;
 }
@@ -562,9 +562,14 @@ body.dark #hero p {
 
 /* título "Comunidad y código abierto" (antes h3, ahora h2 — corrige salto de nivel) */
 #achievements .section-title {
-    color: #0B6E76 !important;
+    color: var(--brand-teal) !important;
     font-size: 20px;
     font-weight: 600;
+}
+
+/* modo oscuro: título "Comunidad y código abierto" */
+body.dark #achievements .section-title {
+    color: var(--brand-teal-light) !important;
 }
 
 #achievements .card {
@@ -582,7 +587,7 @@ body.dark #hero p {
 
 /* título de cada tarjeta: texto normal en negrita, no encabezado */
 #achievements .card .card-title {
-    color: #6B6F73 !important;
+    color: var(--brand-gray) !important;
     font-size: 14px;
     font-weight: 700 !important;
     opacity: 0.9;
@@ -591,7 +596,7 @@ body.dark #hero p {
 
 /* modo oscuro: título de cada tarjeta */
 body.dark #achievements .card .card-title {
-    color: #E4CBDF !important;
+    color: var(--brand-lilac) !important;
 }
 
 #achievements .card:hover {
@@ -606,14 +611,14 @@ body.dark #achievements .card .card-title {
 /* texto normal de cada tarjeta */
 #achievements .card-text {
     background-color: var(--secondary-color) !important;
-    color: #6B6F73 !important;
+    color: var(--brand-gray) !important;
     font-size: 14px;
     font-weight: 400 !important;
 }
 
 /* modo oscuro: texto normal de cada tarjeta */
 body.dark #achievements .card-text {
-    color: #E4CBDF !important;
+    color: var(--brand-lilac) !important;
 }
 
 #achievements .card-body,

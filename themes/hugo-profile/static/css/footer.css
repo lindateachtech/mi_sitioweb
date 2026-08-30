@@ -73,16 +73,16 @@ footer .card-footer a:focus {
 
 /* botón "Leer" con la misma dinámica que el del Blog */
 #recent-posts .card-footer a.read-more-btn {
-    color: #9C2C87 !important;
-    border: 1px solid #9C2C87 !important;
+    color: var(--brand-berry) !important;
+    border: 1px solid var(--brand-berry) !important;
     background-color: transparent !important;
     transition: all 0.2s ease-out;
 }
 
 #recent-posts .card-footer a.read-more-btn:hover,
 #recent-posts .card-footer a.read-more-btn:focus {
-    color: #E4CBDF !important;
-    background-color: #9C2C87 !important;
+    color: var(--brand-lilac) !important;
+    background-color: var(--brand-berry) !important;
     opacity: 1;
     box-shadow: none !important;
 }
@@ -109,7 +109,7 @@ footer .card-footer a:focus {
 
 /* modo oscuro: colores de "Posts recientes" */
 body.dark #recent-posts .h4.text-secondary {
-    color: #E4CBDF !important;
+    color: var(--brand-lilac) !important;
 }
 
 body.dark #recent-posts .card-title {
@@ -119,9 +119,9 @@ body.dark #recent-posts .card-title {
 /* hover del título del post: mismo color de marca en modo día y modo noche */
 #recent-posts a.card-title:hover,
 #recent-posts a.card-title:hover .card-title {
-    color: #0B6E76 !important;
+    color: var(--brand-teal) !important;
 }
 
 body.dark #recent-posts .card-text p {
-    color: #E4CBDF !important;
+    color: var(--brand-lilac) !important;
 }

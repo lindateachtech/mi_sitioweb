@@ -27,7 +27,7 @@
 #single .page-content a {
     display: inline-block;
     text-decoration: none;
-    color: #9C2C87 !important;
+    color: var(--brand-berry) !important;
 }
 
 #single .page-content a::after {
@@ -36,7 +36,7 @@
     width: 0px;
     height: 2px;
     bottom: 0.37em;
-    background-color: #9C2C87;
+    background-color: var(--brand-berry);
     transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
     opacity: 0.5;
 }
@@ -60,31 +60,42 @@
 
 /* jerarquía de títulos dentro del contenido de la página "Sobre mí" */
 #single .page-content h2 {
-    color: #0B6E76 !important;
+    color: var(--brand-teal) !important;
     font-size: 20px;
     font-weight: 600;
 }
 
+/* modo oscuro: h2 */
+body.dark #single .page-content h2 {
+    color: var(--brand-teal-light) !important;
+}
+
 #single .page-content h3 {
-    color: #6B6F73 !important;
+    color: var(--brand-gray) !important;
     font-size: 18px;
     font-weight: 600;
 }
 
 #single .page-content h4 {
-    color: #6B6F73 !important;
+    color: var(--brand-gray) !important;
     font-size: 16px;
     font-weight: 500;
 }
 
+/* modo oscuro: h3 y h4 */
+body.dark #single .page-content h3,
+body.dark #single .page-content h4 {
+    color: var(--brand-lilac) !important;
+}
+
 /* texto normal del contenido de "Sobre mí" */
 #single .page-content p {
-    color: #6B6F73 !important;
+    color: var(--brand-gray) !important;
 }
 
 /* modo oscuro: texto normal de "Sobre mí" */
 body.dark #single .page-content p {
-    color: #E4CBDF !important;
+    color: var(--brand-lilac) !important;
 }
 
 #single .page-content blockquote {

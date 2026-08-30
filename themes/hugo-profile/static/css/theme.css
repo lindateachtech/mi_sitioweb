@@ -1,3 +1,17 @@
+/* colores de marca: valores centralizados usados en about.css, single.css,
+   index.css, footer.css, list.css y header.css. Cambiar aquí actualiza
+   todo el sitio a la vez. Las variantes "-rgb" son para usarlas dentro de
+   rgba(), donde no se puede meter un valor hexadecimal directamente. */
+:root {
+    --brand-berry: #9C2C87;
+    --brand-berry-rgb: 156, 44, 135;
+    --brand-teal: #0B6E76;
+    --brand-teal-rgb: 11, 110, 118;
+    --brand-teal-light: #BBBCC1;
+    --brand-gray: #6B6F73;
+    --brand-lilac: #E4CBDF;
+}
+
 /* light mode */
 .light > *{
     background-color: var(--background-color) !important;

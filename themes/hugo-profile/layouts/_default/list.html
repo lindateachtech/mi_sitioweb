@@ -17,7 +17,7 @@
         <div class="col-12 col-lg-3 order-2 order-lg-1"></div>
         <div class="col-12 col-lg-6 order-1 order-lg-2 text-center list-intro">
             <h1 class="mb-3">{{.Title}}</h1>
-            <p class="text-secondary list-header-desc">Tutoriales, reseñas y consejos sobre R para análisis de datos.</p>
+            <p class="text-secondary list-header-desc">Tutoriales paso a paso, reseñas de libros, recomendaciones y buenas prácticas para trabajar con R, Git, Power BI y Google para análisis de datos.</p>
         </div>
         <div class="col-12 col-lg-3 order-3 d-flex justify-content-lg-end justify-content-center align-items-start mt-3 mt-lg-0">
             <div class="blog-search-wrap">
@@ -115,8 +115,12 @@
         resultsWrap.innerHTML = '';
 
         var matches = posts.filter(function (p) {
+            var tagsMatch = (p.tags || []).some(function (t) {
+                return t && t.toLowerCase().indexOf(q) !== -1;
+            });
             return (p.title && p.title.toLowerCase().indexOf(q) !== -1) ||
-                   (p.description && p.description.toLowerCase().indexOf(q) !== -1);
+                   (p.description && p.description.toLowerCase().indexOf(q) !== -1) ||
+                   tagsMatch;
         });
 
         if (matches.length === 0) {
@@ -157,6 +161,19 @@
             renderResults(q);
         }
     });
+
+    /* clic en un tag: busca esa palabra, igual que si se escribiera en el buscador */
+    var listPage = document.getElementById('list-page');
+    if (listPage) {
+        listPage.addEventListener('click', function (e) {
+            var tag = e.target.closest('.blog-item-tags .badge');
+            if (!tag) { return; }
+            e.preventDefault();
+            input.value = tag.textContent.trim();
+            input.dispatchEvent(new Event('input', { bubbles: true }));
+            input.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        });
+    }
 })();
 </script>
 {{ end }}
