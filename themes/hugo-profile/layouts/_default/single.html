@@ -29,7 +29,7 @@
 {{ end }}
 
 {{ define "main" }}
-<section id="single">
+<section id="single" class="{{ if eq .Params.layout "education" }}education-page{{ end }}">
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-sm-12 col-md-12 col-lg-9">

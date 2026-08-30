@@ -1,7 +1,7 @@
 #single {
     padding: 60px 0;
     line-height: 1.7em;
-    font-size: 15px;
+    font-size: 14px;
 }
 
 #single .title>h1 {
@@ -27,7 +27,7 @@
 #single .page-content a {
     display: inline-block;
     text-decoration: none;
-    color: var(--primary-color) !important;
+    color: #9C2C87 !important;
 }
 
 #single .page-content a::after {
@@ -36,7 +36,7 @@
     width: 0px;
     height: 2px;
     bottom: 0.37em;
-    background-color: var(--primary-color);
+    background-color: #9C2C87;
     transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
     opacity: 0.5;
 }
@@ -56,6 +56,35 @@
     color: var(--primary-color) !important;
     margin-bottom: 0.7em;
     opacity: 0.9;
+}
+
+/* jerarquía de títulos dentro del contenido de la página "Sobre mí" */
+#single .page-content h2 {
+    color: #0B6E76 !important;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+#single .page-content h3 {
+    color: #6B6F73 !important;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+#single .page-content h4 {
+    color: #6B6F73 !important;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+/* texto normal del contenido de "Sobre mí" */
+#single .page-content p {
+    color: #6B6F73 !important;
+}
+
+/* modo oscuro: texto normal de "Sobre mí" */
+body.dark #single .page-content p {
+    color: #E4CBDF !important;
 }
 
 #single .page-content blockquote {

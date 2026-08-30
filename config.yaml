@@ -216,7 +216,7 @@ params:
   # Achievements
   achievements:
     enable: true
-    title: "Logros"
+    title: "Comunidad y código abierto"
     items:
       # agrega aquí tus logros cuando quieras publicarlos, por ejemplo:
       - title: Programa de Campeones rOpenSci 2026

@@ -220,8 +220,29 @@ body.dark #hero p {
 
 
 /* about me */
-#about h3 {
+/* título "Sobre mí" de esta sección: ahora es h2 (antes h3, saltaba de nivel) */
+#about .section-title {
     color: var(--text-secondary-color) !important;
+    font-size: 32px;
+}
+
+/* jerarquía de títulos dentro del contenido de "Sobre mí" */
+#about .content h2 {
+    color: #0B6E76 !important;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+#about .content h3 {
+    color: #6B6F73 !important;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+#about .content h4 {
+    color: #6B6F73 !important;
+    font-size: 16px;
+    font-weight: 500;
 }
 
 #about .image img {
@@ -264,10 +285,16 @@ body.dark #hero p {
     line-height: 1.7rem !important;
 }
 
+/* texto normal del contenido de "Sobre mí" (portada) */
+#about .content p {
+    color: #6B6F73 !important;
+    font-size: 14px;
+}
+
 #about a {
     display: inline-block;
     text-decoration: none;
-    color: var(--primary-color) !important;
+    color: #9C2C87 !important;
 }
 
 #about a::after {
@@ -276,7 +303,7 @@ body.dark #hero p {
     width: 0px;
     height: 2px;
     bottom: 0.37em;
-    background-color: var(--primary-color);
+    background-color: #9C2C87;
     transition: all 0.25s cubic-bezier(0.645,0.045,0.355,1);
     opacity: 0.5;
 }
@@ -410,8 +437,35 @@ body.dark #hero p {
 
 /* Education */
 
-#education .container > h3 {
+/* título "Educación": ahora es h2 (antes h3, saltaba de nivel) */
+#education .section-title {
     color: var(--text-secondary-color) !important;
+    font-size: 34px;
+}
+
+/* jerarquía de títulos dentro del contenido de cada ítem de Educación */
+#education .education-content h2 {
+    color: #0B6E76 !important;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+#education .education-content h3 {
+    color: #6B6F73 !important;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+#education .education-content h4 {
+    color: #6B6F73 !important;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+/* texto normal del contenido de cada ítem de Educación */
+#education .education-content p {
+    color: #6B6F73 !important;
+    font-size: 14px;
 }
 
 #education .row .index {
@@ -456,7 +510,7 @@ body.dark #hero p {
 }
 
 #education .card .card-body .education-content a {
-    color: var(--primary-color) !important;
+    color: #9C2C87 !important;
     text-decoration: none;
     opacity: 0.9;
 }
@@ -506,8 +560,11 @@ body.dark #hero p {
     text-decoration: none;
 }
 
-#achievements h3 {
-    color: var(--text-secondary-color) !important;
+/* título "Comunidad y código abierto" (antes h3, ahora h2 — corrige salto de nivel) */
+#achievements .section-title {
+    color: #0B6E76 !important;
+    font-size: 20px;
+    font-weight: 600;
 }
 
 #achievements .card {
@@ -523,9 +580,18 @@ body.dark #hero p {
     cursor: alias;
 }
 
-#achievements .card h5 {
-    color: var(--text-color) !important;
+/* título de cada tarjeta: texto normal en negrita, no encabezado */
+#achievements .card .card-title {
+    color: #6B6F73 !important;
+    font-size: 14px;
+    font-weight: 700 !important;
     opacity: 0.9;
+    margin-bottom: .5rem;
+}
+
+/* modo oscuro: título de cada tarjeta */
+body.dark #achievements .card .card-title {
+    color: #E4CBDF !important;
 }
 
 #achievements .card:hover {
@@ -537,9 +603,17 @@ body.dark #hero p {
     transition: .3s;
 }
 
+/* texto normal de cada tarjeta */
 #achievements .card-text {
     background-color: var(--secondary-color) !important;
-    color: var(--text-secondary-color) !important;
+    color: #6B6F73 !important;
+    font-size: 14px;
+    font-weight: 400 !important;
+}
+
+/* modo oscuro: texto normal de cada tarjeta */
+body.dark #achievements .card-text {
+    color: #E4CBDF !important;
 }
 
 #achievements .card-body,
