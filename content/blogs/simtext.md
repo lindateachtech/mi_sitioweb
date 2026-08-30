@@ -3,7 +3,7 @@ author: lindateachtech
 date: "2024-12-16"
 description: "SIMTEXT, una app en R con Shiny que compara grandes listados de texto mediante similitud del coseno para detectar duplicados y coincidencias con precisión."
 draft: false
-image: /images/projects/simtext2.jpg
+image: /images/simtext/comparar_listados.png
 tags:
 - shiny
 - apps

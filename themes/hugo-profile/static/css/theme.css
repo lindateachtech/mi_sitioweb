@@ -34,11 +34,14 @@ body.dark {
     --primary-color: var(--primary-color-dark);
     --secondary-color: var(--secondary-color-dark);
 
+    /* títulos y texto normal del contenido en modo oscuro (Blog y Recursos) */
+    --brand-title-dark: #d7e2e1;
+
     /* resaltado de sintaxis en modo oscuro */
     --code-keyword: #f64dc5;
-    --code-string: #76e8ed;
-    --code-function: #5ca3ff;
-    --code-number: #ffcd3a;
+    --code-string: #6cb16b;
+    --code-function: #a44498;
+    --code-number: #4118a4;
 }
 
 .text-secondary {

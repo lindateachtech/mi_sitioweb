@@ -3,7 +3,7 @@ author: lindateachtech
 date: "2024-06-17"
 description: "Sobre R-Ladies, la comunidad global que impulsa la diversidad de género en programación con R, a partir de mi participación en el podcast Generación EdTech."
 draft: false
-image: /images/projects/rladies_igualdad2.jpg
+image: /images/projects/rladies_igualdad.png
 tags:
 - rstudio
 - r-ladies

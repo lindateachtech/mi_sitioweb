@@ -3,7 +3,7 @@ author: lindateachtech
 date: "2023-04-02"
 description: "Guía paso a paso para instalar R y RStudio, entender la diferencia entre ambos, y dejar tu entorno listo para programar y analizar datos."
 draft: false
-image: /images/instalacion_r_rstudio2.jpg
+image: /images/instalacion_r_rstudio.png
 tags:
 - rstudio
 - instalacion

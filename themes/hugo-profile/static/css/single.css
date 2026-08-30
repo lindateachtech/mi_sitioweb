@@ -6,7 +6,7 @@
 
 #single .title > h1 {
     opacity: 0.8;
-    color: var(--text-color) !important;
+    color: var(--brand-gray) !important;
     font-size: 30px;
 }
 
@@ -33,7 +33,7 @@
 #single .page-content a {
     display: inline-block;
     text-decoration: none;
-    color: var(--primary-color) !important;
+    color: var(--brand-berry) !important;
 }
 
 #single .page-content a::after {
@@ -42,7 +42,7 @@
     width: 0px;
     height: 2px;
     bottom: 0.37em;
-    background-color: var(--primary-color);
+    background-color: var(--brand-berry);
     transition: all 0.25s cubic-bezier(0.645,0.045,0.355,1);
     opacity: 0.5;
 }
@@ -60,12 +60,26 @@
     background-color: var(--brand-berry);
 }
 
-#single .page-content h1, #single .page-content h2 {
-    color: #a3238e !important;
+#single .page-content h1 {
+    color: var(--brand-gray) !important;
+    margin-bottom: 0.7em;
+    opacity: 0.9;
+    font-size: 30px;
+}
+
+#single .page-content h2 {
+    color: var(--brand-teal) !important;
     font-weight: 600;
     margin-bottom: 0.7em;
     opacity: 0.9;
-    font-size: 22px;
+    font-size: 20px;
+}
+
+/* modo oscuro: título del post y h1-h2 dentro del contenido (Blog y Recursos) */
+body.dark #single .title > h1,
+body.dark #single .page-content h1,
+body.dark #single .page-content h2 {
+    color: var(--brand-title-dark) !important;
 }
 
 /* página "Educación": misma jerarquía de títulos que "Sobre mí" (no afecta Blog ni Recursos) */
@@ -228,20 +242,50 @@ body.dark #single.education-page .page-content .academic-card .academic-title {
     margin: 0;
 }
 
-#single .page-content h3, #single .page-content h4, #single .page-content h5, #single .page-content h6 {
-    color: var(--text-color) !important;
-    font-weight: 700;
+#single .page-content h3 {
+    color: var(--brand-gray) !important;
+    font-weight: 600;
     margin-bottom: 0.7em;
     opacity: 0.9;
     font-size: 18px;
 }
 
+#single .page-content h4, #single .page-content h5, #single .page-content h6 {
+    color: var(--brand-gray) !important;
+    font-weight: 500;
+    margin-bottom: 0.7em;
+    opacity: 0.9;
+    font-size: 18px;
+}
+
+/* modo oscuro: h3-h6 dentro del contenido (Blog y Recursos) */
+body.dark #single .page-content h3,
+body.dark #single .page-content h4,
+body.dark #single .page-content h5,
+body.dark #single .page-content h6 {
+    color: var(--brand-title-dark) !important;
+}
+
+/* modo oscuro: texto normal (párrafos y listas) del contenido (Blog y Recursos) */
+body.dark #single .page-content p,
+body.dark #single .page-content ol,
+body.dark #single .page-content ul {
+    color: var(--brand-lilac) !important;
+}
+
+/* texto normal del contenido (Blog y Recursos) */
+#single .page-content p {
+    color: var(--brand-gray) !important;
+    font-size: 14px;
+}
+
 #single .page-content blockquote {
     padding: 14px 20px;
-    border-left: 6px solid var(--primary-color) !important;
+    border-left: 6px solid var(--brand-berry) !important;
     color: var(--text-secondary-color) !important;
-    font-weight: 500;
-    font-size: 15px;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 1.4;
     margin: 20px 0;
     border-radius: 5px;
 }
@@ -300,17 +344,17 @@ body.dark #single.education-page .page-content .academic-card .academic-title {
   margin: 5px;
   margin-bottom: 2em;
   padding: 2em;
-  background-color: var(--secondary-color) !important;
-  color: var(--text-secondary-color) !important;
+  background-color: #212529 !important;
+  color: #b0b3b8 !important;
   max-height: 450px;
 }
 
 #single .page-content pre > code {
-  color: var(--text-secondary-color) !important;
+  color: #b0b3b8 !important;
 }
 
 #single .page-content code {
-  color: var(--primary-color) !important;
+  color: var(--brand-berry) !important;
 }
 
 /* resaltado de sintaxis en bloques de código */
@@ -337,13 +381,13 @@ body.dark #single.education-page .page-content .academic-card .academic-title {
 #single .page-content pre .sr,
 #single .page-content pre .ss,
 #single .page-content pre .sa {
-  color: var(--code-string, #0a6b73) !important;
+  color: var(--code-string, #6cb16b) !important;
 }
 
 #single .page-content pre .nb,
 #single .page-content pre .nf,
 #single .page-content pre .nx {
-  color: var(--code-function, #0958d9) !important;
+  color: var(--code-function, #a44498) !important;
 }
 
 #single .page-content pre .m,
@@ -351,7 +395,7 @@ body.dark #single.education-page .page-content .academic-card .academic-title {
 #single .page-content pre .mh,
 #single .page-content pre .mi,
 #single .page-content pre .mo {
-  color: var(--code-number, #b3261e) !important;
+  color: var(--code-number, #4118a4) !important;
 }
 
 #single .page-content pre .c,
@@ -359,13 +403,13 @@ body.dark #single.education-page .page-content .academic-card .academic-title {
 #single .page-content pre .cm,
 #single .page-content pre .cp,
 #single .page-content pre .cs {
-  color: var(--text-secondary-color) !important;
+  color: #8a8f98 !important;
 }
 
 #single .page-content pre .o,
 #single .page-content pre .ow,
 #single .page-content pre .p {
-  color: var(--text-color) !important;
+  color: #e4e6eb !important;
 }
 
 /* kbd and mark */
@@ -387,6 +431,8 @@ body.dark #single.education-page .page-content .academic-card .academic-title {
     padding-left: 1.5em;
     list-style-position: inside;
     opacity: 0.9;
+    color: var(--brand-gray) !important;
+    font-size: 14px;
 }
 
 #single .page-content ol li li, #single .page-content ul li li {

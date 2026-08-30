@@ -3,7 +3,7 @@ author: lindateachtech
 date: "2023-04-18"
 description: "Tutorial paso a paso para conectar RStudio con GitHub y llevar control de versiones en tus proyectos de análisis de datos e investigación reproducible."
 draft: false
-image: /images/conectar_rstudio_gith2.jpg
+image: /images/conectar_rstudio_gith.png
 tags:
 - rstudio
 - git
