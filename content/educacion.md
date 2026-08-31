@@ -13,27 +13,39 @@ title: Educación
 <div class="cert-cards">
 
 <div class="cert-card">
-<p class="cert-title">PL-300 Microsoft Power BI Data Analyst</p>
+<img src="/images/cert/pl300.png" alt="Insignia PL-300 Microsoft Power BI Data Analyst" class="cert-badge">
+<div class="cert-text">
+<p class="cert-title">PL-300 Microsoft Asociado Analista de Datos de Power BI</p>
 <p class="cert-year">Desde 2026</p>
 <a href="https://learn.microsoft.com/es-es/users/lindacabreraorellana/credentials/9e6fbf547737cd4b?ref=https%3A%2F%2Fwww.linkedin.com%2F">Insignia</a>
 </div>
+</div>
 
 <div class="cert-card">
+<img src="/images/cert/data_science.png" alt="Insignia Programa Internacional de Ciencia de Datos" class="cert-badge">
+<div class="cert-text">
 <p class="cert-title">Programa Internacional de Ciencia de Datos</p>
 <p class="cert-year">Desde 2022</p>
 <a href="https://www.credly.com/badges/61943c4c-ae68-49aa-9eac-c26315124242/linked_in_profile">Insignia</a>
 </div>
-
-<div class="cert-card">
-<p class="cert-title">Software Carpentry Instructor</p>
-<p class="cert-year">Desde 2021</p>
-<a href="https://carpentries.org/community/instructors/">Software Carpentry Instructor</a>
 </div>
 
 <div class="cert-card">
+<img src="/images/cert/carpentries.png" alt="Insignia Software Carpentry Instructor" class="cert-badge">
+<div class="cert-text">
+<p class="cert-title">Software Carpentry Instructor</p>
+<p class="cert-year">Desde 2021</p>
+<a href="https://carpentries.org/community/instructors/">Instructores</a>
+</div>
+</div>
+
+<div class="cert-card">
+<img src="/images/cert/docencia_virtual.png" alt="Insignia Certificación en Docencia Virtual" class="cert-badge">
+<div class="cert-text">
 <p class="cert-title">Certificación en Docencia Virtual</p>
 <p class="cert-year">Desde 2020</p>
 <a href="https://www.credly.com/badges/315e9134-61ff-414e-afec-d84e16141f27/linked_in_profile">Insignia</a>
+</div>
 </div>
 
 </div>
