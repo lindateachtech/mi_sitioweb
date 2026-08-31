@@ -1,0 +1,185 @@
+{{ define "head" }}
+<meta name="description" content="Cursos y talleres dictados por Linda Cabrera Orellana sobre R, control de versiones, manejo de datos y herramientas para análisis y programación.">
+<link rel="stylesheet" href="{{ .Site.Params.staticPath }}/css/list.css" media="all">
+
+<!-- fontawesome (ícono de la lupa) -->
+<script defer src="{{ .Site.Params.staticPath }}/fontawesome-5/all-5.15.4.js"></script>
+{{ end }}
+
+{{ define "title" }}
+{{.Title }} | {{ .Site.Title }}
+{{ end }}
+
+{{ define "main" }}
+<div class="container pt-5" id="list-page">
+
+    <div class="row align-items-start mb-4">
+        <div class="col-12 col-lg-3 order-2 order-lg-1"></div>
+        <div class="col-12 col-lg-6 order-1 order-lg-2 text-center list-intro">
+            <h1 class="mb-3">{{.Title}}</h1>
+            <p class="text-secondary list-header-desc">Cursos y talleres que he dictado sobre R, control de versiones con Git, manejo de datos y herramientas de software, dirigidos a quienes están empezando en análisis de datos.</p>
+        </div>
+        <div class="col-12 col-lg-3 order-3 d-flex justify-content-lg-end justify-content-center align-items-start mt-3 mt-lg-0">
+            <div class="blog-search-wrap">
+                <input type="search" id="blog-search-input" class="form-control blog-search-input" placeholder="Buscar cursos..." aria-label="Buscar cursos">
+                <i class="fas fa-search blog-search-icon" aria-hidden="true"></i>
+            </div>
+        </div>
+    </div>
+
+    <div id="blog-search-results" class="blog-search-results" style="display:none;"></div>
+
+    <div class="row" id="blog-list">
+        {{ range .Paginator.Pages }}
+        <div class="row align-items-center my-4">
+            <!-- Imagen del curso (columna izquierda) -->
+            <div class="col-md-3">
+                <img src="{{ .Params.image }}" alt="{{ .Title }}" class="img-fluid rounded shadow-sm">
+            </div>
+
+            <!-- Contenido del curso (columna derecha) -->
+            <div class="col-md-9">
+                <a href="{{ .RelPermalink }}" class="blog-title-link text-decoration-none">
+                    <h4 class="fw-bold">{{ .Title }}</h4>
+                </a>
+                <p class="text-secondary">
+                    {{ if .Params.description }}
+                    {{ .Params.description | truncate 350 }}
+                    {{ else }}
+                    {{ .Summary | truncate 350 }}
+                    {{ end }}
+                </p>
+                {{ if .Params.tags }}
+                <div class="blog-item-tags">
+                    {{ range .Params.tags }}
+                    <span class="badge badge-secondary">{{ . }}</span>
+                    {{ end }}
+                </div>
+                {{ end }}
+                <span class="text-muted blog-item-date">{{ .Date | time.Format ":date_long" }}</span>
+                <a href="{{ .RelPermalink }}" class="btn read-more-btn btn-sm float-end">Recursos</a>
+            </div>
+        </div>
+        <hr>
+        {{ end }}
+    </div>
+
+    <!-- Paginación -->
+    <div class="row justify-content-center" id="blog-pagination">
+        <div class="col-auto m-5">
+            {{template "_internal/pagination.html" . }}
+        </div>
+    </div>
+
+    <!-- Datos de todos los cursos, para que el buscador filtre en todas las páginas -->
+    {{ $allPosts := where .Site.RegularPages "Section" "cursos" }}
+    {{ $allPosts = $allPosts.ByDate.Reverse }}
+    {{ $searchItems := slice }}
+    {{ range $allPosts }}
+        {{ $searchItems = $searchItems | append (dict
+            "title" .Title
+            "description" ((.Params.description | default (.Summary | plainify)) | truncate 350)
+            "url" .RelPermalink
+            "image" .Params.image
+            "date" (.Date | time.Format ":date_long")
+            "tags" (.Params.tags | default slice)
+        ) }}
+    {{ end }}
+    <script type="application/json" id="blog-search-data">{{ $searchItems | jsonify | safeJS }}</script>
+</div>
+
+<script>
+(function () {
+    var input = document.getElementById('blog-search-input');
+    var listWrap = document.getElementById('blog-list');
+    var paginationWrap = document.getElementById('blog-pagination');
+    var resultsWrap = document.getElementById('blog-search-results');
+    var dataEl = document.getElementById('blog-search-data');
+    if (!input || !dataEl) { return; }
+
+    var posts = [];
+    try { posts = JSON.parse(dataEl.textContent); } catch (e) { posts = []; }
+
+    function escapeHtml(str) {
+        var div = document.createElement('div');
+        div.textContent = str || '';
+        return div.innerHTML;
+    }
+
+    function tagsHtml(tags) {
+        if (!tags || !tags.length) { return ''; }
+        var html = '<div class="blog-item-tags">';
+        tags.forEach(function (t) {
+            html += '<span class="badge badge-secondary">' + escapeHtml(t) + '</span>';
+        });
+        html += '</div>';
+        return html;
+    }
+
+    function renderResults(query) {
+        var q = query.trim().toLowerCase();
+        resultsWrap.innerHTML = '';
+
+        var matches = posts.filter(function (p) {
+            var tagsMatch = (p.tags || []).some(function (t) {
+                return t && t.toLowerCase().indexOf(q) !== -1;
+            });
+            return (p.title && p.title.toLowerCase().indexOf(q) !== -1) ||
+                   (p.description && p.description.toLowerCase().indexOf(q) !== -1) ||
+                   tagsMatch;
+        });
+
+        if (matches.length === 0) {
+            resultsWrap.innerHTML = '<p class="text-secondary text-center py-4">No se encontraron cursos que coincidan con &quot;' + escapeHtml(query) + '&quot;.</p>';
+            return;
+        }
+
+        matches.forEach(function (p) {
+            var item = document.createElement('div');
+            item.innerHTML =
+                '<div class="row align-items-center my-4">' +
+                    '<div class="col-md-3">' +
+                        '<img src="' + p.image + '" alt="' + escapeHtml(p.title) + '" class="img-fluid rounded shadow-sm">' +
+                    '</div>' +
+                    '<div class="col-md-9">' +
+                        '<a href="' + p.url + '" class="blog-title-link text-decoration-none"><h4 class="fw-bold">' + escapeHtml(p.title) + '</h4></a>' +
+                        '<p class="text-secondary">' + escapeHtml(p.description) + '</p>' +
+                        tagsHtml(p.tags) +
+                        '<span class="text-muted blog-item-date">' + p.date + '</span>' +
+                        '<a href="' + p.url + '" class="btn read-more-btn btn-sm float-end">Recursos</a>' +
+                    '</div>' +
+                '</div><hr>';
+            resultsWrap.appendChild(item);
+        });
+    }
+
+    input.addEventListener('input', function () {
+        var q = input.value;
+        if (q.trim().length === 0) {
+            listWrap.style.display = '';
+            paginationWrap.style.display = '';
+            resultsWrap.style.display = 'none';
+            resultsWrap.innerHTML = '';
+        } else {
+            listWrap.style.display = 'none';
+            paginationWrap.style.display = 'none';
+            resultsWrap.style.display = 'block';
+            renderResults(q);
+        }
+    });
+
+    /* clic en un tag: busca esa palabra, igual que si se escribiera en el buscador */
+    var listPage = document.getElementById('list-page');
+    if (listPage) {
+        listPage.addEventListener('click', function (e) {
+            var tag = e.target.closest('.blog-item-tags .badge');
+            if (!tag) { return; }
+            e.preventDefault();
+            input.value = tag.textContent.trim();
+            input.dispatchEvent(new Event('input', { bubbles: true }));
+            input.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        });
+    }
+})();
+</script>
+{{ end }}

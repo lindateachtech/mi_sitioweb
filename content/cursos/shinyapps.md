@@ -1,18 +1,19 @@
 ---
 author: Linda Cabrera Orellana
 date: "2023-05-25T23:29:21+05:30"
-description: "Curso de 30 horas sobre análisis de datos con R y creación de aplicaciones web interactivas (dashboards) con ShinyApps."
+description: "Curso de 30 horas sobre análisis de datos con R y creación de aplicaciones web interactivas (dashboards) con ShinyApps. Aprenderás a construir tu propia app para explorar y compartir resultados de forma visual e intuitiva."
 draft: false
 image: /images/shiny.png
 tags:
-- RStudio
+- rstudio
 - análisis de datos
 - tidyverse
 - ggplot2
 - visualización de datos
-- análisis expliratorio
-- EDA
+- análisis exploratorio
+- eda
 - shinyapps
+- curso
 title: Análisis de datos con R y ShinyApps
 toc: TRUE
 ---

@@ -335,12 +335,13 @@ body.dark #single .page-content ul {
     height: 40px !important;
 }
 
+/* encabezado de tablas dentro del contenido: teal de marca, mismo color en día y noche */
 #single .page-content table > thead > tr > th {
     padding: 0.5rem !important;
-    background-color: var(--primary-color) !important;
-    color: var(--secondary-color) !important;
-    border: 1px solid var(--secondary-color);
-    opacity: 0.9;
+    background-color: var(--brand-teal) !important;
+    color: #ffffff !important;
+    border: 1px solid var(--brand-teal);
+    opacity: 1;
 }
 #single .page-content table > tbody > tr > td {
     padding: 0.5rem !important;

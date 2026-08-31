@@ -17,41 +17,47 @@ markup:
 
 Menus:
   main:
-    - identifier: courses
-      name: Recursos
-      title: Recursos
-      url: /recursos
-      weight: 1
-
     - identifier: blog
       name: Blog
       title: Blog posts
       url: /blogs
-      weight: 2
+      weight: 1
 
+    - identifier: cursos
+      name: Cursos
+      title: Cursos
+      url: /cursos
+      weight: 2
+      
     - identifier: projects
       name: Proyectos
       title: Proyectos
       url: /projects
+      weight: 3
+
+    - identifier: recursos
+      name: Recursos
+      title: Recursos
+      url: /recursos
       weight: 4
-
-    - identifier: education
-      name: Educación
-      title: Education
-      url: /educacion
-      weight: 5
-
+      
     - identifier: about
       name: Sobre mí
       title: About
       url: /resumen
       weight: 6
 
+    - identifier: education
+      name: Educación
+      title: Education
+      url: /educacion
+      weight: 7
+      
     - identifier: contact
       name: Contacto
       title: Contacto
       url: /contacto
-      weight: 7
+      weight: 8
 
     #Dropdown menu
     # - identifier: dropdown
@@ -263,7 +269,7 @@ params:
             url: https://lindaj-cabrera.medium.com/el-debate-en-twitter-sobre-el-encarcelamiento-de-pablo-has%C3%A9l-en-el-segundo-d%C3%ADa-de-manifestaciones-77cf5ddf5273
       - title: SIMTEXT
         content: Una aplicación en Shiny que compara grandes listados de texto utilizando el cálculo de similitud del coseno.
-        image: /images/projects/simtext2.jpg
+        image: images/simtext/comparar_listados.png
         featured:
           name: App
           link: https://linda-cabrera.shinyapps.io/simtext/

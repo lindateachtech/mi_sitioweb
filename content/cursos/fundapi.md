@@ -1,18 +1,19 @@
 ---
 author: Linda Cabrera Orellana
 date: "2024-05-31T23:29:21+05:30"
-description: "Curso de 30 horas para aprender R desde cero: importación y manipulación de datos, estadística descriptiva, visualización con ggplot2 y creación de dashboards interactivos con Shiny."
+description: "Curso de 30 horas para aprender R desde cero: importación y manipulación de datos, estadística descriptiva, visualización con ggplot2 y creación de dashboards interactivos con Shiny. Ideal para quienes están dando sus primeros pasos en análisis de datos."
 draft: false
 image: /images/fundapi.png
 tags:
-- RStudio
+- rstudio
 - análisis de datos
 - tidyverse
 - ggplot2
 - visualización de datos
-- análisis expliratorio
-- EDA
+- análisis exploratorio
+- eda
 - shinyapps
+- curso
 title: Lenguaje R - Nivel Básico Intermedio
 toc: TRUE
 ---

@@ -159,9 +159,20 @@ body.dark #list-page .blog-title-link:hover h4 {
     font-size: 13px;
 }
 
+/* hipervínculos dentro de la descripción (p. ej. "Fundapi", "MASAPP Ecuador") */
+#list-page .col-md-9 p.text-secondary a {
+    color: var(--brand-berry) !important;
+}
+
 /* modo oscuro: descripción del post */
 body.dark #list-page .col-md-9 p.text-secondary {
     color: var(--brand-lilac) !important;
+}
+
+/* modo oscuro: hipervínculos dentro de la descripción */
+body.dark #list-page .col-md-9 p.text-secondary a {
+    color: var(--brand-lilac) !important;
+    text-decoration: underline;
 }
 
 /* tags de cada post: berry sobre lila claro (modo día) */

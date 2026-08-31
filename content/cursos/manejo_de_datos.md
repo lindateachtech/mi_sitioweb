@@ -1,17 +1,18 @@
 ---
 author: Linda Cabrera Orellana
 date: "2022-05-16T23:29:21+05:30"
-description: "Curso de 20 horas enfocado en transformar, preparar y visualizar datos con R, y generar reportes automatizados y reproducibles en Rmarkdown."
+description: "Curso de 20 horas enfocado en transformar, preparar y visualizar datos con R, y generar reportes automatizados y reproducibles en R Markdown. Pensado para quienes ya conocen R y quieren ordenar su flujo de trabajo de análisis."
 draft: false
-image: /images/manejo_r.jpeg
+image: /images/manejo_r.png
 tags:
-- RStudio
+- rstudio
 - análisis de datos
 - tidyverse
 - ggplot2
 - visualización de datos
-- análisis expliratorio
-- EDA
+- análisis exploratorio
+- eda
+- curso
 title: Manejo de datos y reportería con R
 toc: TRUE
 ---

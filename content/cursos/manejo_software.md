@@ -1,17 +1,18 @@
 ---
 author: Linda Cabrera Orellana
 date: "2023-03-30T23:29:21+05:30"
-description: "Curso de 15 horas para aprender a usar RStudio en investigación científica, desde los conceptos básicos de estadística hasta el procesamiento de datos de proyectos propios."
+description: "Curso de 15 horas para aprender a usar RStudio en investigación científica, desde los conceptos básicos de estadística hasta el procesamiento de datos de proyectos propios. Dictado como parte de un programa internacional de estadística aplicada."
 draft: false
-image: /images/software.jpg
+image: /images/software.png
 tags:
-- RStudio
+- rstudio
 - análisis de datos
 - tidyverse
 - ggplot2
 - visualización de datos
-- análisis expliratorio
-- EDA
+- análisis exploratorio
+- eda
+- curso
 title: Manejo de software RStudio
 toc: TRUE
 ---

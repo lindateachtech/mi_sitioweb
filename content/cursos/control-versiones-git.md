@@ -1,14 +1,15 @@
 ---
 author: Linda Cabrera Orellana
 date: "2022-09-26T23:29:21+05:30"
-description: "Taller práctico de control de versiones con Git y GitHub, y su conexión con RStudio, dictado con la metodología Software Carpentry. No requiere experiencia previa."
+description: "Taller práctico de control de versiones con Git y GitHub, y su conexión con RStudio, dictado con la metodología de Software Carpentry. Aprenderás a crear repositorios, hacer commits y colaborar en proyectos de código abierto. No requiere experiencia previa."
 draft: false
-image: /images/github_curso.jpg
+image: /images/tallergit.jpg
 tags:
-- Git
-- GitHub
-- Control de versiones
-- RStudio
+- git
+- github
+- control de versiones
+- rstudio
+- taller
 title: Control de versiones con Git y GitHub
 toc: TRUE
 ---
