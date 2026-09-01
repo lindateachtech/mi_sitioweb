@@ -46,3 +46,7 @@ El taller explica paso a paso la construcción de la siguiente gráfica:
 </div>
 
 Puedes encontrar los enlaces del código, presentación y video en los enlaces de arriba.
+
+## Taller
+
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/Ol7bb2CoYnQ?si=Rd87UAtPUpELqcnh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
