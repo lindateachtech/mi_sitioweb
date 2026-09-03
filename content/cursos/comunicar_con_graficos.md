@@ -1,6 +1,6 @@
 ---
 author: Linda Cabrera Orellana
-date: "2021-08-19"
+date: "2021-08-10"
 description: "Taller del capítulo 28 del libro R4DS en el marco del Club de Lectura organizado por los capítulos RLadies Guayaquil, Galápagos, Milagro y Barranquilla, sobre Comunicar con gráficos, desarrollado el 19 de agosto del 2021."
 draft: false
 image: /images/talleres/r4ds_cap_28.jpg

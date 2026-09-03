@@ -332,19 +332,26 @@ body.dark #single .page-content ul {
 }
 
 #single .page-content table > tr {
-    height: 40px !important;
+    height: auto;
+}
+
+/* interlineado más angosto y mismo tamaño de letra que el texto normal del contenido */
+#single .page-content table th,
+#single .page-content table td {
+    line-height: 1.3;
+    font-size: 14px;
 }
 
 /* encabezado de tablas dentro del contenido: teal de marca, mismo color en día y noche */
 #single .page-content table > thead > tr > th {
-    padding: 0.5rem !important;
+    padding: 0.35rem 0.6rem !important;
     background-color: var(--brand-teal) !important;
     color: #ffffff !important;
     border: 1px solid var(--brand-teal);
     opacity: 1;
 }
 #single .page-content table > tbody > tr > td {
-    padding: 0.5rem !important;
+    padding: 0.35rem 0.6rem !important;
     border: 1px solid var(--secondary-color);
     background-color: var(--secondary-color) !important;
     opacity: 0.9;
