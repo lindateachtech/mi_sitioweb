@@ -49,7 +49,7 @@ A fecha de hoy, 10 de agosto de 2026, los datos clave del examen son los siguien
 | **Vigencia** | 3 años |
 | **Requisitos previos** | Ninguno |
 
-Adicionalmente, es requisito completar la ruta de aprendizaje de google skills de la [Certificación de Cloud Digital Leader](https://www.skills.google/paths/9?hl=es), sobre todo si accedes al examen mediante un programa de becas o un cupón (voucher) de Google Cloud.
+Adicionalmente, es requisito completar la ruta de aprendizaje de Google Skills de la [Certificación de Cloud Digital Leader](https://www.skills.google/paths/9?hl=es), sobre todo si accedes al examen mediante un programa de becas o un cupón (voucher) de Google Cloud.
 
 Al vencer, la certificación se puede renovar rindiendo de nuevo el examen estándar, con un examen de renovación más corto (45 minutos, 20 preguntas) si estás dentro del período de elegibilidad, o completando la ruta de aprendizaje de renovación en Google Skills.
 
@@ -149,7 +149,7 @@ En el examen, este dominio también incluye administración financiera y control
 
 ## Términos y definiciones
  
-Antes de las preguntas, este es el glosario de términos más generales que vale la pena tenerlos claros desde ya, porque son la base de las entradas que siguen en la serie, aquí te los explico de forma sencilla para que puedas entenderlos:
+Te presento un glosario de términos más generales que vale la pena tenerlos claros desde ya, porque son la base de las entradas que siguen en la serie, aquí te los explico de forma sencilla para que puedas entenderlos:
 
 <details>
 <summary><strong>Nube (cloud computing)</strong></summary>
@@ -188,4 +188,12 @@ Es el conjunto de prácticas, personas, procesos y herramientas utilizadas para 
 </details>
 
 <br>
+
+Con este mapa general ya tienes clara la estructura del examen y el vocabulario base para seguir la serie. En la próxima entrada profundizaré en el primer pilar, transformación digital, con más definiciones y casos aplicados. ¿Ya estás estudiando para esta certificación o es la primera vez que escuchas de ella?.
+
+<br>
+<div style="display:flex; justify-content:space-between; margin-top:20px;">
+<p><strong>&larr; Entrada anterior</strong><br><a href="https://lindateachtech.netlify.app/blogs/storytelling-con-datos/">Reseña de 'Storytelling con Datos' de Cole Nussbaumer Knaflic</a></p>
+<p style="text-align:right;"><strong>Siguiente entrada &rarr;</strong><br><a href="https://lindateachtech.netlify.app/blogs/transformacion-digital/">Transformación digital con Google Cloud</a></p>
+</div>
 
