@@ -279,37 +279,65 @@ La última etapa es la que le da sentido a todo lo anterior, convertir los datos
 ## Términos y definiciones
  
 Te presento el glosario de esta entrada, con los términos que acabamos de ver explicados de forma sencilla:
+
 <details>
 <summary><strong>Pipeline o canalización de datos</strong></summary>
+
 Es el recorrido automatizado que sigue un dato desde que se genera hasta que llega procesado a su destino final, pasando por distintas etapas de transformación en el camino. Por ejemplo, es como una cinta transportadora en una fábrica, el producto entra por un lado, pasa por varias estaciones donde se le hace algo distinto en cada una, y sale terminado por el otro extremo.
 </details>
+
 <details>
 <summary><strong>Serverless</strong></summary>
+
 Es un modelo en el que el proveedor de la nube administra toda la infraestructura por detrás, servidores, capacidad y mantenimiento incluidos, y quien usa el servicio no tiene que preocuparse por nada de eso, solo por el resultado. Por ejemplo, es como pedir comida a domicilio, tú solo eliges qué quieres comer, sin tener que comprar los ingredientes, cocinar ni lavar los platos después.
 </details>
+
 <details>
 <summary><strong>Evento</strong></summary>
+
 Es cualquier suceso que ocurre dentro de un sistema y que puede disparar una acción en otro, por ejemplo un clic, un pago o un cambio de estado. Por ejemplo, es como una alarma que suena apenas pasa algo puntual, alguien más la escucha y reacciona de inmediato, sin tener que estar revisando constantemente si pasó algo.
 </details>
+
 <details>
 <summary><strong>ETL</strong></summary>
+
 Son las siglas en inglés de extraer, transformar y cargar, el proceso de tomar datos de su origen, limpiarlos o adaptarlos, y llevarlos hasta el lugar donde se van a almacenar o analizar. Por ejemplo, es como mudarte de casa, primero sacas tus cosas del lugar donde estaban, eso es extraer, las organizas y empacas de otra forma, eso es transformar, y las colocas en su lugar definitivo en la casa nueva, eso es cargar.
 </details>
+
 <details>
 <summary><strong>Metadatos</strong></summary>
+
 Son datos que describen a otros datos, sin ser el contenido en sí mismo, por ejemplo la fecha, el autor o el tamaño de un archivo. Por ejemplo, es como la ficha técnica pegada en la contraportada de un libro, no es la historia del libro, pero te dice datos clave sobre él, como el autor, el año y el número de páginas.
 </details>
+
 <details>
 <summary><strong>Microservicios</strong></summary>
+
 Es una forma de construir aplicaciones dividiéndolas en piezas pequeñas e independientes, cada una encargada de una sola función, que se comunican entre sí en vez de ser todo un único bloque de código. Por ejemplo, es como un restaurante donde cada persona se encarga de una sola tarea, uno cocina, otro sirve las mesas y otro cobra, en vez de que una sola persona haga todo, así si uno falla o hay que reemplazarlo, no se detiene todo el restaurante.
 </details>
+
 <details>
 <summary><strong>SLA</strong></summary>
+
 Son las siglas en inglés de Service Level Agreement, o acuerdo de nivel de servicio, el compromiso que asume un proveedor sobre la disponibilidad o el rendimiento garantizado de un servicio, normalmente expresado como un porcentaje. Por ejemplo, un SLA del 99,999%, como el de Spanner, significa que el servicio puede estar caído apenas unos minutos al año, así que cuanto más cerca esté ese número del 100%, menos tiempo de interrupción hay que tolerar.
 </details>
 
+<details>
+<summary><strong>Carga de trabajo transaccional</strong></summary>
+
+Es el tipo de uso donde el sistema registra y actualiza datos constantemente, en operaciones individuales, cortas y frecuentes, también conocido como OLTP, procesamiento de transacciones en línea. Por ejemplo, cada vez que un cliente hace un pedido, inicia sesión o actualiza su carrito de compras, se genera una transacción nueva que la base de datos tiene que guardar de inmediato.
+</details>
+
+<details>
+<summary><strong>Carga de trabajo analítica</strong></summary>
+
+Es el tipo de uso donde el sistema consulta grandes volúmenes de datos ya almacenados para encontrar patrones o generar reportes, también conocido como OLAP, procesamiento analítico en línea. Por ejemplo, revisar las ventas de los últimos doce meses para decidir en qué región abrir una nueva tienda no necesita una respuesta instantánea, pero sí tiene que analizar muchísima información a la vez.
+</details>
+
 <br>
+
 Con esto ya tienes cubierto el segundo pilar de la certificación, desde el origen de los datos hasta cómo se activan en decisiones. En la próxima entrada de la serie voy a meterme con el tercer pilar, la inteligencia artificial. ¿Cuál de estas etapas del recorrido del dato te resulta más familiar en tu día a día?
+
 <br>
 
 <div style="display:flex; justify-content:space-between; margin-top:20px;">
