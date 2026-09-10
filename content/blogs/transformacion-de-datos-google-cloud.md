@@ -314,5 +314,5 @@ Con esto ya tienes cubierto el segundo pilar de la certificación, desde el orig
 
 <div style="display:flex; justify-content:space-between; margin-top:20px;">
 <p><strong>&larr; Entrada anterior</strong><br><a href="https://lindateachtech.netlify.app/blogs/transformacion-digital/">Transformación digital con Google Cloud</a></p>
-<p style="text-align:right;"><strong>Siguiente entrada &rarr;</strong><br><a href="https://lindateachtech.netlify.app/blogs/transformacion-de-datos-google-cloud/">Transformación de datos con Google Cloud</a></p>
+<p style="text-align:right;"><strong>Siguiente entrada &rarr;</strong><br><a href="https://lindateachtech.netlify.app/blogs/innova-con-ia-google-cloud/">Innova con la IA de Google Cloud</a></p>
 </div>
