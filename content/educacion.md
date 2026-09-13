@@ -1,5 +1,5 @@
 ---
-date: "2026-08-24"
+date: "2026-09-13"
 author: "Actualizado al"
 description: 'Formación académica'
 draft: false
@@ -13,11 +13,20 @@ title: Educación
 <div class="cert-cards">
 
 <div class="cert-card">
+<img src="/images/google/cloud-digital-leader.png" alt="Cloud Digital Leader Certification" class="cert-badge">
+<div class="cert-text">
+<p class="cert-title">Cloud Digital Leader Certification</p>
+<p class="cert-year">Desde 2026</p>
+<a href="https://www.credly.com/badges/bc761bdb-0b6f-4aa7-be87-16cd80ca063f/public_url">Insignia</a>
+</div>
+</div>
+
+<div class="cert-card">
 <img src="/images/cert/pl300.png" alt="Insignia PL-300 Microsoft Power BI Data Analyst" class="cert-badge">
 <div class="cert-text">
 <p class="cert-title">PL-300 Microsoft Asociado Analista de Datos de Power BI</p>
 <p class="cert-year">Desde 2026</p>
-<a href="https://learn.microsoft.com/es-es/users/lindacabreraorellana/credentials/9e6fbf547737cd4b?ref=https%3A%2F%2Fwww.linkedin.com%2F">Insignia</a>
+<a href="https://learn.microsoft.com/es-es/users/lindacabreraorellana/credentials/9e6fbf547737cd4b">Insignia</a>
 </div>
 </div>
 
@@ -57,6 +66,8 @@ title: Educación
 <div class="academic-cards">
 
 <div class="academic-card">
+<img src="/images/cert/UGR-Logo.png" alt="Logo Universidad de Granada" class="academic-logo">
+<div class="academic-text">
 <p class="academic-title">Máster en Técnicas Cuantitativas para la gestión empresarial</p>
 <a class="academic-institution" href="https://masteres.ugr.es/tecnicas-cuantitativas-empresas/">Universidad de Granada, España, 2024</a>
 <div class="topic-chips">
@@ -66,8 +77,11 @@ title: Educación
 <span>Calidad de la producción empresarial</span>
 </div>
 </div>
+</div>
 
 <div class="academic-card">
+<img src="/images/cert/UPV-logo.png" alt="Logo Universitat Politècnica de València" class="academic-logo">
+<div class="academic-text">
 <p class="academic-title">Máster en Investigación Matemática</p>
 <a class="academic-institution" href="http://www.upv.es/titulaciones/MUIMA/indexc.html">Universitat Politècnica de València, España, 2018</a>
 <div class="topic-chips">
@@ -77,8 +91,11 @@ title: Educación
 <span>Convexidad y optimización</span>
 </div>
 </div>
+</div>
 
 <div class="academic-card">
+<img src="/images/cert/espol-logo.png" alt="Logo Escuela Superior Politécnica del Litoral" class="academic-logo">
+<div class="academic-text">
 <p class="academic-title">Ingeniera en Auditoría</p>
 <a class="academic-institution" href="https://www.espol.edu.ec/">Escuela Superior Politécnica del Litoral, Ecuador, 2014</a>
 <div class="topic-chips">
@@ -86,6 +103,7 @@ title: Educación
 <span>Análisis multivariado y muestreo</span>
 <span>Bases de datos para auditores</span>
 <span>Auditoría de sistemas informáticos</span>
+</div>
 </div>
 </div>
 

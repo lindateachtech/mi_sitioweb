@@ -234,6 +234,27 @@ body.dark #single.education-page .page-content .cert-card .cert-title {
     border-radius: 14px;
     padding: .8rem 1.5rem .8rem;
     box-shadow: 0px 4px 20px rgba(15, 80, 100, 0.06);
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+/* logo de la universidad, a la izquierda de la tarjeta */
+#single.education-page .page-content .academic-card .academic-logo {
+    width: 85px;
+    height: 85px;
+    object-fit: contain;
+    flex-shrink: 0;
+    border-radius: 50%;
+    border: 1px solid rgba(var(--brand-teal-rgb), 0.25);
+    background-color: #fff;
+    padding: .3rem;
+}
+
+#single.education-page .page-content .academic-card .academic-text {
+    min-width: 0;
+    flex: 1;
 }
 
 #single.education-page .page-content .academic-card .academic-title {
