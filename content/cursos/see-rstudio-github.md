@@ -1,6 +1,6 @@
 ---
 author: Linda Cabrera Orellana
-date: "2026-10-10"
+date: "2026-10-05"
 description: "Taller práctico de control de versiones con GitHub desde RStudio, en la R & Python Week de la Sociedad Ecuatoriana de Estadística."
 draft: false
 image: /images/r_github/taller-see-10102026.png
