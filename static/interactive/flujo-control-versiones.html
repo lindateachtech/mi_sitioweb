@@ -1,0 +1,308 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Flujo de trabajo de control de versiones</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@800&family=Comfortaa:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: tablero con las cuatro zonas de Git y dos historiales alineados por commit; panel de narración al lado (debajo en móvil). */
+:root{
+  --bg:#FFFFFF; --surface:#FFFFFF; --ink:#142338; --muted:#4A5872; --line:#D3DBE6;
+  --blue:#3c8b91; --blue-soft:#DDF0F1; --orange:#a64193; --orange-soft:#F7E3F2;
+  --green:#1C7F54; --green-soft:#E3F4EB; --red:#B83232; --red-soft:#FBE7E7;
+  --grey:#6B7487; --grey-soft:#F1F3F7; --local:#fbeef8; --cloud:#daf0f2;
+  --display:'Nunito', 'Trebuchet MS', Arial, sans-serif;
+  --body:'Comfortaa', 'Trebuchet MS', Arial, sans-serif;
+  --mono:'JetBrains Mono', 'Courier New', monospace;
+}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:14px;line-height:1.35;padding-inline:16px;padding-block:14px 28px}
+.wrap{max-width:1240px;margin-inline:auto;display:flex;flex-direction:column;gap:14px}
+h1,h2,h3{font-family:var(--display);font-weight:800!important;text-wrap:balance;margin:0}
+header{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:10px}
+header h1{font-size:clamp(26px,4vw,38px);font-weight:700;letter-spacing:-0.01em}
+header p{margin:4px 0 0;color:var(--muted);max-width:60ch}
+.tabs{display:flex;gap:4px;background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:3px}
+.tabs button{border:0;background:transparent;color:var(--muted);font:600 13px var(--body);padding:6px 14px;border-radius:999px;cursor:pointer}
+.tabs button[aria-selected="true"]{background:var(--blue);color:var(--surface)}
+button:focus-visible,input:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
+
+.main{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:14px;align-items:start}
+@media (max-width:960px){.main{grid-template-columns:minmax(0,1fr)}}
+
+.board{display:flex;flex-direction:column;gap:10px;min-width:0}
+.zones{display:grid;grid-template-columns:3fr 1fr;gap:8px}
+@media (max-width:720px){.zones{grid-template-columns:1fr}}
+.zone{border-radius:16px;padding:8px;display:flex;flex-direction:column;gap:6px;min-width:0}
+.zone.local{background:var(--local)}
+.zone.cloud{background:var(--cloud)}
+.zone-label{font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase}
+.zone.local .zone-label{color:var(--orange)}
+.zone.cloud .zone-label{color:var(--blue)}
+.cols{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+@media (max-width:560px){.cols{grid-template-columns:1fr}}
+.col{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:8px;min-height:140px;display:flex;flex-direction:column;gap:5px;min-width:0}
+.col h3{font-size:15px;font-weight:600}
+.col .how{font-size:11px;color:var(--muted);margin-top:-4px}
+.col .how code{font-family:var(--mono);font-size:10px;color:var(--ink)}
+.empty{font-size:11px;color:var(--muted);font-style:italic;padding:6px 2px}
+
+.file{display:flex;flex-wrap:wrap;align-items:center;gap:4px 6px;border:1px solid var(--line);border-radius:10px;padding:5px 8px;background:var(--surface);min-width:0}
+.file .name{font-family:var(--mono);font-size:12px;font-weight:600;flex:1 1 auto;white-space:nowrap}
+.badge{font-size:9px;font-weight:600;padding:2px 8px;border-radius:999px;white-space:nowrap}
+.b-untracked{background:var(--grey-soft);color:var(--grey)}
+.b-modified{background:var(--orange-soft);color:var(--orange)}
+.b-staged{background:var(--blue-soft);color:var(--blue)}
+.b-clean{background:var(--green-soft);color:var(--green)}
+.file.untracked{border-style:dashed}
+.file.just{animation:pop .7s ease-out}
+@keyframes pop{0%{transform:scale(.92);box-shadow:0 0 0 4px var(--blue-soft)}100%{transform:scale(1);box-shadow:0 0 0 0 transparent}}
+.mini{border:1px solid var(--line);background:var(--grey-soft);color:var(--ink);font:600 10px var(--body);padding:3px 7px;border-radius:8px;cursor:pointer}
+.mini:hover{border-color:var(--blue);color:var(--blue)}
+
+.history{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:10px;display:flex;flex-direction:column;gap:4px}
+.history-head{display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px;align-items:baseline}
+.history-head h2{font-size:16px;font-weight:600}
+.history-head span{font-size:11px;color:var(--muted)}
+.tl-scroll{overflow-x:auto;padding-bottom:4px}
+.tl{display:grid;grid-template-columns:150px repeat(var(--n),minmax(118px,1fr));min-width:max-content;row-gap:2px}
+.tl-label{font-size:11px;font-weight:600;color:var(--muted);display:flex;align-items:center;padding-right:8px}
+.tl-cell{position:relative;display:flex;flex-direction:column;align-items:center;gap:2px;padding:4px 4px 6px;text-align:center}
+.tl-cell::before{content:"";position:absolute;top:19px;left:0;right:0;height:3px;background:var(--line)}
+.tl-row-local .tl-cell.has::before,.tl-row-local .tl-cell.after::before{background:var(--orange)}
+.tl-row-remote .tl-cell.has::before,.tl-row-remote .tl-cell.after::before{background:var(--blue)}
+.tl-cell.first::before{left:50%}
+.tl-cell.last::before{right:50%}
+.tl-cell.none::before{left:50%;right:50%}
+.dot{position:relative;width:24px;height:24px;border-radius:50%;border:3px solid var(--surface);box-shadow:0 0 0 2px var(--line);background:var(--surface)}
+.tl-row-local .dot.on{background:var(--orange);box-shadow:0 0 0 2px var(--orange)}
+.tl-row-remote .dot.on{background:var(--blue);box-shadow:0 0 0 2px var(--blue)}
+.dot.merge.on{background:var(--surface)!important;border:6px solid currentColor}
+.tl-row-local .dot.merge.on{color:var(--orange)}
+.tl-row-remote .dot.merge.on{color:var(--blue)}
+.dot.ghost{opacity:.35;border-style:dashed}
+.msg{font-size:10px;line-height:1.3;max-width:120px}
+.hash{font-family:var(--mono);font-size:9px;color:var(--muted)}
+.tl-cell.missing .msg,.tl-cell.missing .hash{opacity:.0}
+.dot.just{animation:pop .7s ease-out}
+
+.panel{position:sticky;top:calc(env(safe-area-inset-top,0px) + 8px);background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:12px;display:flex;flex-direction:column;gap:8px;min-width:0}
+@media (max-width:960px){.panel{position:static}}
+.step-count{font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);font-variant-numeric:tabular-nums}
+.progress{height:6px;background:var(--grey-soft);border-radius:999px;overflow:hidden}
+.progress i{display:block;height:100%;background:var(--blue);transition:width .3s}
+.panel h2{font-size:20px;font-weight:700;line-height:1.2}
+.panel p{margin:0}
+.hint{background:var(--grey-soft);border-radius:12px;padding:7px 9px;display:flex;flex-direction:column;gap:4px;font-size:12px}
+.hint b{font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.hint code{font-family:var(--mono);font-size:11px;overflow-wrap:anywhere}
+.alert{border-radius:12px;padding:6px 9px;font-size:12px;font-weight:500}
+.alert.err{background:var(--red-soft);color:var(--red)}
+.alert.ok{background:var(--green-soft);color:var(--green)}
+.nav{display:flex;gap:6px;flex-wrap:wrap}
+.btn{border:1px solid var(--line);background:var(--surface);color:var(--ink);font:600 13px var(--body);padding:7px 12px;border-radius:10px;cursor:pointer}
+.btn:hover{border-color:var(--blue)}
+.btn.primary{background:var(--blue);border-color:var(--blue);color:var(--surface);flex:1}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+.actions{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.actions .btn{font-size:12px;padding:6px 8px}
+.btn.push{color:var(--blue)} .btn.pull{color:var(--blue)} .btn.commit{color:var(--orange)}
+.field{display:flex;flex-direction:column;gap:3px}
+.field label{font-size:11px;color:var(--muted)}
+.field input{font:12px var(--mono);padding:6px 8px;border:1px solid var(--line);border-radius:10px;background:var(--surface);color:var(--ink);width:100%}
+.legend{display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-size:11px;color:var(--muted)}
+.keys{font-size:10px;color:var(--muted)}
+@media (prefers-reduced-motion:reduce){.file.just,.dot.just{animation:none}.progress i{transition:none}}
+</style>
+
+<div class="wrap">
+  <header>
+    <div>
+      <h1>Flujo de trabajo de control de versiones</h1>
+    </div>
+    <div class="tabs" role="tablist" aria-label="Modo">
+      <button id="tab-guia" role="tab" aria-selected="true">Historia guiada</button>
+      <button id="tab-libre" role="tab" aria-selected="false">Practica libre</button>
+    </div>
+  </header>
+
+  <div class="legend" aria-label="Estados de un archivo">
+    <span class="badge b-untracked">Sin rastrear</span>
+    <span class="badge b-modified">Modificado</span>
+    <span class="badge b-staged">Preparado</span>
+    <span class="badge b-clean">Guardado</span>
+  </div>
+
+  <div class="main">
+    <div class="board">
+      <div class="zones">
+        <section class="zone local" aria-label="En tu computadora">
+          <div class="zone-label">En tu computadora</div>
+          <div class="cols">
+            <div class="col"><h3>Tu carpeta</h3><div class="how">Donde editas tus archivos</div><div id="c-work"></div></div>
+            <div class="col"><h3>Staging</h3><div class="how">Llegan con <code>stage</code></div><div id="c-stage"></div></div>
+            <div class="col"><h3>Repositorio</h3><div class="how">Llegan con <code>commit</code></div><div id="c-repo"></div></div>
+          </div>
+        </section>
+        <section class="zone cloud" aria-label="En la nube">
+          <div class="zone-label">En la nube</div>
+          <div class="col"><h3>GitHub</h3><div class="how">Llegan con <code>push</code></div><div id="c-remote"></div></div>
+        </section>
+      </div>
+
+      <section class="history" aria-label="Historiales">
+        <div class="history-head"><h2>Historial de commits</h2><span>El tiempo avanza hacia la derecha</span></div>
+        <div class="tl-scroll"><div class="tl" id="tl"></div></div>
+      </section>
+    </div>
+
+    <aside class="panel" id="panel" aria-live="polite"></aside>
+  </div>
+</div>
+
+<script>
+(function(){
+  var HASHES=['a1f3c9e','7d20be4','c4e81a0','9b5f02d','e37d6c1','15ac94f','f80b3e2','2c6d71a','b9e04c5','63fa1d8','d02c7b9','48be3f6','ae71c20','05d9e8b','7c3a5f1','e8b1640'];
+  var FILES0=['analisis.R','datos.csv'];
+
+  function fresh(){
+    var s={files:{},order:[],commits:{},local:[],remote:[],remoteFiles:[],seq:0,just:[],justC:[],alert:null};
+    FILES0.forEach(function(n){addFile(s,n)});
+    s.just=[];
+    return s;
+  }
+  function addFile(s,n){ if(!s.files[n]){s.files[n]={status:'untracked',committed:false};s.order.push(n);} s.just.push(n); }
+  function newCommit(s,msg,merge){ var id='c'+s.seq; s.commits[id]={msg:msg,seq:s.seq,hash:HASHES[s.seq%HASHES.length],merge:!!merge}; s.seq++; s.justC.push(id); return id; }
+  function remoteOnly(s){ return s.remote.filter(function(id){return s.local.indexOf(id)<0}); }
+  function localOnly(s){ return s.local.filter(function(id){return s.remote.indexOf(id)<0}); }
+
+  var A={
+    edit:function(s,n){ var f=s.files[n]; if(!f) return; if(f.status==='clean'){f.status='modified';s.just.push(n);} },
+    newfile:function(s,n){ addFile(s,n); },
+    stage:function(s,names){ var any=false; names.forEach(function(n){var f=s.files[n]; if(f&&(f.status==='untracked'||f.status==='modified')){f.status='staged';s.just.push(n);any=true;}}); if(!any) s.alert={t:'err',m:'No hay cambios para preparar. Primero edita o crea un archivo.'}; },
+    commit:function(s,msg){ var st=s.order.filter(function(n){return s.files[n].status==='staged'}); if(!st.length){s.alert={t:'err',m:'No hay nada en staging. Marca al menos un archivo antes de hacer commit.'};return;} if(!msg||!msg.trim()){s.alert={t:'err',m:'Escribe un mensaje que explique qué cambió.'};return;} st.forEach(function(n){s.files[n].status='clean';s.files[n].committed=true;s.just.push(n)}); s.local.push(newCommit(s,msg.trim())); },
+    push:function(s){ if(!s.local.length){s.alert={t:'err',m:'Todavía no hay commits que subir.'};return;} if(remoteOnly(s).length){s.alert={t:'err',m:'Push rechazado. GitHub tiene commits que tú no tienes. Haz pull primero.'};return;} var lo=localOnly(s); if(!lo.length){s.alert={t:'ok',m:'Todo está al día. No había nada nuevo que subir.'};return;} s.remote=s.local.slice(); s.order.forEach(function(n){var f=s.files[n]; if(f.committed&&s.remoteFiles.indexOf(n)<0){s.remoteFiles.push(n);}}); s.justC=lo.slice(); s.alert={t:'ok',m:'Push completado. GitHub ya tiene tu historial.'}; },
+    remote:function(s,n,msg){ if(!s.remote.length){s.alert={t:'err',m:'Primero haz push para que el repositorio exista en GitHub.'};return;} var id=newCommit(s,msg); s.remote.push(id); if(s.remoteFiles.indexOf(n)<0) s.remoteFiles.push(n); s.commits[id].file=n; },
+    pull:function(s){ var ro=remoteOnly(s); if(!ro.length){s.alert={t:'ok',m:'Ya tenías todo lo que hay en GitHub.'};return;} var diverged=localOnly(s).length>0; ro.forEach(function(id){ s.local.push(id); var n=s.commits[id].file; if(n){ if(!s.files[n]){s.files[n]={status:'clean',committed:true};s.order.push(n);} s.just.push(n);} }); s.justC=ro.slice(); if(diverged){ var m=newCommit(s,'Une los cambios de GitHub',true); s.local.push(m); s.alert={t:'ok',m:'Pull completado. Como ambos tenían cambios, Git creó un commit que los une.'}; } else { s.alert={t:'ok',m:'Pull completado. Ya tienes los cambios de GitHub.'}; } }
+  };
+
+  var STORY=[
+    {t:'Un proyecto sin versionar',p:'Tienes un proyecto con un script y unos datos. Git todavía no los vigila: por eso aparecen como sin rastrear. El historial está vacío.',r:'Los archivos aparecen en la pestaña Git con un signo de interrogación amarillo.',c:'git status',a:null},
+    {t:'Eliges qué guardar',p:'Marcas los dos archivos para el próximo commit. Ahora están en staging, la zona de preparación. Todavía no se ha guardado nada.',r:'Marca la casilla Staged de cada archivo.',c:'git add analisis.R datos.csv',a:function(s){A.stage(s,['analisis.R','datos.csv'])}},
+    {t:'Tu primer commit',p:'Haces commit con un mensaje. Git guarda una foto del proyecto: aparece el primer punto en tu historial.',r:'Pulsa Commit, escribe el mensaje y confirma.',c:'git commit -m "Primer análisis de ventas"',a:function(s){A.commit(s,'Primer análisis de ventas')}},
+    {t:'Sigues trabajando',p:'Editas el script para añadir un gráfico. Git detecta la diferencia con la última foto y marca el archivo como modificado. El repositorio conserva la versión anterior.',r:'El archivo aparece con una M azul en la pestaña Git.',c:'git diff',a:function(s){A.edit(s,'analisis.R')}},
+    {t:'Preparas el cambio',p:'Marcas solo el script. Puedes elegir qué cambios van juntos en cada commit.',r:'Marca la casilla Staged del script.',c:'git add analisis.R',a:function(s){A.stage(s,['analisis.R'])}},
+    {t:'Segundo commit',p:'Otro punto en el historial. Cada commit tiene un identificador único y un mensaje que dice qué cambió.',r:'Commit y un mensaje claro.',c:'git commit -m "Añade gráfico por región"',a:function(s){A.commit(s,'Añade gráfico por región')}},
+    {t:'Lo subes a GitHub',p:'Con push copias tus commits a GitHub. Ahora los dos historiales son iguales y tu trabajo tiene respaldo en la nube.',r:'Pulsa la flecha verde Push.',c:'git push',a:function(s){A.push(s)}},
+    {t:'Alguien cambia algo en GitHub',p:'Una colega añade un README directamente en GitHub. Ese commit existe en la nube, pero no en tu computadora.',r:'No ves nada todavía: el cambio solo está en GitHub.',c:'(se hace en la web de GitHub)',a:function(s){A.remote(s,'README.md','Añade README')}},
+    {t:'Mientras tanto, tú también avanzas',p:'Sin saberlo, corriges un filtro en tu script, lo preparas y haces commit. Ahora cada historial tiene algo que el otro no tiene.',r:'Marca el script, Commit y mensaje.',c:'git add analisis.R && git commit -m "Corrige filtro de fechas"',a:function(s){A.edit(s,'analisis.R');A.stage(s,['analisis.R']);s.just=[];A.commit(s,'Corrige filtro de fechas')}},
+    {t:'Push rechazado',p:'Intentas subir tu commit y GitHub lo rechaza, porque tiene un commit que tú no tienes. No se pierde nada: solo te pide ponerte al día.',r:'RStudio muestra un mensaje con la palabra rejected.',c:'git push',a:function(s){A.push(s)}},
+    {t:'Te pones al día con pull',p:'Con pull traes el README a tu computadora. Como los dos historiales avanzaron, Git crea un commit que los une.',r:'Pulsa la flecha azul Pull.',c:'git pull',a:function(s){A.pull(s)}},
+    {t:'Ahora sí, push',p:'Subes tu commit y el de unión. Los dos historiales vuelven a ser idénticos. Este es el ciclo que repetirás todos los días.',r:'Pulsa Push otra vez.',c:'git push',a:function(s){A.push(s)}}
+  ];
+
+  var mode='guia', step=0, free=fresh(), freeAlert=null, freeCount=0, freeMsg='Actualiza el análisis';
+  document.addEventListener('input',function(e){ if(e.target&&e.target.id==='msg') freeMsg=e.target.value; });
+  function storyState(k){ var s=fresh(); for(var i=1;i<=k;i++){ s.just=[];s.justC=[];s.alert=null; if(STORY[i].a) STORY[i].a(s);} return s; }
+
+  function esc(t){return String(t).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+  var LABEL={untracked:'Sin rastrear',modified:'Modificado',staged:'Preparado',clean:'Guardado'};
+
+  function chip(s,n,status,ctrl){
+    var j=s.just.indexOf(n)>=0?' just':'';
+    return '<div class="file '+status+j+'"><span class="name">'+esc(n)+'</span><span class="badge b-'+status+'">'+LABEL[status]+'</span>'+(ctrl||'')+'</div>';
+  }
+  function list(el,html,empty){ document.getElementById(el).innerHTML=html||'<div class="empty">'+empty+'</div>'; }
+
+  function renderBoard(s){
+    var interactive=mode==='libre', w='',st='',rp='',rm='';
+    s.order.forEach(function(n){
+      var f=s.files[n];
+      if(f.status==='untracked'||f.status==='modified') w+=chip(s,n,f.status,interactive?'<button class="mini" data-stage="'+esc(n)+'" aria-label="Preparar '+esc(n)+'">Stage</button>':'');
+      if(f.status==='staged') st+=chip(s,n,'staged','');
+      if(f.committed) rp+=chip(s,n,'clean',interactive&&f.status==='clean'?'<button class="mini" data-edit="'+esc(n)+'" aria-label="Editar '+esc(n)+'">Editar</button>':'');
+    });
+    s.remoteFiles.forEach(function(n){ var j=s.justC.length&&mode?'':''; rm+='<div class="file"><span class="name">'+esc(n)+'</span><span class="badge b-staged">En GitHub</span></div>'; });
+    list('c-work',w,'Sin cambios pendientes');
+    list('c-stage',st,'Nada preparado');
+    list('c-repo',rp,'Aún no hay commits');
+    list('c-remote',rm,'El repositorio aún no tiene archivos');
+
+    var ids=Object.keys(s.commits).sort(function(a,b){return s.commits[a].seq-s.commits[b].seq});
+    var tl=document.getElementById('tl'); tl.style.setProperty('--n',Math.max(ids.length,1));
+    function row(cls,label,arr){
+      var h='<div class="tl-label">'+label+'</div>';
+      if(!ids.length){ return h+'<div class="tl-cell none '+cls+'"><span class="empty">Sin commits todavía</span></div>'; }
+      var present=ids.map(function(id){return arr.indexOf(id)>=0});
+      var lastOn=present.lastIndexOf(true), firstOn=present.indexOf(true);
+      ids.forEach(function(id,i){
+        var c=s.commits[id], on=present[i];
+        var k='tl-cell'+(on?' has':' missing');
+        if(i===0||firstOn===i) k+=' first';
+        if(lastOn===i) k+=' last';
+        if(firstOn<0||i<firstOn||i>lastOn) k+=' none';
+        var dj=(on&&s.justC.indexOf(id)>=0)?' just':'';
+        h+='<div class="'+k+'"><span class="dot'+(on?' on':' ghost')+(c.merge?' merge':'')+dj+'" title="'+esc(c.msg)+'"></span><span class="msg">'+esc(c.msg)+'</span><span class="hash">'+c.hash+'</span></div>';
+      });
+      return h;
+    }
+    tl.innerHTML='<div class="tl-row-local" style="display:contents">'+row('','En tu computadora',s.local)+'</div><div class="tl-row-remote" style="display:contents">'+row('','En GitHub',s.remote)+'</div>';
+  }
+
+  function renderPanel(s){
+    var p=document.getElementById('panel'), alert=s.alert?'<div class="alert '+(s.alert.t==='err'?'err':'ok')+'" role="status">'+esc(s.alert.m)+'</div>':'';
+    if(mode==='guia'){
+      var S=STORY[step], pct=Math.round(step/(STORY.length-1)*100);
+      p.innerHTML='<div class="step-count">Paso '+(step+1)+' de '+STORY.length+'</div><div class="progress"><i style="width:'+pct+'%"></i></div>'+
+        '<h2>'+esc(S.t)+'</h2><p>'+esc(S.p)+'</p>'+alert+
+        '<div class="hint"><b>En RStudio</b><span>'+esc(S.r)+'</span></div>'+
+        '<div class="hint"><b>Comando equivalente</b><code>'+esc(S.c)+'</code></div>'+
+        '<div class="nav"><button class="btn" id="prev"'+(step===0?' disabled':'')+'>Anterior</button><button class="btn primary" id="next">'+(step===STORY.length-1?'Volver a empezar':'Siguiente')+'</button></div>'+
+        '<div class="keys">También puedes usar las flechas del teclado.</div>';
+    } else {
+      p.innerHTML='<div class="step-count">Practica libre</div><h2>Haz tu propio historial</h2>'+
+        '<p>Edita archivos desde el repositorio, prepáralos con Stage desde tu carpeta y guarda con Commit.</p>'+
+        (freeAlert?'<div class="alert '+(freeAlert.t==='err'?'err':'ok')+'" role="status">'+esc(freeAlert.m)+'</div>':'')+
+        '<div class="field"><label for="msg">Mensaje del commit</label><input id="msg" type="text" value="'+esc(freeMsg)+'" autocomplete="off"></div>'+
+        '<div class="actions"><button class="btn commit" data-act="commit">Commit</button><button class="btn" data-act="new">Nuevo archivo</button>'+
+        '<button class="btn push" data-act="push">Push</button><button class="btn pull" data-act="pull">Pull</button>'+
+        '<button class="btn" data-act="remote">Cambio en GitHub</button><button class="btn" data-act="reset">Reiniciar</button></div>'+
+        '<div class="hint"><b>Prueba esto</b><span>Haz un cambio en GitHub y, antes de hacer pull, un commit tuyo. Luego intenta push.</span></div>';
+    }
+  }
+
+  function render(){
+    var s=mode==='guia'?storyState(step):free;
+    renderBoard(s); renderPanel(s);
+    document.getElementById('tab-guia').setAttribute('aria-selected',mode==='guia');
+    document.getElementById('tab-libre').setAttribute('aria-selected',mode==='libre');
+  }
+
+  function freeDo(fn){ free.just=[];free.justC=[];free.alert=null; fn(free); freeAlert=free.alert; render(); }
+
+  document.addEventListener('click',function(e){
+    var t=e.target.closest('button'); if(!t) return;
+    if(t.id==='tab-guia'){mode='guia';render();return;}
+    if(t.id==='tab-libre'){mode='libre';render();return;}
+    if(t.id==='next'){ step=step===STORY.length-1?0:step+1; render(); return; }
+    if(t.id==='prev'){ if(step>0){step--;render();} return; }
+    if(t.dataset.stage){ var n=t.dataset.stage; freeDo(function(s){A.stage(s,[n])}); return; }
+    if(t.dataset.edit){ var m=t.dataset.edit; freeDo(function(s){A.edit(s,m)}); return; }
+    var act=t.dataset.act; if(!act) return;
+    if(act==='commit'){ var v=(document.getElementById('msg')||{}).value; freeDo(function(s){A.commit(s,v); if(!s.alert) s.alert={t:'ok',m:'Commit guardado en tu historial.'};}); }
+    if(act==='new'){ freeCount++; var names=['grafico.R','informe.qmd','limpieza.R','notas.md']; var nm=names[(freeCount-1)%names.length]; if(free.files[nm]) nm='archivo'+freeCount+'.R'; freeDo(function(s){A.newfile(s,nm); s.alert={t:'ok',m:'Creaste '+nm+'. Git lo ve, pero aún no lo rastrea.'};}); }
+    if(act==='push') freeDo(function(s){A.push(s)});
+    if(act==='pull') freeDo(function(s){A.pull(s)});
+    if(act==='remote') freeDo(function(s){ var before=s.remote.length; A.remote(s,'README.md','Edita README en GitHub'); if(s.remote.length>before) s.alert={t:'ok',m:'Alguien hizo un commit en GitHub. Aún no está en tu computadora.'}; });
+    if(act==='reset'){ free=fresh(); freeAlert=null; freeCount=0; render(); }
+  });
+  document.addEventListener('keydown',function(e){
+    if(mode!=='guia'||/INPUT|TEXTAREA/.test((e.target||{}).tagName||'')) return;
+    if(e.key==='ArrowRight'){ if(step<STORY.length-1){step++;render();} }
+    if(e.key==='ArrowLeft'){ if(step>0){step--;render();} }
+  });
+  render();
+})();
+</script>
+
+</body></html>
