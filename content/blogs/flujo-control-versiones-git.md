@@ -1,6 +1,6 @@
 ---
 author: lindateachtech
-date: "2026-10-09"
+date: "2026-10-15"
 description: "Cuando empecé a aprender Git memorizaba comandos sin entender qué pasaba por dentro. Ahora que enseño control de versiones en talleres de Software Carpentry, construí una herramienta interactiva para que mis estudiantes entiendan el flujo completo desde el primer día."
 draft: false
 image: /images/r_github/commit.png
@@ -15,33 +15,6 @@ title: "Memorizar comandos de Git y no entender nada"
 toc: TRUE
 ---
 
-<div style="margin: 0 0 1.5em;">
-<iframe id="git-flow-iframe" src="/interactive/flujo-control-versiones.html" style="width:100%; height:600px; border:1px solid #D3DBE6; border-radius:12px; display:block;" loading="lazy" title="Flujo de trabajo de control de versiones (interactivo)"></iframe>
-</div>
-
-<script>
-(function () {
-  var iframe = document.getElementById('git-flow-iframe');
-  if (!iframe) return;
-
-  function resize() {
-    try {
-      var doc = iframe.contentWindow.document;
-      var h = Math.max(doc.documentElement.scrollHeight, doc.body.scrollHeight);
-      iframe.style.height = (h + 24) + 'px';
-    } catch (e) {}
-  }
-
-  iframe.addEventListener('load', function () {
-    resize();
-    try {
-      var ro = new ResizeObserver(resize);
-      ro.observe(iframe.contentWindow.document.body);
-    } catch (e) {}
-    window.addEventListener('resize', resize);
-  });
-})();
-</script>
 
 El primer curso de Git que tomé fue hace casi cuatro años, un curso dirigido a programadores cuya metodología era aprender Git memorizando comandos, como quien memoriza un conjuro, escribía `git add`, `git commit`, `git push` en ese orden porque supuestamente así funcionaba, pero yo no tenía ni idea de qué estaba pasando por dentro ni por qué eran tres pasos y no uno. 
 
@@ -49,7 +22,7 @@ Luego, cuando aprendí control de versiones con The Carpentries, vi el flujo exp
 
 Con el tiempo quise ir un poco más allá. Hay buenos recursos visuales sobre Git, pero casi todos están en inglés, y yo quería uno propio, pensado para mis estudiantes. Por eso creé esta herramienta interactiva, para enseñar el flujo de forma dinámica y que puedan ver en tiempo real cómo va cambiando el estado de cada archivo, en vez de imaginárselo.
 
-Desde 2021 soy instructora de Software Carpentry y uso este material en mis talleres de control de versiones. Aquí te cuento los puntos donde más he visto trabarse a quienes están aprendiendo, los mismos donde yo me trababa, y te dejo la herramienta para que la pruebes tú.
+Desde 2021 soy instructora de Software Carpentry y uso este material en mis talleres de control de versiones. Aquí te cuento los puntos donde más he visto trabarse a quienes están aprendiendo, los mismos donde yo me trababa, y al final te dejo el enlace al [simulador](/blogs/simulador-flujo-control-de-versiones) para que lo pruebes tú mismo.
 
 ## El área de staging es la primera pared
 
@@ -67,8 +40,9 @@ El tercer momento, y el más intenso que recuerdo, fue mi primer conflicto de fu
 
 Explicar estos conceptos con diapositivas ayuda, pero lo que realmente los fija es ver el flujo completo moverse: un archivo que pasa de la carpeta de trabajo al staging, de ahí al repositorio local y finalmente a GitHub, con el historial creciendo en tiempo real. Armé esta herramienta interactiva para eso. Tiene una historia guiada que recorre paso a paso el ciclo completo, incluido un conflicto real entre tu computadora y GitHub, y un modo de práctica libre para que experimentes por tu cuenta sin ningún riesgo, porque aquí no hay ningún repositorio real detrás.
 
-Te recomiendo empezar por la historia guiada para ver el ciclo completo una vez, y después pasar a práctica libre e intentar provocar tú mismo un conflicto, antes de probarlo en un repositorio real.
+Puedes probarla en [el simulador de flujo de trabajo de control de versiones](/blogs/simulador-flujo-control-de-versiones). Te recomiendo empezar por la historia guiada para ver el ciclo completo una vez, y después pasar a práctica libre e intentar provocar tú mismo un conflicto, antes de probarlo en un repositorio real.
 
 ## Este material es parte de mi taller
 
 Esta herramienta es una pequeña parte de lo que cubro en mi taller de control de versiones con Git y GitHub, donde además de practicar el flujo vemos cómo conectarlo con tus propios proyectos de R y RStudio. Si quieres profundizar, en [la página del taller](/cursos/control-versiones-git) tienes el material completo, las diapositivas y el repositorio de cada sesión, para que puedas revisarlo a tu ritmo o seguirlo paso a paso.
+
