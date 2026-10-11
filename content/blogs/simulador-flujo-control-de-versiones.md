@@ -86,5 +86,13 @@ La historia guiada tiene doce pasos. El panel de la derecha simula la pestaña d
 * Que alguien más suba un cambio a GitHub sin que tú lo sepas.
 * Resolver un push rechazado haciendo pull primero.
 
+## Más recursos para seguir aprendiendo de forma visual
+
+* [Learn Git Branching (GitHub)](https://github.com/pcottle/learnGitBranching)
+* [Visualizing Git](https://github.com/git-school/visualizing-git)
+* [git-sim](https://initialcommit.com/tools/git-sim)
+* [Git resources for visual learners, GitLab](https://about.gitlab.com/blog/2022/09/14/git-resources-for-visual-learners)
+* [Software Carpentry, El Control de Versiones con Git](https://swcarpentry.github.io/git-novice-es/)
+
 Este simulador está disponible bajo licencia [Creative Commons Atribución 4.0 (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/deed.es), la misma que usa Software Carpentry para su material. Puedes usarlo libremente en tus propias clases o talleres, adaptarlo o compartirlo, dando crédito y enlazando a este sitio.
 
