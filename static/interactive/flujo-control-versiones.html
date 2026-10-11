@@ -1,4 +1,26 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}@media (prefers-color-scheme:dark){body{background:#1b1c20;color:#eef1f6}}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<script>
+(function(){
+  // Si este archivo está incrustado en el blog, copiamos el modo claro/oscuro
+  // que el blog ya tiene activo (botón de la cabecera), en vez de depender
+  // solo de la preferencia del sistema operativo.
+  function applyFromParent(){
+    try{
+      if(window.parent && window.parent!==window){
+        var isDark=window.parent.document.body.classList.contains('dark');
+        document.documentElement.setAttribute('data-theme', isDark?'dark':'light');
+      }
+    }catch(e){ /* distinto origen o no incrustado: usamos la preferencia del sistema */ }
+  }
+  applyFromParent();
+  window.addEventListener('DOMContentLoaded', applyFromParent);
+  try{
+    if(window.parent && window.parent!==window){
+      new MutationObserver(applyFromParent).observe(window.parent.document.body, {attributes:true, attributeFilter:['class']});
+    }
+  }catch(e){}
+})();
+</script>
 <title>Flujo de trabajo de control de versiones</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -10,9 +32,24 @@
   --blue:#3c8b91; --blue-soft:#DDF0F1; --orange:#a64193; --orange-soft:#F7E3F2;
   --green:#1C7F54; --green-soft:#E3F4EB; --red:#B83232; --red-soft:#FBE7E7;
   --grey:#6B7487; --grey-soft:#F1F3F7; --local:#fbeef8; --cloud:#daf0f2;
+  --on-accent:#fff;
   --display:'Nunito', 'Trebuchet MS', Arial, sans-serif;
   --body:'Comfortaa', 'Trebuchet MS', Arial, sans-serif;
   --mono:'JetBrains Mono', 'Courier New', monospace;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#1b1c20; --surface:#232529; --ink:#eef1f6; --muted:#a9b2c3; --line:#3a3d46;
+    --blue:#6fc1c7; --blue-soft:#163235; --orange:#dd93c4; --orange-soft:#3a2535;
+    --green:#5fd79b; --green-soft:#163826; --red:#e78585; --red-soft:#3a2020;
+    --grey:#9aa3b5; --grey-soft:#2a2c32; --local:#2a2230; --cloud:#152a2d;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#1b1c20; --surface:#232529; --ink:#eef1f6; --muted:#a9b2c3; --line:#3a3d46;
+  --blue:#6fc1c7; --blue-soft:#163235; --orange:#dd93c4; --orange-soft:#3a2535;
+  --green:#5fd79b; --green-soft:#163826; --red:#e78585; --red-soft:#3a2020;
+  --grey:#9aa3b5; --grey-soft:#2a2c32; --local:#2a2230; --cloud:#152a2d;
 }
 
 *{box-sizing:border-box}
@@ -24,7 +61,7 @@ header h1{font-size:clamp(26px,4vw,38px);font-weight:700;letter-spacing:-0.01em}
 header p{margin:4px 0 0;color:var(--muted);max-width:60ch}
 .tabs{display:flex;gap:4px;background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:3px}
 .tabs button{border:0;background:transparent;color:var(--muted);font:600 13px var(--body);padding:6px 14px;border-radius:999px;cursor:pointer}
-.tabs button[aria-selected="true"]{background:var(--blue);color:var(--surface)}
+.tabs button[aria-selected="true"]{background:var(--blue);color:var(--on-accent)}
 button:focus-visible,input:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
 
 .main{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:14px;align-items:start}
@@ -94,16 +131,20 @@ button:focus-visible,input:focus-visible{outline:3px solid var(--blue);outline-o
 .panel h2{font-size:20px;font-weight:700;line-height:1.2}
 .panel p{margin:0}
 .hint{background:var(--grey-soft);border-radius:12px;padding:7px 9px;display:flex;flex-direction:column;gap:4px;font-size:12px}
-.hint b{font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.hint b{font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);display:inline-flex;align-items:center;gap:4px}
 .hint code{font-family:var(--mono);font-size:11px;overflow-wrap:anywhere}
+.hint b code{text-transform:none}
+.git-icon{width:13px;height:13px;flex:0 0 auto}
+.step-title{text-transform:none;font-weight:700;color:var(--ink);letter-spacing:normal;font-size:12px}
 .alert{border-radius:12px;padding:6px 9px;font-size:12px;font-weight:500}
 .alert.err{background:var(--red-soft);color:var(--red)}
 .alert.ok{background:var(--green-soft);color:var(--green)}
-.nav{display:flex;gap:6px;flex-wrap:wrap}
-.btn{border:1px solid var(--line);background:var(--surface);color:var(--ink);font:600 13px var(--body);padding:7px 12px;border-radius:10px;cursor:pointer}
+.nav{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.btn{border:1px solid var(--line);background:var(--surface);color:var(--ink);font:600 13px var(--body);padding:7px 12px;border-radius:10px;cursor:pointer;flex:0 0 auto}
 .btn:hover{border-color:var(--blue)}
-.btn.primary{background:var(--blue);border-color:var(--blue);color:var(--surface);flex:1}
+.btn.primary{background:var(--blue);border-color:var(--blue);color:var(--on-accent)}
 .btn:disabled{opacity:.45;cursor:not-allowed}
+.next-label{margin-left:auto;text-align:right;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);font-variant-numeric:tabular-nums;line-height:1.3;max-width:50%}
 .actions{display:grid;grid-template-columns:1fr 1fr;gap:6px}
 .actions .btn{font-size:12px;padding:6px 8px}
 .btn.push{color:var(--blue)} .btn.pull{color:var(--blue)} .btn.commit{color:var(--orange)}
@@ -112,6 +153,22 @@ button:focus-visible,input:focus-visible{outline:3px solid var(--blue);outline-o
 .field input{font:12px var(--mono);padding:6px 8px;border:1px solid var(--line);border-radius:10px;background:var(--surface);color:var(--ink);width:100%}
 .legend{display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-size:11px;color:var(--muted)}
 .keys{font-size:10px;color:var(--muted)}
+
+/* mockup de la pestaña Git de RStudio: barra de botones y lista de staging */
+.rstudio-box{border:1px solid var(--line);border-radius:10px;background:var(--grey-soft);padding:7px;display:flex;flex-direction:column;gap:6px}
+.rstudio-box .rstudio-label{font-size:9px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.rstudio-toolbar{display:flex;gap:3px;flex-wrap:wrap}
+.rstudio-btn{display:flex;flex-direction:column;align-items:center;gap:1px;flex:1;min-width:0;border:1px solid var(--line);background:var(--surface);color:var(--grey);font:10px var(--body);padding:5px 2px;border-radius:6px;cursor:default;opacity:.5}
+.rstudio-btn .ic{font-size:13px;line-height:1}
+.rstudio-btn.active{opacity:1;color:var(--blue);border-color:var(--blue);background:var(--blue-soft);cursor:pointer;font-weight:600}
+.rstudio-btn.active:hover{background:var(--blue);color:var(--on-accent)}
+.rstudio-check{display:flex;flex-direction:column;gap:4px}
+.rstudio-check-head{display:grid;grid-template-columns:20px 1fr;gap:6px;font-size:9px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding:0 2px}
+.rstudio-check-row{display:grid;grid-template-columns:20px 1fr;gap:6px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:4px 6px}
+.rstudio-check-row input{width:14px;height:14px;cursor:pointer;accent-color:var(--blue)}
+.rstudio-check-row span{font-family:var(--mono);font-size:11px;overflow-wrap:anywhere}
+.rstudio-check-row.done{background:var(--blue-soft);border-color:var(--blue)}
+.editor-note{display:flex;align-items:center;gap:6px;font-size:11px;color:var(--muted)}
 @media (prefers-reduced-motion:reduce){.file.just,.dot.just{animation:none}.progress i{transition:none}}
 </style>
 
@@ -191,23 +248,56 @@ button:focus-visible,input:focus-visible{outline:3px solid var(--blue);outline-o
   };
 
   var STORY=[
-    {t:'Un proyecto sin versionar',p:'Tienes un proyecto con un script y unos datos. Git todavía no los vigila: por eso aparecen como sin rastrear. El historial está vacío.',r:'Los archivos aparecen en la pestaña Git con un signo de interrogación amarillo.',c:'git status',a:null},
-    {t:'Eliges qué guardar',p:'Marcas los dos archivos para el próximo commit. Ahora están en staging, la zona de preparación. Todavía no se ha guardado nada.',r:'Marca la casilla Staged de cada archivo.',c:'git add analisis.R datos.csv',a:function(s){A.stage(s,['analisis.R','datos.csv'])}},
-    {t:'Tu primer commit',p:'Haces commit con un mensaje. Git guarda una foto del proyecto: aparece el primer punto en tu historial.',r:'Pulsa Commit, escribe el mensaje y confirma.',c:'git commit -m "Primer análisis de ventas"',a:function(s){A.commit(s,'Primer análisis de ventas')}},
-    {t:'Sigues trabajando',p:'Editas el script para añadir un gráfico. Git detecta la diferencia con la última foto y marca el archivo como modificado. El repositorio conserva la versión anterior.',r:'El archivo aparece con una M azul en la pestaña Git.',c:'git diff',a:function(s){A.edit(s,'analisis.R')}},
-    {t:'Preparas el cambio',p:'Marcas solo el script. Puedes elegir qué cambios van juntos en cada commit.',r:'Marca la casilla Staged del script.',c:'git add analisis.R',a:function(s){A.stage(s,['analisis.R'])}},
-    {t:'Segundo commit',p:'Otro punto en el historial. Cada commit tiene un identificador único y un mensaje que dice qué cambió.',r:'Commit y un mensaje claro.',c:'git commit -m "Añade gráfico por región"',a:function(s){A.commit(s,'Añade gráfico por región')}},
-    {t:'Lo subes a GitHub',p:'Con push copias tus commits a GitHub. Ahora los dos historiales son iguales y tu trabajo tiene respaldo en la nube.',r:'Pulsa la flecha verde Push.',c:'git push',a:function(s){A.push(s)}},
-    {t:'Alguien cambia algo en GitHub',p:'Una colega añade un README directamente en GitHub. Ese commit existe en la nube, pero no en tu computadora.',r:'No ves nada todavía: el cambio solo está en GitHub.',c:'(se hace en la web de GitHub)',a:function(s){A.remote(s,'README.md','Añade README')}},
-    {t:'Mientras tanto, tú también avanzas',p:'Sin saberlo, corriges un filtro en tu script, lo preparas y haces commit. Ahora cada historial tiene algo que el otro no tiene.',r:'Marca el script, Commit y mensaje.',c:'git add analisis.R && git commit -m "Corrige filtro de fechas"',a:function(s){A.edit(s,'analisis.R');A.stage(s,['analisis.R']);s.just=[];A.commit(s,'Corrige filtro de fechas')}},
-    {t:'Push rechazado',p:'Intentas subir tu commit y GitHub lo rechaza, porque tiene un commit que tú no tienes. No se pierde nada: solo te pide ponerte al día.',r:'RStudio muestra un mensaje con la palabra rejected.',c:'git push',a:function(s){A.push(s)}},
-    {t:'Te pones al día con pull',p:'Con pull traes el README a tu computadora. Como los dos historiales avanzaron, Git crea un commit que los une.',r:'Pulsa la flecha azul Pull.',c:'git pull',a:function(s){A.pull(s)}},
-    {t:'Ahora sí, push',p:'Subes tu commit y el de unión. Los dos historiales vuelven a ser idénticos. Este es el ciclo que repetirás todos los días.',r:'Pulsa Push otra vez.',c:'git push',a:function(s){A.push(s)}}
+    {t:'Un proyecto de RStudio sin versionar',p:'Tienes un proyecto con un script de R y datos en formato .csv. Git todavía no los rastrea y el historial de commits está vacío.',r:'No tienes que tipear git status: esto pasa automáticamente. En la pestaña Git verás reflejados los archivos nuevos con un signo de interrogación amarillo (?) y los modificados con una M azul, cada vez que los guardes.',c:'git status',e:'git status muestra el estado de cada archivo del proyecto, los nuevos, los que han cambiado y los guardados en el historial. No modifica nada, solo informa. En este caso, analisis.R y datos.csv son archivos nuevos que Git todavía no vigila.',a:null,ui:{kind:'status'}},
+    {t:'Eliges qué guardar',p:'Marcas los dos archivos para el próximo commit. Ahora están en staging, la zona de preparación. Todavía no se ha guardado nada.',r:'Debes marcar la casilla Staged de cada archivo en la pestaña Git para que los archivos pasen a Staging.',c:'git add analisis.R datos.csv',e:'git add mueve los cambios de un archivo al área de staging, la zona de preparación antes de guardarlos en el historial. No crea una versión todavía, solo marca qué cambios quieres incluir en el próximo commit. Aquí estás preparando los dos archivos nuevos.',a:function(s){A.stage(s,['analisis.R','datos.csv'])},ui:{kind:'checklist',files:['analisis.R','datos.csv']}},
+    {t:'Tu primer commit',p:'Haces commit con un mensaje. Git guarda una foto del proyecto: aparece el primer punto en tu historial.',r:'Pulsa Commit en la barra de la pestaña Git.',c:'git commit -m "Primer análisis de ventas"',e:'git commit toma todo lo que está en staging y crea una nueva versión guardada en el historial, con un mensaje que explica qué cambió. A partir de aquí, este estado del proyecto queda registrado y puedes volver a él cuando quieras.',a:function(s){A.commit(s,'Primer análisis de ventas')},ui:{kind:'toolbar',button:'commit'}},
+    {t:'Editas archivo existente',p:'Editas el script para añadir un gráfico. Git detecta la diferencia con la última foto y marca el archivo como modificado. El repositorio conserva la versión anterior.',r:'Cuando editas un archivo existente y guardas esos cambios, es una nueva versión del archivo y pasa a estar en tu carpeta, el archivo aparece con una M azul en la pestaña Git',c:'git diff',e:'git diff muestra línea por línea qué cambió dentro de un archivo respecto a la última versión guardada. Aquí te deja ver exactamente qué añadiste al script antes de decidir si lo preparas para un nuevo commit.',a:function(s){A.edit(s,'analisis.R')},ui:{kind:'editor'}},
+    {t:'Preparas el cambio',p:'Marcas solo el script. Puedes elegir qué cambios van juntos en cada commit.',r:'Marca la casilla Staged del script.',c:'git add analisis.R',e:'git add sobre un solo archivo prepara únicamente ese cambio para el próximo commit, dejando fuera cualquier otro archivo modificado. Así puedes agrupar en un commit solo los cambios que tienen sentido juntos.',a:function(s){A.stage(s,['analisis.R'])},ui:{kind:'checklist',files:['analisis.R']}},
+    {t:'Segundo commit',p:'Otro punto en el historial. Cada commit tiene un identificador único y un mensaje que dice qué cambió.',r:'Haces Commit con un mensaje claro. Ahora se visualizarán los dos commits en el Historial de commits',c:'git commit -m "Añade gráfico por región"',e:'De nuevo, git commit guarda en el historial lo que está en staging. Este es tu segundo commit: cada uno queda como un punto independiente al que puedes volver, con su propio identificador y mensaje.',a:function(s){A.commit(s,'Añade gráfico por región')},ui:{kind:'toolbar',button:'commit'}},
+    {t:'Lo subes a GitHub',p:'Con push copias tus commits a GitHub. Ahora los dos historiales son iguales y tu trabajo tiene respaldo en la nube.',r:'Pulsa Push en la barra de la pestaña Git.',c:'git push',e:'git push copia los commits que tienes en tu computadora hacia el repositorio remoto en GitHub, para que queden respaldados en la nube y disponibles para otras personas. Esta es la primera vez que subes tu historial.',a:function(s){A.push(s)},ui:{kind:'toolbar',button:'push'}},
+    {t:'Alguien cambia algo en GitHub',p:'Una colega añade un README directamente en GitHub. Ese commit existe en la nube, pero no en tu computadora.',r:'No ves ningún cambio en RStudio, el cambio solo está en GitHub.com.',c:'(Ninguno)',e:'Esto no es un comando de Git que ejecutes en tu computadora, alguien modificó el README.md en GitHub e hizo el commit en el repositorio remoto, lo puedes ver reflejado en el Historial de commits.',a:function(s){A.remote(s,'README.md','Añade README')},ui:{kind:'remote'}},
+    {t:'Mientras tanto, tú también avanzas',p:'Mientras tanto, también corregiste un filtro en tu script y ya lo preparaste: el archivo está en Staging, listo para el commit.',r:'Sigues trabajando en analisis.R, lo has editado, guardado y marcado en la casilla Staged. Ahora pulsa Commit para guardar los últimos cambios en tu historial local.',c:'git commit -m "Corrige filtro de fechas"',e:'git commit toma lo que está en staging (el archivo ya se preparó con git add) y crea una nueva versión guardada en tu historial local. GitHub todavía no sabe nada de este cambio, ni tú sabes del último commit en GitHub.',pre:function(s){A.edit(s,'analisis.R');A.stage(s,['analisis.R']);},a:function(s){A.commit(s,'Corrige filtro de fechas')},ui:{kind:'toolbar',button:'commit'}},
+    {t:'Push rechazado',p:'Intentas subir tu commit y GitHub lo rechaza, porque tiene un commit que tú no tienes. No se pierde nada: solo te pide ponerte al día.',r:'RStudio muestra un mensaje con la palabra rejected.',c:'git push',e:'git push intenta subir tus commits, pero Git rechazará la operación porque el repositorio remoto tiene un commit que tú no tienes en tu historial local. Es una medida de seguridad, donde Git prefiere detenerte antes que sobrescribir el trabajo de otra persona.',a:function(s){A.push(s)},ui:{kind:'toolbar',button:'push'}},
+    {t:'Te pones al día con pull',p:'Con pull traes el README a tu computadora. Como los dos historiales avanzaron, Git crea un commit que los une.',r:'Pulsa Pull en la barra de la pestaña Git.',c:'git pull',e:'git pull descarga los commits que existen en GitHub pero no en tu computadora y los combina con tu historial local. Como ambos historiales avanzaron por separado, Git crea automáticamente un commit de fusión para unirlos.',a:function(s){A.pull(s)},ui:{kind:'toolbar',button:'pull'}},
+    {t:'Ahora sí, push',p:'Subes tu commit y el de unión. Los dos historiales vuelven a ser idénticos. Este es el ciclo que repetirás todos los días.',r:'Pulsa Push otra vez.',c:'git push',e:'git push ahora sí se completa, porque tu historial local ya incluye el commit que faltaba, el de fusión. Los dos historiales, el tuyo y el de GitHub, vuelven a ser idénticos.',a:function(s){A.push(s)},ui:{kind:'toolbar',button:'push'}}
   ];
 
-  var mode='guia', step=0, free=fresh(), freeAlert=null, freeCount=0, freeMsg='Actualiza el análisis';
+  var RSTUDIO_BTNS=[
+    {id:'diff',label:'Diff',icon:'&Delta;'},
+    {id:'commit',label:'Commit',icon:'&check;'},
+    {id:'pull',label:'Pull',icon:'&darr;'},
+    {id:'push',label:'Push',icon:'&uarr;'},
+    {id:'history',label:'History',icon:'&#9201;'},
+    {id:'more',label:'More',icon:'&#8943;'}
+  ];
+
+  var GIT_ICON='<svg class="git-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.2" y="3.2" width="17.6" height="17.6" rx="4.2" fill="#F05133" transform="rotate(45 12 12)"/><line x1="8" y1="6.2" x2="9" y2="17.8" stroke="#fff" stroke-width="2" stroke-linecap="round"/><line x1="8.4" y1="10.3" x2="16" y2="9" stroke="#fff" stroke-width="2" stroke-linecap="round"/><circle cx="8" cy="6.2" r="1.7" fill="#fff"/><circle cx="16" cy="9" r="1.7" fill="#fff"/><circle cx="9" cy="17.8" r="1.7" fill="#fff"/></svg>';
+  var RSTUDIO_ICON='<svg class="git-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10.5" fill="#7CACDB"/><text x="12" y="16.8" text-anchor="middle" font-family="Georgia, \'Times New Roman\', serif" font-weight="700" font-size="13.5" fill="#fff">R</text></svg>';
+  var GITHUB_ICON='<svg class="git-icon" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.385-1.333-1.755-1.333-1.755-1.089-.744.084-.729.084-.729 1.205.084 1.84 1.237 1.84 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.605-2.665-.303-5.467-1.332-5.467-5.93 0-1.31.467-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>';
+  var mode='guia', step=0, free=fresh(), freeAlert=null, freeCount=0, freeMsg='Actualiza el análisis', checklistChecked={}, lastDone=false;
   document.addEventListener('input',function(e){ if(e.target&&e.target.id==='msg') freeMsg=e.target.value; });
-  function storyState(k){ var s=fresh(); for(var i=1;i<=k;i++){ s.just=[];s.justC=[];s.alert=null; if(STORY[i].a) STORY[i].a(s);} return s; }
+  function storyState(k){
+    // Las acciones de los pasos ya superados (i<k) siempre se aplican.
+    // La acción del paso actual (i===k) solo se aplica de entrada si no depende
+    // de una interacción del usuario (checklist o toolbar); en esos casos la
+    // acción ocurre recién cuando se completa la interacción y se avanza de paso.
+    var s=fresh();
+    for(var i=1;i<=k;i++){
+      // "pre" es preparación que ya ocurrió antes de llegar al paso (se ve de
+      // entrada, sin interacción); se aplica siempre que el paso ya fue alcanzado.
+      if(STORY[i].pre){ s.just=[];s.justC=[];s.alert=null; STORY[i].pre(s); }
+      var kind=(STORY[i].ui&&STORY[i].ui.kind)||'status';
+      var interactive=(kind==='checklist'||kind==='toolbar');
+      var isFinalDone=(i===k&&i===STORY.length-1&&lastDone);
+      if(i<k||!interactive||isFinalDone){
+        s.just=[];s.justC=[];s.alert=null;
+        if(STORY[i].a) STORY[i].a(s);
+      }
+    }
+    return s;
+  }
+  function setStep(n){ step=n; checklistChecked={}; lastDone=false; render(); }
+  function goNext(){ setStep(step===STORY.length-1?0:step+1); }
 
   function esc(t){return String(t).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
   var LABEL={untracked:'Sin rastrear',modified:'Modificado',staged:'Preparado',clean:'Guardado'};
@@ -253,16 +343,58 @@ button:focus-visible,input:focus-visible{outline:3px solid var(--blue);outline-o
     tl.innerHTML='<div class="tl-row-local" style="display:contents">'+row('','En tu computadora',s.local)+'</div><div class="tl-row-remote" style="display:contents">'+row('','En GitHub',s.remote)+'</div>';
   }
 
+  function rstudioToolbarHtml(activeId){
+    var h='<div class="rstudio-box"><div class="rstudio-label">Pestaña Git de RStudio</div><div class="rstudio-toolbar">';
+    RSTUDIO_BTNS.forEach(function(b){
+      var isActive=b.id===activeId;
+      h+='<button type="button" class="rstudio-btn'+(isActive?' active':'')+'" data-rstudio-btn="'+b.id+'"'+(isActive?'':' disabled aria-hidden="true" tabindex="-1"')+'><span class="ic">'+b.icon+'</span><span>'+b.label+'</span></button>';
+    });
+    h+='</div></div>';
+    return h;
+  }
+
+  function rstudioChecklistHtml(s,files){
+    var h='<div class="rstudio-box"><div class="rstudio-label">Pestaña Git de RStudio: Staged</div><div class="rstudio-check">';
+    files.forEach(function(n){
+      var done=!!checklistChecked[n];
+      h+='<label class="rstudio-check-row'+(done?' done':'')+'"><input type="checkbox" data-rstudio-check="'+esc(n)+'"'+(done?' checked':'')+'><span>'+esc(n)+'</span></label>';
+    });
+    h+='</div></div>';
+    return h;
+  }
+
   function renderPanel(s){
     var p=document.getElementById('panel'), alert=s.alert?'<div class="alert '+(s.alert.t==='err'?'err':'ok')+'" role="status">'+esc(s.alert.m)+'</div>':'';
     if(mode==='guia'){
-      var S=STORY[step], pct=Math.round(step/(STORY.length-1)*100);
-      p.innerHTML='<div class="step-count">Paso '+(step+1)+' de '+STORY.length+'</div><div class="progress"><i style="width:'+pct+'%"></i></div>'+
-        '<h2>'+esc(S.t)+'</h2><p>'+esc(S.p)+'</p>'+alert+
-        '<div class="hint"><b>En RStudio</b><span>'+esc(S.r)+'</span></div>'+
-        '<div class="hint"><b>Comando equivalente</b><code>'+esc(S.c)+'</code></div>'+
-        '<div class="nav"><button class="btn" id="prev"'+(step===0?' disabled':'')+'>Anterior</button><button class="btn primary" id="next">'+(step===STORY.length-1?'Volver a empezar':'Siguiente')+'</button></div>'+
+      var S=STORY[step], pct=Math.round(step/(STORY.length-1)*100), ui=S.ui||{kind:'status'};
+      var control='';
+      if(ui.kind==='toolbar'){
+        control=rstudioToolbarHtml(ui.button);
+      } else if(ui.kind==='checklist'){
+        control=rstudioChecklistHtml(s,ui.files);
+      }
+      var needsContinue=(ui.kind!=='toolbar'&&ui.kind!=='checklist');
+      var isFinalDone=(step===STORY.length-1&&lastDone);
+      var isWeb=(S.c==='(Ninguno)');
+      var qLabel=isWeb?(GITHUB_ICON+'Qué está pasando en GitHub.com'):'¿Qué hace <code>'+esc(S.c)+'</code>?';
+      var nextIdx=(step+1)%STORY.length;
+      var nextLabel='<span class="next-label">Siguiente paso: '+esc(STORY[nextIdx].t)+'</span>';
+      var actionBtn=needsContinue?'<button class="btn primary" id="next">'+(step===STORY.length-1?'Volver a empezar':'Continuar')+'</button>':(isFinalDone?'<button class="btn primary" id="restart-final">Reiniciar</button>':'');
+      p.innerHTML='<div class="step-count">Paso '+(step+1)+' de '+STORY.length+': <span class="step-title">'+esc(S.t)+'</span></div><div class="progress"><i style="width:'+pct+'%"></i></div>'+
+        alert+
+        '<div class="hint"><b>'+GIT_ICON+'Comando equivalente en Git</b><code>'+esc(S.c)+'</code></div>'+
+        '<div class="hint"><b>'+qLabel+'</b><span>'+esc(S.e||'')+'</span></div>'+
+        '<div class="hint"><b>'+RSTUDIO_ICON+'Qué está pasando en RStudio</b><span>'+esc(S.r)+'</span></div>'+
+        control+
+        '<div class="nav"><button class="btn" id="prev"'+(step===0?' disabled':'')+'>Anterior</button>'+actionBtn+nextLabel+'</div>'+
         '<div class="keys">También puedes usar las flechas del teclado.</div>';
+      if(needsContinue){
+        var prevBtn=document.getElementById('prev'), nextBtn=document.getElementById('next');
+        if(prevBtn&&nextBtn){ nextBtn.style.minWidth=(prevBtn.offsetWidth*2)+'px'; }
+      } else if(isFinalDone){
+        var prevBtn2=document.getElementById('prev'), restartBtn=document.getElementById('restart-final');
+        if(prevBtn2&&restartBtn){ restartBtn.style.minWidth=(prevBtn2.offsetWidth*2)+'px'; }
+      }
     } else {
       p.innerHTML='<div class="step-count">Practica libre</div><h2>Haz tu propio historial</h2>'+
         '<p>Edita archivos desde el repositorio, prepáralos con Stage desde tu carpeta y guarda con Commit.</p>'+
@@ -277,6 +409,13 @@ button:focus-visible,input:focus-visible{outline:3px solid var(--blue);outline-o
 
   function render(){
     var s=mode==='guia'?storyState(step):free;
+    if(mode==='guia'){
+      var S=STORY[step], ui=S.ui||{};
+      if(ui.kind==='checklist'){
+        var checkedFiles=ui.files.filter(function(n){return checklistChecked[n];});
+        if(checkedFiles.length){ s.just=[];s.justC=[]; A.stage(s,checkedFiles); }
+      }
+    }
     renderBoard(s); renderPanel(s);
     document.getElementById('tab-guia').setAttribute('aria-selected',mode==='guia');
     document.getElementById('tab-libre').setAttribute('aria-selected',mode==='libre');
@@ -284,12 +423,35 @@ button:focus-visible,input:focus-visible{outline:3px solid var(--blue);outline-o
 
   function freeDo(fn){ free.just=[];free.justC=[];free.alert=null; fn(free); freeAlert=free.alert; render(); }
 
+  document.addEventListener('change',function(e){
+    var t=e.target;
+    if(t&&t.matches&&t.matches('input[data-rstudio-check]')){
+      var file=t.dataset.rstudioCheck;
+      checklistChecked[file]=t.checked;
+      var S=STORY[step], ui=S.ui||{};
+      if(ui.kind==='checklist'){
+        var allDone=ui.files.every(function(n){return checklistChecked[n];});
+        if(allDone){ goNext(); return; }
+      }
+      render();
+    }
+  });
   document.addEventListener('click',function(e){
     var t=e.target.closest('button'); if(!t) return;
-    if(t.id==='tab-guia'){mode='guia';render();return;}
+    if(t.id==='tab-guia'){mode='guia';checklistChecked={};render();return;}
     if(t.id==='tab-libre'){mode='libre';render();return;}
-    if(t.id==='next'){ step=step===STORY.length-1?0:step+1; render(); return; }
-    if(t.id==='prev'){ if(step>0){step--;render();} return; }
+    if(t.id==='next'){ goNext(); return; }
+    if(t.id==='prev'){ if(step>0){setStep(step-1);} return; }
+    if(t.id==='restart-final'){ setStep(0); return; }
+    if(t.dataset.rstudioBtn){
+      if(t.disabled) return;
+      var S=STORY[step], ui=S.ui||{};
+      if(ui.kind==='toolbar'&&ui.button===t.dataset.rstudioBtn){
+        if(step===STORY.length-1){ lastDone=true; render(); }
+        else { goNext(); }
+      }
+      return;
+    }
     if(t.dataset.stage){ var n=t.dataset.stage; freeDo(function(s){A.stage(s,[n])}); return; }
     if(t.dataset.edit){ var m=t.dataset.edit; freeDo(function(s){A.edit(s,m)}); return; }
     var act=t.dataset.act; if(!act) return;
@@ -302,8 +464,8 @@ button:focus-visible,input:focus-visible{outline:3px solid var(--blue);outline-o
   });
   document.addEventListener('keydown',function(e){
     if(mode!=='guia'||/INPUT|TEXTAREA/.test((e.target||{}).tagName||'')) return;
-    if(e.key==='ArrowRight'){ if(step<STORY.length-1){step++;render();} }
-    if(e.key==='ArrowLeft'){ if(step>0){step--;render();} }
+    if(e.key==='ArrowRight'){ if(step<STORY.length-1){setStep(step+1);} }
+    if(e.key==='ArrowLeft'){ if(step>0){setStep(step-1);} }
   });
   render();
 })();

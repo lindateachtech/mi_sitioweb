@@ -1,6 +1,6 @@
 ---
 author: lindateachtech
-date: "2026-10-15"
+date: "2026-10-20"
 description: "Cuando empecé a aprender Git memorizaba comandos sin entender qué pasaba por dentro. Ahora que enseño control de versiones en talleres de Software Carpentry, construí una herramienta interactiva para que mis estudiantes entiendan el flujo completo desde el primer día."
 draft: false
 image: /images/r_github/commit.png
