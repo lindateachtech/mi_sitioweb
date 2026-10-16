@@ -1,6 +1,6 @@
 ---
 author: lindateachtech
-date: "2026-10-20"
+date: "2026-10-15"
 description: "Si ya conectaste RStudio con GitHub desde la consola, aquí tienes la misma configuración pero con el paquete usethis de R, que automatiza cada paso: configurar Git, crear tu token de GitHub y conectar un proyecto nuevo o uno que ya existe."
 draft: false
 image: /images/r_github/commit.png
