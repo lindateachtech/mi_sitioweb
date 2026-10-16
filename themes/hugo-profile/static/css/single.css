@@ -441,7 +441,7 @@ body.dark #single .page-content ul {
 #single .page-content pre .mh,
 #single .page-content pre .mi,
 #single .page-content pre .mo {
-  color: var(--code-number, #4118a4) !important;
+  color: var(--code-number, #2FD9CB) !important;
 }
 
 #single .page-content pre .c,

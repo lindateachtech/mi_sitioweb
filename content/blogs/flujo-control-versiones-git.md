@@ -1,17 +1,18 @@
 ---
 author: lindateachtech
 date: "2026-10-20"
-description: "Cuando empecé a aprender Git memorizaba comandos sin entender qué pasaba por dentro. Ahora que enseño control de versiones en talleres de Software Carpentry, construí una herramienta interactiva para que mis estudiantes entiendan el flujo completo desde el primer día."
+description: "Si ya conectaste RStudio con GitHub desde la consola, aquí tienes la misma configuración pero con el paquete usethis de R, que automatiza cada paso: configurar Git, crear tu token de GitHub y conectar un proyecto nuevo o uno que ya existe."
 draft: false
 image: /images/r_github/commit.png
 tags:
+- rstudio
 - git
 - github
+- usethis
 - control de versiones
-- docencia
-- software carpentry
-- principiantes
-title: "Memorizar comandos de Git y no entender nada"
+- tutorial
+- intermedio
+title: "¿Cómo conectar RStudio con GitHub usando el paquete usethis?"
 toc: TRUE
 ---
 
@@ -20,29 +21,140 @@ El primer curso de Git que tomé fue hace casi cuatro años, un curso dirigido a
 
 Luego, cuando aprendí control de versiones con The Carpentries, vi el flujo explicado de forma gráfica por primera vez, y pensé, dios mío, ¿es esto? Así es como debí aprenderlo desde el principio. A mí me funciona aprender de forma visual, y claramente no soy la única, porque ese mismo principio es la base de cómo Software Carpentry enseña control de versiones, un archivo que pasa por cuatro lugares distintos, tu carpeta, el área de staging, tu repositorio local y GitHub, y cada comando simplemente lo mueve de un lugar al siguiente. Una vez que tienes ese mapa en la cabeza, los comandos dejan de ser un conjuro y se vuelven lógicos.
 
-Con el tiempo quise ir un poco más allá. Hay buenos recursos visuales sobre Git, pero casi todos están en inglés, y yo quería uno propio, pensado para mis estudiantes. Por eso creé esta herramienta interactiva, para enseñar el flujo de forma dinámica y que puedan ver en tiempo real cómo va cambiando el estado de cada archivo, en vez de imaginárselo.
+Ese mapa del flujo lo he construido para mis talleres y puedes recorrerlo sin miedo a romper nada en el [simulador](/blogs/simulador-flujo-control-de-versiones) de flujo de trabajo de control de versiones. Sin embargo, la idea es ir un paso más allá del mapa conceptual y trabajarlo directamente en RStudio, y para eso utilizamos un paquete de R que automatiza buena parte de esta configuración y del trabajo con Git, el paquete `usethis`.
 
-Desde 2021 soy instructora de Software Carpentry y uso este material en mis talleres de control de versiones. Aquí te cuento los puntos donde más he visto trabarse a quienes están aprendiendo, los mismos donde yo me trababa, y al final te dejo el enlace al [simulador](/blogs/simulador-flujo-control-de-versiones) para que lo pruebes tú mismo.
+<img src="/images/r_github/usethis-hex.png" alt="Logo hexagonal del paquete usethis de R" style="max-width:140px; float:left; margin: 0 1.3em 0.8em 0;">
 
-## El área de staging es la primera pared
+`usethis` es un paquete de Posit (antes RStudio) pensado para automatizar tareas repetitivas al crear y mantener proyectos de R, y cada función `use_*()` hace una sola cosa muy concreta, desde crear un archivo hasta configurar tu token de GitHub, en vez de tener que recordar el comando exacto para cada paso.
 
-Lo que más cuesta no es Git en sí, es entender por qué existe un paso intermedio entre editar un archivo y guardarlo en el historial. En casi cualquier otra herramienta que usamos a diario (Word, Google Docs, incluso RStudio al guardar un script) el flujo es editar y guardar, sin pasos de más. Git te pide marcar primero qué cambios quieres incluir en la próxima foto del proyecto, y ese "paso de más" se siente innecesario hasta que lo necesitas, por ejemplo cuando cambiaste dos cosas distintas en un mismo script y quieres separarlas en dos commits con mensajes diferentes. Mientras no lo has necesitado, el staging parece burocracia.
+A continuación realizaremos paso a paso la configuración de Git y GitHub, conectaremos GitHub a un proyecto nuevo de RStudio y conectaremos GitHub a un proyecto que ya existe.
 
-## Confundir guardar con compartir
+<div style="clear:both;"></div>
 
-El segundo punto donde veo trabarse a casi todo el grupo es la diferencia entre hacer commit y hacer push. Es muy común que alguien haga su primer commit, se sienta satisfecho y luego pregunte por qué su compañero no ve el cambio. El commit guarda en tu historial local, push lo copia a GitHub para que otros lo vean. Son dos verbos distintos para dos lugares distintos, y en la cabeza de quien empieza, "guardar" es una sola acción. Cuando lo explico con el commit como una fotografía que guardas en tu álbum personal y el push como subir esa foto a un álbum compartido, el concepto suele aterrizar mejor que con cualquier definición técnica.
+<br>
 
-## El primer conflicto da pánico
+## Configuración de Git y GitHub
 
-El tercer momento, y el más intenso que recuerdo, fue mi primer conflicto de fusión en un proyecto real de trabajo. Hasta ese punto todo había sido lineal y previsible, edito, hago commit, hago push, y todo avanza. De pronto Git me dijo que había cambios que no sabía cómo combinar, y apareció un archivo lleno de símbolos raros. Mi primera reacción fue pensar que había roto algo, cuando en realidad Git estaba siendo cuidadoso, prefiere parar y preguntar antes que decidir por ti cuál versión es la correcta. Resolver ese primer conflicto sin perder nada me quitó buena parte del miedo para los siguientes.
+Esto se hace una sola vez por computadora, no por proyecto. Antes de cambiar nada, `git_sitrep()` te da un diagnóstico de cómo está tu configuración actual, si ves cruces en lugar de marcas de verificación junto a tu nombre, tu correo o tu token de GitHub, es que todavía falta configurarlos.
 
-## Una forma de practicar sin miedo
+```r
+usethis::git_sitrep()
+```
 
-Explicar estos conceptos con diapositivas ayuda, pero lo que realmente los fija es ver el flujo completo moverse: un archivo que pasa de la carpeta de trabajo al staging, de ahí al repositorio local y finalmente a GitHub, con el historial creciendo en tiempo real. Armé esta herramienta interactiva para eso. Tiene una historia guiada que recorre paso a paso el ciclo completo, incluido un conflicto real entre tu computadora y GitHub, y un modo de práctica libre para que experimentes por tu cuenta sin ningún riesgo, porque aquí no hay ningún repositorio real detrás.
+**1. Dile a Git quién eres.** El correo debe ser el mismo con el que te registraste en GitHub.
 
-Puedes probarla en [el simulador de flujo de trabajo de control de versiones](/blogs/simulador-flujo-control-de-versiones). Te recomiendo empezar por la historia guiada para ver el ciclo completo una vez, y después pasar a práctica libre e intentar provocar tú mismo un conflicto, antes de probarlo en un repositorio real.
+```r
+usethis::use_git_config(
+  user.name = "Tu Nombre",
+  user.email = "tu@correo.com"
+)
+```
 
-## Este material es parte de mi taller
+**2. Crea un token de acceso personal en GitHub.**
 
-Esta herramienta es una pequeña parte de lo que cubro en mi taller de control de versiones con Git y GitHub, donde además de practicar el flujo vemos cómo conectarlo con tus propios proyectos de R y RStudio. Si quieres profundizar, en [la página del taller](/cursos/control-versiones-git) tienes el material completo, las diapositivas y el repositorio de cada sesión, para que puedas revisarlo a tu ritmo o seguirlo paso a paso.
+```r
+usethis::create_github_token()
+```
+
+Esto abre GitHub con los permisos ya marcados, solo tienes que elegir una fecha de caducidad (por ejemplo 90 días) y pulsar *Generate token*. El token se muestra una sola vez, cópialo antes de salir de esa pantalla.
+
+**3. Guarda el token en tu computadora.**
+
+```r
+gitcreds::gitcreds_set()
+```
+
+Pega el token cuando te lo pida y pulsa Enter. Queda guardado en el gestor de credenciales de tu sistema operativo, y RStudio no te lo volverá a pedir.
+
+**4. Vacuna tu `.gitignore` global.**
+
+```r
+usethis::git_vaccinate()
+```
+
+Esto agrega a todos tus proyectos una lista de archivos que Git debe ignorar siempre, entre ellos `.Rhistory`. Sin esta vacuna, si haces `git add .` en un proyecto, ese archivo podría subirse a GitHub con tu token incluido, porque `.Rhistory` guarda el historial de comandos que ejecutaste en la consola. GitHub suele detectar y bloquear tokens expuestos, pero no conviene depender de eso.
+
+**5. Usa `main` como rama por defecto.**
+
+```r
+usethis::git_default_branch_configure()
+```
+
+**6. Comprueba que todo quedó bien.**
+
+```r
+usethis::git_sitrep()
+```
+
+Si ahora ves tu nombre, tu correo y el token como válidos, la configuración quedó lista, y no vuelves a repetir este bloque salvo que cambies de computadora.
+
+<br>
+
+## Cómo conectar GitHub a un proyecto nuevo
+
+
+**1. Crea el repositorio en GitHub.** En github.com, pulsa el signo + de la esquina superior derecha y elige *New repository*. Dale un nombre (por ejemplo `mi-primer-repo`), márcalo como público, y activa las casillas *Add a README file* y *.gitignore* con la plantilla de R. El README es la portada del proyecto, y el `.gitignore` evita que subas sin querer archivos sensibles: mientras un archivo esté en esa lista, Git lo ignora al hacer commit.
+
+
+**2. Tráelo a RStudio.** En GitHub pulsa el botón verde *Code* y copia la URL HTTPS. En RStudio ve a *File > New Project > Version Control > Git*, pega la URL y crea el proyecto. A esto se le llama clonar un repositorio: RStudio descarga todo lo que había en GitHub (el README y el `.gitignore`) y lo abre como proyecto nuevo. Verás aparecer la pestaña Git en el panel superior derecho.
+
+
+**3. Agrega un script.** Crea un archivo nuevo (*File > New File > R Script*) con algo como:
+
+```r
+# Ventas ficticias por región de Ecuador
+ventas <- data.frame(
+  region = c("Costa", "Sierra", "Amazonía", "Galápagos"),
+  ventas = c(1250, 980, 310, 140)
+)
+```
+
+Guárdalo como `analisis.R`. Guardar el archivo no equivale a hacer `git add` ni `git commit`, pero en cuanto lo guardas, Git empieza a rastrear ese cambio y lo verás aparecer en la pestaña Git.
+
+**4. Haz tu primer commit.** En la pestaña Git marca la casilla *Staged* de los archivos que quieras incluir y pulsa *Commit*. Marcar *Staged* equivale a `git add`, todavía no se ha guardado nada en el historial. En la ventana que se abre, escribe un mensaje descriptivo, por ejemplo "Añade tabla de ventas por región", y pulsa *Commit*. El mensaje importa porque es lo que te ayudará a encontrar esa versión si más adelante necesitas volver a ella.
+
+**5. Sube los cambios con push.** Hasta aquí todo queda guardado solo en tu computadora. Para que se vea en GitHub, pulsa la flecha verde de *Push*. Si refrescas el repositorio en GitHub, verás los archivos subidos.
+
+**6. Modifica el script y repite el ciclo.** Por ejemplo, agrega al final:
+
+```r
+barplot(ventas$ventas, names.arg = ventas$region,
+        main = "Ventas por región", col = "#3c8b91")
+```
+
+Guarda, marca *Staged*, escribe un mensaje como "Añade gráfico de barras" y vuelve a hacer *Push*. Si comparas el archivo en GitHub, verás resaltadas en verde las líneas que agregaste, eso es un *diff*.
+
+**7. Trae cambios remotos con pull.** Si alguien más modifica el repositorio (o lo haces tú mismo desde la web de GitHub, por ejemplo editando el README), esos cambios no aparecen automáticamente en tu computadora. Antes de empezar a trabajar, y sobre todo si colaboras con más personas, conviene pulsar la flecha azul de *Pull* para traer la última versión antes de hacer tus propios cambios.
+
+**8. Revisa el historial.** El botón con el ícono de reloj en la pestaña Git abre el historial de commits. Al hacer clic en uno de ellos puedes ver exactamente qué líneas cambiaron, el mismo tipo de comparación que puedes practicar en el simulador.
+
+<br>
+
+## Cómo conectar GitHub a un proyecto existente
+
+Si ya tienes un proyecto en RStudio que nunca pusiste bajo control de versiones, no hace falta recrearlo desde GitHub, puedes versionarlo donde está. Antes de empezar, revisa que la carpeta no tenga datos sensibles ni contraseñas: el primer commit sube todo lo que haya ahí dentro.
+
+**1. Activa Git en el proyecto.**
+
+```r
+usethis::use_git()
+```
+
+Te preguntará si puede hacer un primer commit con los archivos que ya tiene el proyecto, y luego si puede reiniciar RStudio para activar la pestaña Git. En ambos casos conviene responder que sí. Al volver a abrir el proyecto, verás la pestaña Git disponible.
+
+**2. Súbelo a GitHub.**
+
+```r
+usethis::use_github()
+```
+
+Esta función crea el repositorio en tu cuenta de GitHub, sube todo tu historial local y abre la página del repositorio en el navegador, usando el token que configuraste en el primer bloque.
+
+<br>
+
+## Taller
+
+Todo este código puedes verlo en práctica en el taller de control de versiones con Git y GitHub que di en el mes de octubre de 2026, donde además de practicar el flujo vemos cómo conectarlo con tus propios proyectos de R y RStudio. También puedes encontrar el material que utilicé en este Taller en el siguiente [enlace](/cursos/see-rstudio-github) y la grabación en este video:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/lcHvfmAEJso?si=yKMvDO7fIYT4k_69&amp;start=7450" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 

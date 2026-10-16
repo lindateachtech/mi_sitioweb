@@ -10,6 +10,11 @@
     --brand-teal-light: #BBBCC1;
     --brand-gray: #6B6F73;
     --brand-lilac: #E4CBDF;
+
+    /* variante clara de --brand-teal, usada para que los números tengan
+       buen contraste sobre el fondo oscuro de los bloques de código
+       (ese fondo es oscuro tanto en modo claro como en modo oscuro) */
+    --code-number: #2FD9CB;
 }
 
 /* light mode */
@@ -41,7 +46,7 @@ body.dark {
     --code-keyword: #f64dc5;
     --code-string: #6cb16b;
     --code-function: #a44498;
-    --code-number: #4118a4;
+    --code-number: #2FD9CB;
 }
 
 .text-secondary {
