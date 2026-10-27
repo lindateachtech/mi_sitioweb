@@ -22,6 +22,8 @@ Taller de 2 horas dictado a través de la [Sociedad Ecuatoriana de Estadística]
 [![material](https://img.shields.io/badge/MATERIAL-12100E.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/lindateachtech/taller-github-rstudio-10102026)
 [![linkedIn](https://img.shields.io/badge/LINKEDIN-0A66C2.svg?style=for-the-badge&logoColor=white)](https://lnkd.in/p/efkuZ6-d)
 [![facebook](https://img.shields.io/badge/FACEBOOK-0866FF.svg?style=for-the-badge&logo=facebook&logoColor=white)](https://www.facebook.com/photo?fbid=1126896169910024&set=a.176623574937293&locale=es_ES)
+[![YouTube](https://img.shields.io/badge/VIDEO-FF0000.svg?style=for-the-badge&logo=youtube&logoColor=white)](https://www.youtube.com/live/lcHvfmAEJso?si=7acH0zcvWAhmuyD1&t=7550)
+
 
 ¿Cuántas veces has guardado un archivo como `analisis_final_v3_DEFINITIVO.R`? En este taller aprenderás a dejar eso atrás y a trabajar con control de versiones usando GitHub directamente desde RStudio, para que tus proyectos tengan historial, estén respaldados y puedas compartirlos con quien quieras.
 
