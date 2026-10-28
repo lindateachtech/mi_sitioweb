@@ -3,7 +3,7 @@ author: Linda Cabrera Orellana
 date: "2026-10-24"
 description: "Taller práctico de control de versiones con Git para proyectos de Power BI, en el BI Week de la Sociedad Ecuatoriana de Estadística."
 draft: false
-image: /images/talleres/powerbi+github.png  # TODO: reemplazar por una imagen propia de este taller
+image: /images/talleres/powerbi+github.png  
 tags:
 - git
 - github
@@ -17,7 +17,7 @@ toc: TRUE
 Taller de 2 horas dictado a través de la [Sociedad Ecuatoriana de Estadística](https://see-ec.org/wordpress/), dentro del BI Week.
 
 
-[![material](https://img.shields.io/badge/MATERIAL-12100E.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/lindateachtech/taller-github-powerbi-24102026)
+[![material](https://img.shields.io/badge/MATERIAL-12100E.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/lindateachtech/taller-github-powerbi)
 [![linkedIn](https://img.shields.io/badge/LINKEDIN-0A66C2.svg?style=for-the-badge&logoColor=white)](https://lnkd.in/p/dr8i9UTS)
 [![facebook](https://img.shields.io/badge/FACEBOOK-0866FF.svg?style=for-the-badge&logo=facebook&logoColor=white)](https://www.facebook.com/photo/?fbid=1143108124955495&set=a.176623574937293&locale=es_ES)
 [![YouTube](https://img.shields.io/badge/VIDEO-FF0000.svg?style=for-the-badge&logo=youtube&logoColor=white)](https://www.youtube.com/live/Y_mM2cdfwcs?si=_l-0qGkoOFVveEfY)
@@ -62,4 +62,3 @@ Si quieres usar un asistente de IA durante la parte de Git, puedes traer tu prop
 
 Toda la configuración la haremos juntos durante el taller.
 
-<!-- TODO: si vas a dejar un repositorio de práctica público con la guía de instalación, enlázalo aquí -->
